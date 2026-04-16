@@ -115,9 +115,6 @@
       },
       "currentCurrency": "usd"
     },
-    "DelegationController": {
-      "delegations": {}
-    },
     "EnsController": {
       "ensEntries": {
         "0x1": {
@@ -2040,8 +2037,8 @@
         "gmx": {},
         "hyperliquid": {}
       },
-      "showSidePanelMigrationToast": false,
       "securityAlertsEnabled": true,
+      "showSidePanelMigrationToast": false,
       "snapRegistryList": {},
       "snapsAddSnapAccountModalDismissed": false,
       "theme": "os",
