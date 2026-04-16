@@ -317,7 +317,7 @@
     "@metamask/contract-metadata": "^2.5.0",
     "@metamask/controller-utils": "^11.18.0",
     "@metamask/core-backend": "^6.2.0",
-    "@metamask/delegation-controller": "^2.0.2",
+    "@metamask/delegation-controller": "^3.0.0",
     "@metamask/delegation-core": "^0.2.0-rc.1",
     "@metamask/delegation-deployments": "^1.0.0",
     "@metamask/design-system-react": "^0.17.0",
