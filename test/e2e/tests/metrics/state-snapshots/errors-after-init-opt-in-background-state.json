@@ -144,7 +144,6 @@
     "unapprovedDecryptMsgCount": 0,
     "unapprovedDecryptMsgs": "object"
   },
-  "DelegationController": "object",
   "EncryptionPublicKeyController": {
     "unapprovedEncryptionPublicKeyMsgCount": 0,
     "unapprovedEncryptionPublicKeyMsgs": "object"

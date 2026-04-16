@@ -659,7 +659,6 @@
     "databaseUnavailable": "boolean",
     "dataCollectionForMarketing": "boolean",
     "defaultHomeActiveTabName": "null",
-    "delegations": {},
     "depositInProgress": "boolean",
     "depositRequests": [],
     "dismissSeedBackUpReminder": "boolean",
