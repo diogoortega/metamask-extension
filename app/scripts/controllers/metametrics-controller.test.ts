@@ -2264,32 +2264,74 @@ describe('MetaMetricsController', function () {
         'evm-0': {
           id: 'evm-0',
           metadata: { keyring: { type: KeyringType.hdKeyTree } },
-          options: { entropy: { type: 'mnemonic', id: srp1, groupIndex: 0, derivationPath: "m/44'/60'/0'/0/0" } },
+          options: {
+            entropy: {
+              type: 'mnemonic',
+              id: srp1,
+              groupIndex: 0,
+              derivationPath: "m/44'/60'/0'/0/0",
+            },
+          },
         } as unknown as InternalAccount,
         'btc-0': {
           id: 'btc-0',
           metadata: { keyring: { type: KeyringType.snap } },
-          options: { entropy: { type: 'mnemonic', id: srp1, groupIndex: 0, derivationPath: "m/44'/0'/0'/0/0" } },
+          options: {
+            entropy: {
+              type: 'mnemonic',
+              id: srp1,
+              groupIndex: 0,
+              derivationPath: "m/44'/0'/0'/0/0",
+            },
+          },
         } as unknown as InternalAccount,
         'sol-0': {
           id: 'sol-0',
           metadata: { keyring: { type: KeyringType.snap } },
-          options: { entropy: { type: 'mnemonic', id: srp1, groupIndex: 0, derivationPath: "m/44'/501'/0'/0'" } },
+          options: {
+            entropy: {
+              type: 'mnemonic',
+              id: srp1,
+              groupIndex: 0,
+              derivationPath: "m/44'/501'/0'/0'",
+            },
+          },
         } as unknown as InternalAccount,
         'evm-1': {
           id: 'evm-1',
           metadata: { keyring: { type: KeyringType.hdKeyTree } },
-          options: { entropy: { type: 'mnemonic', id: srp1, groupIndex: 1, derivationPath: "m/44'/60'/1'/0/0" } },
+          options: {
+            entropy: {
+              type: 'mnemonic',
+              id: srp1,
+              groupIndex: 1,
+              derivationPath: "m/44'/60'/1'/0/0",
+            },
+          },
         } as unknown as InternalAccount,
         'btc-1': {
           id: 'btc-1',
           metadata: { keyring: { type: KeyringType.snap } },
-          options: { entropy: { type: 'mnemonic', id: srp1, groupIndex: 1, derivationPath: "m/44'/0'/1'/0/0" } },
+          options: {
+            entropy: {
+              type: 'mnemonic',
+              id: srp1,
+              groupIndex: 1,
+              derivationPath: "m/44'/0'/1'/0/0",
+            },
+          },
         } as unknown as InternalAccount,
         'sol-1': {
           id: 'sol-1',
           metadata: { keyring: { type: KeyringType.snap } },
-          options: { entropy: { type: 'mnemonic', id: srp1, groupIndex: 1, derivationPath: "m/44'/501'/1'/0'" } },
+          options: {
+            entropy: {
+              type: 'mnemonic',
+              id: srp1,
+              groupIndex: 1,
+              derivationPath: "m/44'/501'/1'/0'",
+            },
+          },
         } as unknown as InternalAccount,
       };
       const networkState = mockNetworkState({ chainId: CHAIN_IDS.MAINNET });
@@ -2317,7 +2359,11 @@ describe('MetaMetricsController', function () {
           preferences: {
             privacyMode: false,
             tokenNetworkFilter: {},
-            tokenSortConfig: { key: '', order: 'dsc', sortCallback: 'stringNumeric' },
+            tokenSortConfig: {
+              key: '',
+              order: 'dsc',
+              sortCallback: 'stringNumeric',
+            },
             showNativeTokenAsMainBalance: false,
           } as Preferences,
           srpSessionData: undefined,
@@ -2341,7 +2387,14 @@ describe('MetaMetricsController', function () {
         'hd-acc': {
           id: 'hd-acc',
           metadata: { keyring: { type: KeyringType.hdKeyTree } },
-          options: { entropy: { type: 'mnemonic', id: 'srp1', groupIndex: 0, derivationPath: "m/44'/60'/0'/0/0" } },
+          options: {
+            entropy: {
+              type: 'mnemonic',
+              id: 'srp1',
+              groupIndex: 0,
+              derivationPath: "m/44'/60'/0'/0/0",
+            },
+          },
         } as unknown as InternalAccount,
         'imported-acc': {
           id: 'imported-acc',
@@ -2405,7 +2458,11 @@ describe('MetaMetricsController', function () {
           preferences: {
             privacyMode: false,
             tokenNetworkFilter: {},
-            tokenSortConfig: { key: '', order: 'dsc', sortCallback: 'stringNumeric' },
+            tokenSortConfig: {
+              key: '',
+              order: 'dsc',
+              sortCallback: 'stringNumeric',
+            },
             showNativeTokenAsMainBalance: false,
           } as Preferences,
           srpSessionData: undefined,
@@ -2421,7 +2478,9 @@ describe('MetaMetricsController', function () {
         expect(traits?.[MetaMetricsUserTrait.NumberOfTrezorAccounts]).toBe(1);
         expect(traits?.[MetaMetricsUserTrait.NumberOfLatticeAccounts]).toBe(1);
         // QR hardware includes both 'QR Hardware Wallet Device' and 'OneKey Hardware'.
-        expect(traits?.[MetaMetricsUserTrait.NumberOfQrHardwareAccounts]).toBe(2);
+        expect(traits?.[MetaMetricsUserTrait.NumberOfQrHardwareAccounts]).toBe(
+          2,
+        );
         // 1 mnemonic entropy id → 1 HD entropy; hardware wallets don't contribute.
         expect(traits?.[MetaMetricsUserTrait.NumberOfHDEntropies]).toBe(1);
         // ledger(1) + trezor(1) + lattice(1) + qr(2) = 5.
@@ -2605,7 +2664,11 @@ describe('MetaMetricsController', function () {
         preferences: {
           privacyMode: false,
           tokenNetworkFilter: {},
-          tokenSortConfig: { key: '', order: 'dsc', sortCallback: 'stringNumeric' },
+          tokenSortConfig: {
+            key: '',
+            order: 'dsc',
+            sortCallback: 'stringNumeric',
+          },
           showNativeTokenAsMainBalance: false,
         } as Preferences,
         srpSessionData: undefined,
@@ -2626,7 +2689,9 @@ describe('MetaMetricsController', function () {
         expect(traits?.[MetaMetricsUserTrait.NumberOfLedgerAccounts]).toBe(0);
         expect(traits?.[MetaMetricsUserTrait.NumberOfTrezorAccounts]).toBe(0);
         expect(traits?.[MetaMetricsUserTrait.NumberOfLatticeAccounts]).toBe(0);
-        expect(traits?.[MetaMetricsUserTrait.NumberOfQrHardwareAccounts]).toBe(0);
+        expect(traits?.[MetaMetricsUserTrait.NumberOfQrHardwareAccounts]).toBe(
+          0,
+        );
       });
     });
 
@@ -2637,17 +2702,23 @@ describe('MetaMetricsController', function () {
             'evm-0': {
               id: 'evm-0',
               metadata: { keyring: { type: KeyringType.hdKeyTree } },
-              options: { entropy: { type: 'mnemonic', id: 'srp1', groupIndex: 0 } },
+              options: {
+                entropy: { type: 'mnemonic', id: 'srp1', groupIndex: 0 },
+              },
             },
             'evm-1': {
               id: 'evm-1',
               metadata: { keyring: { type: KeyringType.hdKeyTree } },
-              options: { entropy: { type: 'mnemonic', id: 'srp1', groupIndex: 1 } },
+              options: {
+                entropy: { type: 'mnemonic', id: 'srp1', groupIndex: 1 },
+              },
             },
             'evm-2': {
               id: 'evm-2',
               metadata: { keyring: { type: KeyringType.hdKeyTree } },
-              options: { entropy: { type: 'mnemonic', id: 'srp1', groupIndex: 2 } },
+              options: {
+                entropy: { type: 'mnemonic', id: 'srp1', groupIndex: 2 },
+              },
             },
           }),
         );
@@ -2664,17 +2735,23 @@ describe('MetaMetricsController', function () {
             'evm-srp1': {
               id: 'evm-srp1',
               metadata: { keyring: { type: KeyringType.hdKeyTree } },
-              options: { entropy: { type: 'mnemonic', id: 'srp1', groupIndex: 0 } },
+              options: {
+                entropy: { type: 'mnemonic', id: 'srp1', groupIndex: 0 },
+              },
             },
             'evm-srp2': {
               id: 'evm-srp2',
               metadata: { keyring: { type: KeyringType.hdKeyTree } },
-              options: { entropy: { type: 'mnemonic', id: 'srp2', groupIndex: 0 } },
+              options: {
+                entropy: { type: 'mnemonic', id: 'srp2', groupIndex: 0 },
+              },
             },
             'evm-srp3': {
               id: 'evm-srp3',
               metadata: { keyring: { type: KeyringType.hdKeyTree } },
-              options: { entropy: { type: 'mnemonic', id: 'srp3', groupIndex: 0 } },
+              options: {
+                entropy: { type: 'mnemonic', id: 'srp3', groupIndex: 0 },
+              },
             },
           }),
         );
@@ -2723,7 +2800,9 @@ describe('MetaMetricsController', function () {
         expect(traits?.[MetaMetricsUserTrait.NumberOfLedgerAccounts]).toBe(2);
         expect(traits?.[MetaMetricsUserTrait.NumberOfTrezorAccounts]).toBe(1);
         expect(traits?.[MetaMetricsUserTrait.NumberOfLatticeAccounts]).toBe(1);
-        expect(traits?.[MetaMetricsUserTrait.NumberOfQrHardwareAccounts]).toBe(2);
+        expect(traits?.[MetaMetricsUserTrait.NumberOfQrHardwareAccounts]).toBe(
+          2,
+        );
         // ledger(2) + trezor(1) + lattice(1) + qr(2) = 6.
         expect(traits?.[MetaMetricsUserTrait.NumberOfHardwareWallets]).toBe(6);
       });
@@ -2755,13 +2834,41 @@ describe('MetaMetricsController', function () {
       await withController(({ controller }) => {
         const traits = controller._buildUserTraitsObject(
           buildStateWithAccounts({
-            'ledger-1': { id: 'ledger-1', metadata: { keyring: { type: KeyringType.ledger } }, options: {} },
-            'ledger-2': { id: 'ledger-2', metadata: { keyring: { type: KeyringType.ledger } }, options: {} },
-            'trezor-1': { id: 'trezor-1', metadata: { keyring: { type: KeyringType.trezor } }, options: {} },
-            'lattice-1': { id: 'lattice-1', metadata: { keyring: { type: KeyringType.lattice } }, options: {} },
-            'lattice-2': { id: 'lattice-2', metadata: { keyring: { type: KeyringType.lattice } }, options: {} },
-            'qr-1': { id: 'qr-1', metadata: { keyring: { type: KeyringType.qr } }, options: {} },
-            'onekey-1': { id: 'onekey-1', metadata: { keyring: { type: KeyringType.oneKey } }, options: {} },
+            'ledger-1': {
+              id: 'ledger-1',
+              metadata: { keyring: { type: KeyringType.ledger } },
+              options: {},
+            },
+            'ledger-2': {
+              id: 'ledger-2',
+              metadata: { keyring: { type: KeyringType.ledger } },
+              options: {},
+            },
+            'trezor-1': {
+              id: 'trezor-1',
+              metadata: { keyring: { type: KeyringType.trezor } },
+              options: {},
+            },
+            'lattice-1': {
+              id: 'lattice-1',
+              metadata: { keyring: { type: KeyringType.lattice } },
+              options: {},
+            },
+            'lattice-2': {
+              id: 'lattice-2',
+              metadata: { keyring: { type: KeyringType.lattice } },
+              options: {},
+            },
+            'qr-1': {
+              id: 'qr-1',
+              metadata: { keyring: { type: KeyringType.qr } },
+              options: {},
+            },
+            'onekey-1': {
+              id: 'onekey-1',
+              metadata: { keyring: { type: KeyringType.oneKey } },
+              options: {},
+            },
           }),
         );
         // ledger(2) + trezor(1) + lattice(2) + qr(1) + onekey(1) = 7.
@@ -2808,12 +2915,16 @@ describe('MetaMetricsController', function () {
             'evm-0': {
               id: 'evm-0',
               metadata: { keyring: { type: KeyringType.hdKeyTree } },
-              options: { entropy: { type: 'mnemonic', id: 'srp1', groupIndex: 0 } },
+              options: {
+                entropy: { type: 'mnemonic', id: 'srp1', groupIndex: 0 },
+              },
             },
             'evm-1': {
               id: 'evm-1',
               metadata: { keyring: { type: KeyringType.hdKeyTree } },
-              options: { entropy: { type: 'mnemonic', id: 'srp2', groupIndex: 0 } },
+              options: {
+                entropy: { type: 'mnemonic', id: 'srp2', groupIndex: 0 },
+              },
             },
             'ledger-1': {
               id: 'ledger-1',
@@ -2833,9 +2944,12 @@ describe('MetaMetricsController', function () {
             },
           }),
         );
-        const hdEntropies = traits?.[MetaMetricsUserTrait.NumberOfHDEntropies] ?? 0;
-        const hardwareWallets = traits?.[MetaMetricsUserTrait.NumberOfHardwareWallets] ?? 0;
-        const importedAccounts = traits?.[MetaMetricsUserTrait.NumberOfImportedAccounts] ?? 0;
+        const hdEntropies =
+          traits?.[MetaMetricsUserTrait.NumberOfHDEntropies] ?? 0;
+        const hardwareWallets =
+          traits?.[MetaMetricsUserTrait.NumberOfHardwareWallets] ?? 0;
+        const importedAccounts =
+          traits?.[MetaMetricsUserTrait.NumberOfImportedAccounts] ?? 0;
         // 2 SRPs + 1 hardware + 1 imported = 4 total wallets.
         expect(hdEntropies + hardwareWallets + importedAccounts).toBe(4);
       });
