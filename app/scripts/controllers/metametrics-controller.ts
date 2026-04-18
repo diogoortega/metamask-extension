@@ -1556,7 +1556,6 @@ export class MetaMetricsController extends BaseController<
     const accountGroupKeys = new Set<string>();
     const hdEntropyIds = new Set<string>();
     let numberOfImportedAccounts = 0;
-    let numberOfSnapAccounts = 0;
     let numberOfLedgerAccounts = 0;
     let numberOfTrezorAccounts = 0;
     let numberOfLatticeAccounts = 0;
@@ -1570,9 +1569,6 @@ export class MetaMetricsController extends BaseController<
       switch (keyringType) {
         case KeyringType.imported:
           numberOfImportedAccounts += 1;
-          break;
-        case KeyringType.snap:
-          numberOfSnapAccounts += 1;
           break;
         case KeyringType.ledger:
           numberOfLedgerAccounts += 1;
@@ -1615,7 +1611,6 @@ export class MetaMetricsController extends BaseController<
       [MetaMetricsUserTrait.NumberOfHDEntropies]: hdEntropyIds.size,
       [MetaMetricsUserTrait.NumberOfAccountGroups]: accountGroupKeys.size,
       [MetaMetricsUserTrait.NumberOfImportedAccounts]: numberOfImportedAccounts,
-      [MetaMetricsUserTrait.NumberOfSnapAccounts]: numberOfSnapAccounts,
       [MetaMetricsUserTrait.NumberOfLedgerAccounts]: numberOfLedgerAccounts,
       [MetaMetricsUserTrait.NumberOfTrezorAccounts]: numberOfTrezorAccounts,
       [MetaMetricsUserTrait.NumberOfLatticeAccounts]: numberOfLatticeAccounts,
