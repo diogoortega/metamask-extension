@@ -1,5 +1,5 @@
-import React from 'react';
-import { screen, waitFor } from '@testing-library/react';
+import React, { useEffect } from 'react';
+import { act, screen, waitFor } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 import { renderWithProvider } from '../../../../test/lib/render-helpers-navigate';
 import WebcamUtils from '../../../helpers/utils/webcam-utils';
@@ -127,9 +127,13 @@ describe('BaseReader', () => {
     }: {
       handleScan: (data: string) => void;
     }) => {
-      handleScan(
-        'UR:CRYPTO-HDKEY/24-2/LPCSCSAOCSNYCYNLAMSKJPHDGTEHOEADCSFNAOAEAMTAADDYOTADLNCSDWYKCSFNYKAEYKAOCYJKSKTNBKAXAXATTAADDYOEADLRAEWKLAWKAXAEAYCYTEDMFEAYASISGRIHKKJKJYJLJTIHBKJOHSIAIAJLKPJTJYDMJKJYHSJTIEHSJPIEHTSTGSAO',
-      );
+      // Call handleScan in useEffect to avoid state updates during render
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      useEffect(() => {
+        handleScan(
+          'UR:CRYPTO-HDKEY/24-2/LPCSCSAOCSNYCYNLAMSKJPHDGTEHOEADCSFNAOAEAMTAADDYOTADLNCSDWYKCSFNYKAEYKAOCYJKSKTNBKAXAXATTAADDYOEADLRAEWKLAWKAXAEAYCYTEDMFEAYASISGRIHKKJKJYJLJTIHBKJOHSIAIAJLKPJTJYDMJKJYHSJTIEHSJPIEHTSTGSAO',
+        );
+      }, [handleScan]);
       return null;
     }) as unknown as typeof EnhancedReader);
     renderWithProvider(<BaseReader {...defaultProps} />);
@@ -277,11 +281,9 @@ describe('BaseReader', () => {
     let capturedChangeHandler: (() => void) | null = null;
     const mockPermissionStatus = {
       state: 'denied' as PermissionState,
-      addEventListener: jest.fn(
-        (_event: string, handler: () => void) => {
-          capturedChangeHandler = handler;
-        },
-      ),
+      addEventListener: jest.fn((_event: string, handler: () => void) => {
+        capturedChangeHandler = handler;
+      }),
     } as unknown as PermissionStatus;
 
     mockQueryCameraPermission.mockResolvedValue({
@@ -297,12 +299,12 @@ describe('BaseReader', () => {
       new Error('Camera hardware error'),
     );
 
-    capturedChangeHandler!();
-
-    // Wait for the failed stream request to complete
-    await waitFor(() => {
-      expect(mockRequestVideoStream).toHaveBeenCalledTimes(1);
+    expect(capturedChangeHandler).not.toBeNull();
+    await act(async () => {
+      (capturedChangeHandler as () => void)();
     });
+
+    expect(mockRequestVideoStream).toHaveBeenCalledTimes(1);
     // Should still show blocked UI since acquireCameraAndTransitionToReady caught the error
     expect(screen.getByTestId('qr-camera-access-blocked')).toBeInTheDocument();
   });
@@ -319,11 +321,9 @@ describe('BaseReader', () => {
     let capturedChangeHandler: (() => void) | null = null;
     const mockPermissionStatus = {
       state: 'denied' as PermissionState,
-      addEventListener: jest.fn(
-        (_event: string, handler: () => void) => {
-          capturedChangeHandler = handler;
-        },
-      ),
+      addEventListener: jest.fn((_event: string, handler: () => void) => {
+        capturedChangeHandler = handler;
+      }),
     } as unknown as PermissionStatus;
 
     mockQueryCameraPermission.mockResolvedValue({
@@ -341,13 +341,13 @@ describe('BaseReader', () => {
     );
 
     expect(capturedChangeHandler).not.toBeNull();
-    capturedChangeHandler!();
-
-    await waitFor(() => {
-      expect(
-        screen.getByText(messages.QRHardwareScanInstructions.message),
-      ).toBeInTheDocument();
+    await act(async () => {
+      (capturedChangeHandler as () => void)();
     });
+
+    expect(
+      screen.getByText(messages.QRHardwareScanInstructions.message),
+    ).toBeInTheDocument();
     expect(mockRequestVideoStream).toHaveBeenCalledTimes(1);
     expect(mockStopVideoStream).toHaveBeenCalledWith(mockStream);
   });
@@ -631,13 +631,14 @@ describe('BaseReader', () => {
     }: {
       handleScan: (data: string) => void;
     }) => {
-      handleScan('not-a-valid-ur-payload');
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      useEffect(() => {
+        handleScan('not-a-valid-ur-payload');
+      }, [handleScan]);
       return null;
     }) as unknown as typeof EnhancedReader);
 
-    renderWithProvider(
-      <BaseReader {...defaultProps} isReadingWallet />,
-    );
+    renderWithProvider(<BaseReader {...defaultProps} isReadingWallet />);
 
     expect(
       await screen.findByText(messages.QRHardwareUnknownWalletQRCode.message),
@@ -654,7 +655,10 @@ describe('BaseReader', () => {
     }: {
       handleScan: (data: string) => void;
     }) => {
-      handleScan('not-a-valid-ur-payload');
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      useEffect(() => {
+        handleScan('not-a-valid-ur-payload');
+      }, [handleScan]);
       return null;
     }) as unknown as typeof EnhancedReader);
 
@@ -685,9 +689,7 @@ describe('BaseReader', () => {
     renderWithProvider(<BaseReader {...defaultProps} />);
     await screen.findByText(messages.noWebcamFound.message);
 
-    await userEvent.click(
-      screen.getByTestId('page-container-footer-cancel'),
-    );
+    await userEvent.click(screen.getByTestId('page-container-footer-cancel'));
 
     expect(defaultProps.handleCancel).toHaveBeenCalledTimes(1);
     expect(defaultProps.setErrorTitle).toHaveBeenCalledWith('');
@@ -709,9 +711,7 @@ describe('BaseReader', () => {
     // Set up success for the retry
     setupWebcamUtilsSuccess();
 
-    await userEvent.click(
-      screen.getByTestId('page-container-footer-next'),
-    );
+    await userEvent.click(screen.getByTestId('page-container-footer-next'));
 
     await waitFor(() => {
       expect(
