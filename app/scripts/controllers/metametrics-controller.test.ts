@@ -49,6 +49,7 @@ import {
   MetaMetricsController,
   AllowedActions,
   AllowedEvents,
+  MetaMaskState,
   MetaMetricsControllerOptions,
 } from './metametrics-controller';
 import {
@@ -2350,7 +2351,9 @@ describe('MetaMetricsController', function () {
           useNftDetection: false,
           theme: 'default' as ThemeType,
           useTokenDetection: false,
-          names: {},
+          names: {
+            [NameType.ETHEREUM_ADDRESS]: {},
+          },
           currentCurrency: 'usd',
           securityAlertsEnabled: false,
           participateInMetaMetrics: true,
@@ -2447,7 +2450,9 @@ describe('MetaMetricsController', function () {
           useNftDetection: false,
           theme: 'default' as ThemeType,
           useTokenDetection: false,
-          names: {},
+          names: {
+            [NameType.ETHEREUM_ADDRESS]: {},
+          },
           currentCurrency: 'usd',
           securityAlertsEnabled: false,
           participateInMetaMetrics: true,
@@ -2652,7 +2657,9 @@ describe('MetaMetricsController', function () {
         useNftDetection: false,
         theme: 'default' as ThemeType,
         useTokenDetection: false,
-        names: {},
+        names: {
+          [NameType.ETHEREUM_ADDRESS]: {},
+        },
         currentCurrency: 'usd',
         securityAlertsEnabled: false,
         participateInMetaMetrics: true,
