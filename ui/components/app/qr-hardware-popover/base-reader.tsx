@@ -162,9 +162,50 @@ const BaseReader = ({
   // ---- permission flow entry points ---------------------------------------
 
   /**
+   * Classifies a `NotAllowedError` after re-querying the permission state
+   * and updates the UI to the appropriate error screen.
+   */
+  const handleNotAllowedError = useCallback(async () => {
+    const nextState = await reconcileNotAllowedPermission();
+    if (!mountedRef.current) {
+      return;
+    }
+    const useBlockedUi =
+      nextState === CameraPermissionState.Denied ||
+      (nextState === CameraPermissionState.Prompt && isFirefoxBrowser());
+    setReadyState(
+      useBlockedUi
+        ? CameraReadyState.CameraAccessBlocked
+        : CameraReadyState.CameraAccessNeeded,
+    );
+  }, [reconcileNotAllowedPermission]);
+
+  /**
+   * Prompts the user for camera access via `getUserMedia` (used when the
+   * Permissions API returns `'prompt'`). On success transitions to READY;
+   * on `NotAllowedError` classifies the denial; other errors bubble up.
+   */
+  const promptForCameraAccess = useCallback(async () => {
+    try {
+      const stream = await WebcamUtils.requestVideoStream();
+      WebcamUtils.stopVideoStream(stream);
+      if (mountedRef.current) {
+        cleanupPermissionListener();
+        setReadyState(CameraReadyState.Ready);
+      }
+    } catch (cameraError) {
+      if ((cameraError as { name?: string }).name === 'NotAllowedError') {
+        await handleNotAllowedError();
+      } else if (mountedRef.current) {
+        setError(cameraError as WebcamError);
+      }
+    }
+  }, [cleanupPermissionListener, handleNotAllowedError]);
+
+  /**
    * Initial permission flow executed once the environment check passes.
-   * Queries the permission API, tries `getUserMedia`, and classifies the
-   * outcome into a {@link CameraReadyState}.
+   * Queries the permission API, then dispatches to the appropriate handler
+   * based on the current permission state.
    */
   const startCameraPermissionFlow = useCallback(async () => {
     const { state, permissionStatus } =
@@ -191,36 +232,12 @@ const BaseReader = ({
       return;
     }
 
-    try {
-      const stream = await WebcamUtils.requestVideoStream();
-      WebcamUtils.stopVideoStream(stream);
-      if (mountedRef.current) {
-        cleanupPermissionListener();
-        setReadyState(CameraReadyState.Ready);
-      }
-    } catch (cameraError) {
-      const domError = cameraError as { name?: string };
-      if (domError.name === 'NotAllowedError') {
-        const nextState = await reconcileNotAllowedPermission();
-        if (mountedRef.current) {
-          const useBlockedUi =
-            nextState === CameraPermissionState.Denied ||
-            (nextState === CameraPermissionState.Prompt && isFirefoxBrowser());
-          setReadyState(
-            useBlockedUi
-              ? CameraReadyState.CameraAccessBlocked
-              : CameraReadyState.CameraAccessNeeded,
-          );
-        }
-      } else if (mountedRef.current) {
-        setError(cameraError as WebcamError);
-      }
-    }
+    await promptForCameraAccess();
   }, [
     attachPermissionListener,
     acquireCameraAndTransitionToReady,
     cleanupPermissionListener,
-    reconcileNotAllowedPermission,
+    promptForCameraAccess,
   ]);
 
   // ---- environment check --------------------------------------------------
@@ -239,7 +256,7 @@ const BaseReader = ({
         const currentUrl = new URL(window.location.href);
         const currentHash = currentUrl.hash;
         const currentRoute = currentHash ? currentHash.substring(1) : null;
-        global.platform.openExtensionInBrowser(currentRoute);
+        globalThis.platform.openExtensionInBrowser(currentRoute);
         return;
       }
     } catch (environmentError) {
@@ -322,7 +339,7 @@ const BaseReader = ({
    * Opens the Chromium camera site-settings page in a new tab.
    */
   const handleOpenChromiumCameraSettings = useCallback(() => {
-    global.platform.openTab({
+    globalThis.platform.openTab({
       url: getChromiumExtensionCameraSiteSettingsUrl(),
     });
   }, []);

@@ -104,22 +104,6 @@ describe('BaseReader', () => {
 
   // ---- Happy-path scanning ------------------------------------------------
 
-  it('renders scan instructions when camera is ready', async () => {
-    mockEnhancedReader.mockImplementation(
-      () => null as unknown as React.ReactElement,
-    );
-    setupWebcamUtilsSuccess();
-
-    renderWithProvider(<BaseReader {...defaultProps} />);
-
-    await waitFor(() => {
-      expect(
-        screen.getByText(messages.QRHardwareScanInstructions.message),
-      ).toBeInTheDocument();
-    });
-    expect(screen.queryByTestId('qr-reader-progress-bar')).toBeNull();
-  });
-
   it('renders progress bar when scan produces partial data', async () => {
     setupWebcamUtilsSuccess();
     mockEnhancedReader.mockImplementation((({
@@ -186,36 +170,6 @@ describe('BaseReader', () => {
       ).toBeInTheDocument();
     });
     expect(mockRequestVideoStream).not.toHaveBeenCalled();
-  });
-
-  // ---- Permission: prompt-dismissed (needed) on Chromium ------------------
-
-  it('shows camera-access-needed when Chromium user dismisses the prompt', async () => {
-    mockIsFirefoxBrowser.mockReturnValue(false);
-    mockEnhancedReader.mockImplementation(
-      () => null as unknown as React.ReactElement,
-    );
-    mockCheckStatus.mockResolvedValue({
-      permissions: false,
-      environmentReady: true,
-    });
-    mockQueryCameraPermission.mockResolvedValue({
-      state: 'prompt',
-      permissionStatus: {
-        state: 'prompt',
-        addEventListener: jest.fn(),
-      } as unknown as PermissionStatus,
-    });
-    const notAllowed = new Error('denied');
-    notAllowed.name = 'NotAllowedError';
-    mockRequestVideoStream.mockRejectedValueOnce(notAllowed);
-
-    renderWithProvider(<BaseReader {...defaultProps} />);
-
-    expect(
-      await screen.findByTestId('qr-camera-access-needed'),
-    ).toBeInTheDocument();
-    expect(screen.queryByTestId('qr-reader-progress-bar')).toBeNull();
   });
 
   // ---- Permission: blocked -----------------------------------------------
@@ -380,38 +334,7 @@ describe('BaseReader', () => {
     });
   });
 
-  // ---- Firefox: always blocked for NotAllowedError (prompt stays prompt) --
-
-  it('shows Firefox blocked instructions when permission stays prompt after NotAllowedError', async () => {
-    mockIsFirefoxBrowser.mockReturnValue(true);
-    mockEnhancedReader.mockImplementation(
-      () => null as unknown as React.ReactElement,
-    );
-    mockCheckStatus.mockResolvedValue({
-      permissions: false,
-      environmentReady: true,
-    });
-    mockQueryCameraPermission.mockResolvedValue({
-      state: 'prompt',
-      permissionStatus: {
-        state: 'prompt',
-        addEventListener: jest.fn(),
-      } as unknown as PermissionStatus,
-    });
-    const notAllowed = new Error('denied');
-    notAllowed.name = 'NotAllowedError';
-    mockRequestVideoStream.mockRejectedValueOnce(notAllowed);
-
-    renderWithProvider(<BaseReader {...defaultProps} />);
-
-    expect(
-      await screen.findByTestId('qr-camera-access-blocked'),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByTestId('qr-camera-firefox-instructions'),
-    ).toBeInTheDocument();
-    expect(screen.queryByTestId('qr-camera-access-needed')).toBeNull();
-  });
+  // ---- Firefox-specific UI ------------------------------------------------
 
   it('shows Firefox instructions when blocked in Firefox', async () => {
     mockEnhancedReader.mockImplementation(
@@ -436,6 +359,185 @@ describe('BaseReader', () => {
       await screen.findByTestId('qr-camera-firefox-instructions'),
     ).toBeInTheDocument();
     expect(screen.queryByTestId('qr-camera-open-settings')).toBeNull();
+  });
+
+  // ---- promptForCameraAccess ----------------------------------------------
+
+  describe('promptForCameraAccess', () => {
+    it('transitions to Ready when getUserMedia succeeds', async () => {
+      mockEnhancedReader.mockImplementation(
+        () => null as unknown as React.ReactElement,
+      );
+      mockCheckStatus.mockResolvedValue({
+        permissions: true,
+        environmentReady: true,
+      });
+      mockQueryCameraPermission.mockResolvedValue({
+        state: 'prompt',
+        permissionStatus: null,
+      });
+      mockRequestVideoStream.mockResolvedValue(
+        mockStream as unknown as MediaStream,
+      );
+
+      renderWithProvider(<BaseReader {...defaultProps} />);
+
+      await waitFor(() => {
+        expect(
+          screen.getByText(messages.QRHardwareScanInstructions.message),
+        ).toBeInTheDocument();
+      });
+      expect(mockRequestVideoStream).toHaveBeenCalledTimes(1);
+      expect(mockStopVideoStream).toHaveBeenCalledWith(mockStream);
+    });
+
+    it('delegates to handleNotAllowedError on NotAllowedError', async () => {
+      mockEnhancedReader.mockImplementation(
+        () => null as unknown as React.ReactElement,
+      );
+      mockCheckStatus.mockResolvedValue({
+        permissions: true,
+        environmentReady: true,
+      });
+      mockQueryCameraPermission.mockResolvedValue({
+        state: 'prompt',
+        permissionStatus: {
+          state: 'prompt',
+          addEventListener: jest.fn(),
+        } as unknown as PermissionStatus,
+      });
+      const notAllowed = new Error('denied');
+      notAllowed.name = 'NotAllowedError';
+      mockRequestVideoStream.mockRejectedValueOnce(notAllowed);
+
+      renderWithProvider(<BaseReader {...defaultProps} />);
+
+      expect(
+        await screen.findByTestId('qr-camera-access-needed'),
+      ).toBeInTheDocument();
+      expect(mockQueryCameraPermission).toHaveBeenCalledTimes(2);
+    });
+
+    it('sets generic error for non-NotAllowedError camera failures', async () => {
+      mockEnhancedReader.mockImplementation(
+        () => null as unknown as React.ReactElement,
+      );
+      mockCheckStatus.mockResolvedValue({
+        permissions: true,
+        environmentReady: true,
+      });
+      mockQueryCameraPermission.mockResolvedValue({
+        state: 'prompt',
+        permissionStatus: null,
+      });
+      const notReadable = new Error('Could not start video source');
+      notReadable.name = 'NotReadableError';
+      mockRequestVideoStream.mockRejectedValueOnce(notReadable);
+
+      renderWithProvider(<BaseReader {...defaultProps} />);
+
+      expect(
+        await screen.findByText(messages.generalCameraError.message),
+      ).toBeInTheDocument();
+      expect(mockQueryCameraPermission).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  // ---- handleNotAllowedError ----------------------------------------------
+
+  describe('handleNotAllowedError', () => {
+    it('shows camera-access-needed when re-queried permission is prompt on Chromium', async () => {
+      mockIsFirefoxBrowser.mockReturnValue(false);
+      mockEnhancedReader.mockImplementation(
+        () => null as unknown as React.ReactElement,
+      );
+      mockCheckStatus.mockResolvedValue({
+        permissions: true,
+        environmentReady: true,
+      });
+      mockQueryCameraPermission.mockResolvedValue({
+        state: 'prompt',
+        permissionStatus: {
+          state: 'prompt',
+          addEventListener: jest.fn(),
+        } as unknown as PermissionStatus,
+      });
+      const notAllowed = new Error('denied');
+      notAllowed.name = 'NotAllowedError';
+      mockRequestVideoStream.mockRejectedValueOnce(notAllowed);
+
+      renderWithProvider(<BaseReader {...defaultProps} />);
+
+      expect(
+        await screen.findByTestId('qr-camera-access-needed'),
+      ).toBeInTheDocument();
+      expect(
+        screen.queryByTestId('qr-camera-access-blocked'),
+      ).not.toBeInTheDocument();
+    });
+
+    it('shows camera-access-blocked when re-queried permission is denied', async () => {
+      mockEnhancedReader.mockImplementation(
+        () => null as unknown as React.ReactElement,
+      );
+      mockCheckStatus.mockResolvedValue({
+        permissions: true,
+        environmentReady: true,
+      });
+      // First call returns prompt (entering promptForCameraAccess),
+      // second call (from reconcileNotAllowedPermission) returns denied
+      mockQueryCameraPermission
+        .mockResolvedValueOnce({
+          state: 'prompt',
+          permissionStatus: null,
+        })
+        .mockResolvedValueOnce({
+          state: 'denied',
+          permissionStatus: {
+            state: 'denied',
+            addEventListener: jest.fn(),
+          } as unknown as PermissionStatus,
+        });
+      const notAllowed = new Error('denied');
+      notAllowed.name = 'NotAllowedError';
+      mockRequestVideoStream.mockRejectedValueOnce(notAllowed);
+
+      renderWithProvider(<BaseReader {...defaultProps} />);
+
+      expect(
+        await screen.findByTestId('qr-camera-access-blocked'),
+      ).toBeInTheDocument();
+    });
+
+    it('shows camera-access-blocked on Firefox when re-queried permission is prompt', async () => {
+      mockIsFirefoxBrowser.mockReturnValue(true);
+      mockEnhancedReader.mockImplementation(
+        () => null as unknown as React.ReactElement,
+      );
+      mockCheckStatus.mockResolvedValue({
+        permissions: true,
+        environmentReady: true,
+      });
+      mockQueryCameraPermission.mockResolvedValue({
+        state: 'prompt',
+        permissionStatus: {
+          state: 'prompt',
+          addEventListener: jest.fn(),
+        } as unknown as PermissionStatus,
+      });
+      const notAllowed = new Error('denied');
+      notAllowed.name = 'NotAllowedError';
+      mockRequestVideoStream.mockRejectedValueOnce(notAllowed);
+
+      renderWithProvider(<BaseReader {...defaultProps} />);
+
+      expect(
+        await screen.findByTestId('qr-camera-access-blocked'),
+      ).toBeInTheDocument();
+      expect(
+        screen.queryByTestId('qr-camera-access-needed'),
+      ).not.toBeInTheDocument();
+    });
   });
 
   // ---- "Continue" on needed UI (handleCameraAccessNeededContinue) ----------
@@ -580,32 +682,6 @@ describe('BaseReader', () => {
   });
 
   // ---- Error rendering ----------------------------------------------------
-
-  it('renders generic camera error when requestVideoStream throws non-NotAllowedError', async () => {
-    mockEnhancedReader.mockImplementation(
-      () => null as unknown as React.ReactElement,
-    );
-    mockCheckStatus.mockResolvedValue({
-      permissions: false,
-      environmentReady: true,
-    });
-    mockQueryCameraPermission.mockResolvedValue({
-      state: 'prompt',
-      permissionStatus: {
-        state: 'prompt',
-        addEventListener: jest.fn(),
-      } as unknown as PermissionStatus,
-    });
-    const notReadable = new Error('Could not start video source');
-    notReadable.name = 'NotReadableError';
-    mockRequestVideoStream.mockRejectedValueOnce(notReadable);
-
-    renderWithProvider(<BaseReader {...defaultProps} />);
-
-    expect(
-      await screen.findByText(messages.generalCameraError.message),
-    ).toBeInTheDocument();
-  });
 
   it('renders error state when WebcamUtils.checkStatus rejects with NO_WEBCAM_FOUND', async () => {
     mockEnhancedReader.mockImplementation(
