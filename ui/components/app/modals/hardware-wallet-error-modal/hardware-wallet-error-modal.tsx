@@ -515,13 +515,15 @@ export const HardwareWalletErrorModal: React.FC<HardwareWalletErrorModalProps> =
         <ModalOverlay />
         <ModalContent>
           <ModalHeader onClose={handleClose}>
-            <Box
-              display={Display.Flex}
-              alignItems={AlignItems.center}
-              justifyContent={JustifyContent.center}
-            >
-              {headerContent}
-            </Box>
+            {headerContent && (
+              <Box
+                display={Display.Flex}
+                alignItems={AlignItems.center}
+                justifyContent={JustifyContent.center}
+              >
+                {headerContent}
+              </Box>
+            )}
           </ModalHeader>
 
           <ModalBody>
