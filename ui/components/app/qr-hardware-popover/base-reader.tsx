@@ -253,7 +253,7 @@ const BaseReader = ({
         !environmentReady &&
         getEnvironmentType() !== ENVIRONMENT_TYPE_FULLSCREEN
       ) {
-        const currentUrl = new URL(window.location.href);
+        const currentUrl = new URL(globalThis.location.href);
         const currentHash = currentUrl.hash;
         const currentRoute = currentHash ? currentHash.substring(1) : null;
         globalThis.platform.openExtensionInBrowser(currentRoute);
