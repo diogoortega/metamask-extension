@@ -174,7 +174,7 @@ export function getMozExtensionOriginForDisplay(): string {
       return url;
     }
     const uuid = match[1];
-    const compact = uuid.replace(/-/gu, '');
+    const compact = uuid.replaceAll('-', '');
     if (compact.length <= 15) {
       return `moz-extension://${uuid}`;
     }

@@ -380,7 +380,7 @@ export const HardwareWalletErrorModal: React.FC<HardwareWalletErrorModalProps> =
         : t('hardwareWalletErrorReconnectButton');
 
     const handleOpenChromiumCameraSettings = () => {
-      global.platform.openTab({
+      globalThis.platform.openTab({
         url: getChromiumExtensionCameraSiteSettingsUrl(),
       });
     };
