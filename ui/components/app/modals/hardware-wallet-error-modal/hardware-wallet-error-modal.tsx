@@ -72,6 +72,86 @@ import {
   HardwareWalletErrorContentVariant,
 } from './error-content-builder';
 
+/**
+ * Checks whether the error code represents a QR camera permission flow error.
+ *
+ * @param code - The hardware wallet error code.
+ * @returns `true` when the error is camera-denied or camera-prompt-dismissed.
+ */
+function isQrCameraFlowErrorCode(code: ErrorCode | undefined): boolean {
+  return (
+    code === ErrorCode.PermissionCameraDenied ||
+    code === ErrorCode.PermissionCameraPromptDismissed
+  );
+}
+
+/**
+ * Determines whether the "blocked" (rather than "needed") camera-access
+ * variant should be shown, accounting for Firefox's prompt-stays-prompt quirk.
+ *
+ * @param code - The hardware wallet error code.
+ * @returns `true` when the blocked variant is appropriate.
+ */
+function shouldShowQrCameraBlockedVariant(
+  code: ErrorCode | undefined,
+): boolean {
+  return (
+    code === ErrorCode.PermissionCameraDenied ||
+    (isFirefoxBrowser() && code === ErrorCode.PermissionCameraPromptDismissed)
+  );
+}
+
+/**
+ * Renders the appropriate `CameraAccessErrorContent` variant for QR camera
+ * permission errors (blocked vs. needed).
+ *
+ * @param params - Render parameters.
+ * @param params.errorCode - The hardware wallet error code.
+ * @param params.onRetry - Callback invoked when the user clicks Continue.
+ * @param params.isLoading - Whether the retry action is in progress.
+ * @returns The camera-access error content element.
+ */
+function renderQrCameraFlowContent({
+  errorCode,
+  onRetry,
+  isLoading,
+}: {
+  errorCode: ErrorCode | undefined;
+  onRetry: () => Promise<void>;
+  isLoading: boolean;
+}): React.JSX.Element {
+  const handleOpenSettings = () => {
+    globalThis.platform.openTab({
+      url: getChromiumExtensionCameraSiteSettingsUrl(),
+    });
+  };
+
+  if (shouldShowQrCameraBlockedVariant(errorCode)) {
+    return (
+      <CameraAccessErrorContent
+        variant={CameraAccessErrorContentVariant.Blocked}
+        isFirefox={isFirefoxBrowser()}
+        mozExtensionDisplay={getMozExtensionOriginForDisplay()}
+        onOpenSettings={handleOpenSettings}
+        onContinue={onRetry}
+        continueLoading={isLoading}
+        rootPaddingHorizontal={0}
+        rootPaddingBottom={0}
+      />
+    );
+  }
+
+  return (
+    <CameraAccessErrorContent
+      variant={CameraAccessErrorContentVariant.Needed}
+      onContinue={onRetry}
+      continueLoading={isLoading}
+      rootPaddingHorizontal={0}
+      rootPaddingBottom={0}
+    />
+  );
+}
+
 type HardwareWalletErrorModalProps = {
   isOpen?: boolean;
   error?: HardwareWalletError;
@@ -339,16 +419,9 @@ export const HardwareWalletErrorModal: React.FC<HardwareWalletErrorModalProps> =
       return null;
     }
 
-    const isQrCameraFlowError =
-      error.code === ErrorCode.PermissionCameraDenied ||
-      error.code === ErrorCode.PermissionCameraPromptDismissed;
+    const isQrCameraFlow = isQrCameraFlowErrorCode(error.code);
 
-    const showQrCameraBlockedVariant =
-      error.code === ErrorCode.PermissionCameraDenied ||
-      (isFirefoxBrowser() &&
-        error.code === ErrorCode.PermissionCameraPromptDismissed);
-
-    const standardErrorContent = isQrCameraFlowError
+    const standardErrorContent = isQrCameraFlow
       ? null
       : buildErrorContent(
           error,
@@ -379,11 +452,6 @@ export const HardwareWalletErrorModal: React.FC<HardwareWalletErrorModalProps> =
         ? t('hardwareWalletErrorContinueButton')
         : t('hardwareWalletErrorReconnectButton');
 
-    const handleOpenChromiumCameraSettings = () => {
-      globalThis.platform.openTab({
-        url: getChromiumExtensionCameraSiteSettingsUrl(),
-      });
-    };
     const retryButtonContent = isLoading ? (
       <Icon
         name={IconName.Loading}
@@ -463,28 +531,13 @@ export const HardwareWalletErrorModal: React.FC<HardwareWalletErrorModalProps> =
               alignItems={AlignItems.center}
               gap={4}
             >
-              {isQrCameraFlowError &&
-                (showQrCameraBlockedVariant ? (
-                  <CameraAccessErrorContent
-                    variant={CameraAccessErrorContentVariant.Blocked}
-                    isFirefox={isFirefoxBrowser()}
-                    mozExtensionDisplay={getMozExtensionOriginForDisplay()}
-                    onOpenSettings={handleOpenChromiumCameraSettings}
-                    onContinue={handleRetry}
-                    continueLoading={isLoading}
-                    rootPaddingHorizontal={0}
-                    rootPaddingBottom={0}
-                  />
-                ) : (
-                  <CameraAccessErrorContent
-                    variant={CameraAccessErrorContentVariant.Needed}
-                    onContinue={handleRetry}
-                    continueLoading={isLoading}
-                    rootPaddingHorizontal={0}
-                    rootPaddingBottom={0}
-                  />
-                ))}
-              {!isQrCameraFlowError && standardErrorContent ? (
+              {isQrCameraFlow &&
+                renderQrCameraFlowContent({
+                  errorCode: error.code,
+                  onRetry: handleRetry,
+                  isLoading,
+                })}
+              {!isQrCameraFlow && standardErrorContent ? (
                 <>
                   {standardErrorContent.icon && (
                     <Text
@@ -549,7 +602,7 @@ export const HardwareWalletErrorModal: React.FC<HardwareWalletErrorModalProps> =
             </Box>
           </ModalBody>
 
-          {!isQrCameraFlowError && (
+          {!isQrCameraFlow && (
             <ModalFooter>
               <Box
                 display={Display.Flex}
