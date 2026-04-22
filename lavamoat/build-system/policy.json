@@ -1229,7 +1229,7 @@
         "process.report.getReport": true
       },
       "packages": {
-        "@tailwindcss/postcss>@tailwindcss/oxide>@tailwindcss/oxide-darwin-arm64": true
+        "@tailwindcss/postcss>@tailwindcss/oxide>@tailwindcss/oxide-linux-x64-gnu": true
       }
     },
     "@tailwindcss/postcss": {
@@ -7941,7 +7941,7 @@
         "process.versions.pnp": true
       },
       "packages": {
-        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-darwin-arm64": true
+        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-linux-x64-gnu": true
       }
     },
     "gulp>gulp-cli>matchdep>micromatch>snapdragon>base>cache-base>unset-value": {
