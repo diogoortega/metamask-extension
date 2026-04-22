@@ -1205,7 +1205,7 @@
       "packages": {
         "@tailwindcss/postcss>@tailwindcss/node>@jridgewell/remapping": true,
         "webpack>enhanced-resolve": true,
-        "addons-linter>eslint>jiti": true,
+        "eslint-plugin-better-tailwindcss>jiti": true,
         "@tailwindcss/postcss>@tailwindcss/node>lightningcss": true,
         "depcheck>@vue/compiler-sfc>magic-string": true,
         "postcss>source-map-js": true,
@@ -4341,7 +4341,7 @@
         "string.prototype.matchall>set-function-name": true
       }
     },
-    "addons-linter>eslint>jiti": {
+    "eslint-plugin-better-tailwindcss>jiti": {
       "builtin": {
         "assert": true,
         "fs": true,
