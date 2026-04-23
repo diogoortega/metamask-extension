@@ -433,8 +433,8 @@ export const HardwareWalletErrorModal: React.FC<HardwareWalletErrorModalProps> =
       standardErrorContent &&
       (standardErrorContent.icon ? (
         <Icon
-          name={standardErrorContent.icon as unknown as IconName}
-          color={standardErrorContent.iconColor as unknown as IconColor}
+          name={standardErrorContent.icon}
+          color={standardErrorContent.iconColor}
           size={IconSize.Xl}
         />
       ) : (
