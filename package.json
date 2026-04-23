@@ -506,8 +506,8 @@
     "xml2js": "^0.6.2"
   },
   "devDependencies": {
-    "@actions/core": "^1.10.1",
-    "@actions/github": "^5.1.1",
+    "@actions/core": "^3.0.1",
+    "@actions/github": "^9.1.1",
     "@anthropic-ai/sdk": "^0.32.1",
     "@babel/code-frame": "^7.25.9",
     "@babel/core": "patch:@babel/core@npm%3A7.25.9#~/.yarn/patches/@babel-core-npm-7.25.9-4ae3bff7f3.patch",
