@@ -781,7 +781,7 @@
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
     "vinyl-sourcemaps-apply": "^0.2.1",
-    "wait-on": "^7.0.1",
+    "wait-on": "^9.0.5",
     "watchify": "^4.0.0",
     "web-vitals": "^4.2.4",
     "webextension-polyfill": "^0.8.0",
