@@ -123,8 +123,10 @@ const BaseReader = ({
   // ---- camera helpers -----------------------------------------------------
 
   /**
-   * Acquires a camera stream, immediately stops it (proving the camera works),
-   * and transitions to READY.
+   * Auto-recovery callback for the `PermissionStatus.change` event.
+   * Proves the camera works by briefly acquiring and releasing a stream,
+   * then transitions to READY. Errors are logged silently — the user
+   * remains on the instructional UI and can retry manually via Continue button.
    */
   const acquireCameraAndTransitionToReady = useCallback(async () => {
     try {
