@@ -15,8 +15,7 @@
  */
 
 import { execFileSync } from 'child_process';
-// import { context } from '@actions/github';
-import * as github from '@actions/github';
+import { context } from '@actions/github';
 
 export interface GetPrDiffOptions {
   /** Base branch name (default: 'main'). Used only in the branch-based fallback. */
@@ -76,7 +75,7 @@ export function getPrDiff(options: GetPrDiffOptions = {}): string {
   } = options;
 
   // 1. Try GitHub API (no git history needed, fastest path)
-  const prNumber = github.context.payload.pull_request?.number;
+  const prNumber = context.payload.pull_request?.number;
   const repo = process.env.GITHUB_REPOSITORY;
   if (prNumber && repo) {
     try {
