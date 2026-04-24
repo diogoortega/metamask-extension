@@ -1337,7 +1337,8 @@
     "chokidar>anymatch": {
       "packages": {
         "chokidar>normalize-path": true,
-        "chokidar>anymatch>picomatch": true
+        "chokidar>anymatch>picomatch": true,
+        "micromatch>picomatch": true
       }
     },
     "gulp>glob-watcher>anymatch": {

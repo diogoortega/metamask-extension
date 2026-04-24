@@ -749,7 +749,8 @@
     "chokidar>anymatch": {
       "packages": {
         "chokidar>normalize-path": true,
-        "chokidar>anymatch>picomatch": true
+        "chokidar>anymatch>picomatch": true,
+        "micromatch>picomatch": true
       }
     },
     "mockttp>@peculiar/asn1-x509>asn1js": {

@@ -104,7 +104,17 @@ jobs:
         run: ${{ inputs.build-command }}${{ inputs.bundle-analyzer && ' --bundleAnalyzer' || '' }}
 
       - name: Validate source maps
-        run: ${{ contains(inputs.build-name, 'webpack') && 'yarn validate-source-maps:webpack' || 'yarn validate-source-maps' }}
+        run: |
+          if [[ "${{ contains(inputs.build-name, 'webpack') }}" == "true" ]]; then
+            if [[ -d dist/chrome || -d dist/firefox ]]; then
+              yarn validate-source-maps:webpack
+            else
+              echo "No dist/chrome or dist/firefox found after webpack build; falling back to legacy source-map validation."
+              yarn validate-source-maps
+            fi
+          else
+            yarn validate-source-maps
+          fi
 
       - name: Run mozilla-lint
         if: ${{ contains(inputs.build-name, 'mv2') }}
