@@ -634,7 +634,6 @@
     "@typescript-eslint/eslint-plugin": "^8.1.0",
     "@typescript-eslint/parser": "^8.1.0",
     "@viem/anvil": "^0.0.10",
-    "@vitejs/plugin-react": "^6.0.1",
     "@vitest/coverage-v8": "^4.1.2",
     "@vitest/utils": "^4.1.2",
     "@welldone-software/why-did-you-render": "^8.0.3",

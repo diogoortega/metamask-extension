@@ -1337,7 +1337,6 @@
     "chokidar>anymatch": {
       "packages": {
         "chokidar>normalize-path": true,
-        "chokidar>anymatch>picomatch": true,
         "micromatch>picomatch": true
       }
     },
@@ -2730,7 +2729,7 @@
         "tsx>get-tsconfig": true,
         "eslint-import-resolver-typescript>is-bun-module": true,
         "eslint-import-resolver-typescript>stable-hash": true,
-        "vitest>tinyglobby": true,
+        "vite>tinyglobby": true,
         "eslint-import-resolver-typescript>unrs-resolver": true
       }
     },
@@ -3152,7 +3151,7 @@
         "webpack-dev-server>sockjs>websocket-driver": true
       }
     },
-    "vitest>tinyglobby>fdir": {
+    "vite>tinyglobby>fdir": {
       "builtin": {
         "fs": true,
         "path": true
@@ -3161,7 +3160,7 @@
         "process.platform": true
       },
       "packages": {
-        "vitest>picomatch": true
+        "vite>tinyglobby>picomatch": true
       }
     },
     "eslint>file-entry-cache": {
@@ -4142,36 +4141,6 @@
         "string.prototype.matchall>set-function-name": true
       }
     },
-    "tailwindcss>jiti": {
-      "builtin": {
-        "assert": true,
-        "crypto": true,
-        "fs": true,
-        "module": true,
-        "os": true,
-        "path": true,
-        "perf_hooks.performance.now": true,
-        "process": true,
-        "tty": true,
-        "url": true,
-        "util": true,
-        "v8": true,
-        "vm": true
-      },
-      "globals": {
-        "Buffer": true,
-        "TextDecoder": true,
-        "URL": true,
-        "atob": true,
-        "btoa": true,
-        "console": true,
-        "document": true,
-        "localStorage": true,
-        "navigator": true,
-        "process": true,
-        "value": true
-      }
-    },
     "vite>jiti": {
       "builtin": {
         "assert": true,
@@ -5041,16 +5010,6 @@
         "process.platform": true
       }
     },
-    "chokidar>anymatch>picomatch": {
-      "builtin": {
-        "path.basename": true,
-        "path.sep": true
-      },
-      "globals": {
-        "process.platform": true,
-        "process.version.slice": true
-      }
-    },
     "micromatch>picomatch": {
       "builtin": {
         "path.basename": true,
@@ -5061,17 +5020,7 @@
         "process.version.slice": true
       }
     },
-    "chokidar>readdirp>picomatch": {
-      "builtin": {
-        "path.basename": true,
-        "path.sep": true
-      },
-      "globals": {
-        "process.platform": true,
-        "process.version.slice": true
-      }
-    },
-    "vitest>picomatch": {
+    "vite>tinyglobby>picomatch": {
       "globals": {
         "navigator": true,
         "process": true
@@ -6136,7 +6085,6 @@
         "process.versions.node.split": true
       },
       "packages": {
-        "chokidar>readdirp>picomatch": true,
         "micromatch>picomatch": true
       }
     },
@@ -7261,7 +7209,6 @@
         "fast-glob": true,
         "eslint>glob-parent": true,
         "del>is-glob": true,
-        "tailwindcss>jiti": true,
         "vite>jiti": true,
         "micromatch": true,
         "chokidar>normalize-path": true,
@@ -7562,7 +7509,7 @@
         "mockttp>express>qs": true
       }
     },
-    "vitest>tinyglobby": {
+    "vite>tinyglobby": {
       "builtin": {
         "fs": true,
         "path": true,
@@ -7576,8 +7523,8 @@
         "process.platform": true
       },
       "packages": {
-        "vitest>tinyglobby>fdir": true,
-        "vitest>picomatch": true
+        "vite>tinyglobby>fdir": true,
+        "vite>tinyglobby>picomatch": true
       }
     },
     "gulp>vinyl-fs>glob-stream>to-absolute-glob": {
@@ -7814,7 +7761,6 @@
         "process.versions.pnp": true
       },
       "packages": {
-        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-darwin-arm64": true,
         "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-linux-x64-gnu": true
       }
     },

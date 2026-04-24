@@ -749,7 +749,6 @@
     "chokidar>anymatch": {
       "packages": {
         "chokidar>normalize-path": true,
-        "chokidar>anymatch>picomatch": true,
         "micromatch>picomatch": true
       }
     },
@@ -1147,7 +1146,7 @@
         "schema-utils": true,
         "copy-webpack-plugin>serialize-javascript": true,
         "mocha>serialize-javascript": true,
-        "vitest>tinyglobby": true
+        "vite>tinyglobby": true
       }
     },
     "postcss-loader>cosmiconfig": {
@@ -1418,7 +1417,7 @@
         "atob": true
       }
     },
-    "vitest>vite>esbuild": {
+    "@storybook/test-runner>@storybook/core-common>esbuild": {
       "builtin": {
         "child_process.execFileSync": true,
         "child_process.spawn": true,
@@ -1613,7 +1612,7 @@
         "webpack-dev-server>sockjs>websocket-driver": true
       }
     },
-    "vitest>tinyglobby>fdir": {
+    "vite>tinyglobby>fdir": {
       "builtin": {
         "fs": true,
         "path": true
@@ -1622,7 +1621,7 @@
         "process.platform": true
       },
       "packages": {
-        "vitest>picomatch": true
+        "vite>tinyglobby>picomatch": true
       }
     },
     "chokidar>braces>fill-range": {
@@ -1968,36 +1967,6 @@
         "terser-webpack-plugin": true
       }
     },
-    "tailwindcss>jiti": {
-      "builtin": {
-        "assert": true,
-        "crypto": true,
-        "fs": true,
-        "module": true,
-        "os": true,
-        "path": true,
-        "perf_hooks.performance.now": true,
-        "process": true,
-        "tty": true,
-        "url": true,
-        "util": true,
-        "v8": true,
-        "vm": true
-      },
-      "globals": {
-        "Buffer": true,
-        "TextDecoder": true,
-        "URL": true,
-        "atob": true,
-        "btoa": true,
-        "console": true,
-        "document": true,
-        "localStorage": true,
-        "navigator": true,
-        "process": true,
-        "value": true
-      }
-    },
     "vite>jiti": {
       "builtin": {
         "assert": true,
@@ -2330,16 +2299,6 @@
         "process": true
       }
     },
-    "chokidar>anymatch>picomatch": {
-      "builtin": {
-        "path.basename": true,
-        "path.sep": true
-      },
-      "globals": {
-        "process.platform": true,
-        "process.version.slice": true
-      }
-    },
     "micromatch>picomatch": {
       "builtin": {
         "path.basename": true,
@@ -2350,17 +2309,7 @@
         "process.version.slice": true
       }
     },
-    "chokidar>readdirp>picomatch": {
-      "builtin": {
-        "path.basename": true,
-        "path.sep": true
-      },
-      "globals": {
-        "process.platform": true,
-        "process.version.slice": true
-      }
-    },
-    "vitest>picomatch": {
+    "vite>tinyglobby>picomatch": {
       "globals": {
         "navigator": true,
         "process": true
@@ -2421,7 +2370,7 @@
       },
       "packages": {
         "postcss-loader>cosmiconfig": true,
-        "tailwindcss>jiti": true,
+        "vite>jiti": true,
         "postcss": true,
         "semver": true
       }
@@ -2533,7 +2482,6 @@
         "process.versions.node.split": true
       },
       "packages": {
-        "chokidar>readdirp>picomatch": true,
         "micromatch>picomatch": true
       }
     },
@@ -2993,7 +2941,6 @@
         "fast-glob": true,
         "eslint>glob-parent": true,
         "del>is-glob": true,
-        "tailwindcss>jiti": true,
         "vite>jiti": true,
         "micromatch": true,
         "chokidar>normalize-path": true,
@@ -3043,7 +2990,7 @@
       "packages": {
         "terser-webpack-plugin>@jridgewell/trace-mapping": true,
         "@swc/core": true,
-        "vitest>vite>esbuild": true,
+        "@storybook/test-runner>@storybook/core-common>esbuild": true,
         "terser-webpack-plugin>jest-worker": true,
         "schema-utils": true,
         "mocha>serialize-javascript": true,
@@ -3083,7 +3030,7 @@
         "process.nextTick": true
       }
     },
-    "vitest>tinyglobby": {
+    "vite>tinyglobby": {
       "builtin": {
         "fs": true,
         "path": true,
@@ -3097,8 +3044,8 @@
         "process.platform": true
       },
       "packages": {
-        "vitest>tinyglobby>fdir": true,
-        "vitest>picomatch": true
+        "vite>tinyglobby>fdir": true,
+        "vite>tinyglobby>picomatch": true
       }
     },
     "chokidar>braces>fill-range>to-regex-range": {
