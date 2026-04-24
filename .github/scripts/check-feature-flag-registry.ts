@@ -3,7 +3,8 @@
 
 import { execFileSync } from 'child_process';
 import * as path from 'path';
-import { context, getOctokit } from '@actions/github';
+// import { context, getOctokit } from '@actions/github';
+// import * as github from '@actions/github'
 import { getRegisteredFlagNames } from '../../test/e2e/feature-flags';
 import { buildKnownFlagConstants } from './known-feature-flag-constants';
 import { getPrDiff } from './shared/get-pr-diff';
