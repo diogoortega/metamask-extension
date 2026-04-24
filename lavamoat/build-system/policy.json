@@ -4171,6 +4171,36 @@
         "value": true
       }
     },
+    "vite>jiti": {
+      "builtin": {
+        "assert": true,
+        "crypto": true,
+        "fs": true,
+        "module": true,
+        "os": true,
+        "path": true,
+        "perf_hooks.performance.now": true,
+        "process": true,
+        "tty": true,
+        "url": true,
+        "util": true,
+        "v8": true,
+        "vm": true
+      },
+      "globals": {
+        "Buffer": true,
+        "TextDecoder": true,
+        "URL": true,
+        "atob": true,
+        "btoa": true,
+        "console": true,
+        "document": true,
+        "localStorage": true,
+        "navigator": true,
+        "process": true,
+        "value": true
+      }
+    },
     "postcss-discard-font-face>postcss>js-base64": {
       "globals": {
         "Base64": "write",
@@ -6105,7 +6135,8 @@
         "process.versions.node.split": true
       },
       "packages": {
-        "chokidar>readdirp>picomatch": true
+        "chokidar>readdirp>picomatch": true,
+        "micromatch>picomatch": true
       }
     },
     "@babel/preset-env>@babel/plugin-transform-dotall-regex>@babel/helper-create-regexp-features-plugin>regexpu-core>regenerate": {
@@ -7230,6 +7261,7 @@
         "eslint>glob-parent": true,
         "del>is-glob": true,
         "tailwindcss>jiti": true,
+        "vite>jiti": true,
         "micromatch": true,
         "chokidar>normalize-path": true,
         "tailwindcss>object-hash": true,

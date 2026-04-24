@@ -1,6 +1,5 @@
 import { defineConfig } from 'vitest/config';
-import { transformWithOxc } from 'vite';
-import react from '@vitejs/plugin-react';
+import { transformWithEsbuild } from 'vite';
 import {
   createHoistJestMockPlugin,
   createAsyncRelativeRequireActualPlugin,
@@ -14,11 +13,15 @@ export default defineConfig({
       name: 'jsx-in-js',
       enforce: 'pre',
       async transform(code, id) {
-        if (!id.endsWith('.js') || id.includes('node_modules')) return;
-        return transformWithOxc(code, id, { lang: 'jsx' });
+        if (!id.endsWith('.js') || id.includes('node_modules')) {
+          return;
+        }
+        return transformWithEsbuild(code, id, {
+          loader: 'jsx',
+          jsx: 'automatic',
+        });
       },
     },
-    react(),
   ],
   test: {
     globals: true,

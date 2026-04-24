@@ -1,6 +1,22 @@
 import { defineConfig } from 'vitest/config';
+import { transformWithEsbuild } from 'vite';
 
 export default defineConfig({
+  plugins: [
+    {
+      name: 'jsx-in-js',
+      enforce: 'pre',
+      async transform(code, id) {
+        if (!id.endsWith('.js') || id.includes('node_modules')) {
+          return;
+        }
+        return transformWithEsbuild(code, id, {
+          loader: 'jsx',
+          jsx: 'automatic',
+        });
+      },
+    },
+  ],
   test: {
     globals: true,
     environment: 'jsdom',
@@ -17,10 +33,7 @@ export default defineConfig({
     ],
 
     coverage: {
-      include: [
-        'shared/**/*.{js,ts,tsx}',
-        'ui/**/*.{js,ts,tsx}',
-      ],
+      include: ['shared/**/*.{js,ts,tsx}', 'ui/**/*.{js,ts,tsx}'],
     },
 
     environmentOptions: {
