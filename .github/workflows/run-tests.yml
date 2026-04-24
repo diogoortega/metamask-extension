@@ -29,7 +29,18 @@ jobs:
         run: yarn test:unit:coverage --shard=${{ matrix.shard }}/${{ strategy.job-total }}
 
       - name: Rename coverage
-        run: mv coverage/unit/coverage-final.json coverage/unit/coverage-unit-${{matrix.shard}}.json
+        shell: bash
+        run: |
+          source_file="coverage/unit/coverage-final.json"
+          target_file="coverage/unit/coverage-unit-${{ matrix.shard }}.json"
+
+          if [[ -f "$source_file" ]]; then
+            mv "$source_file" "$target_file"
+          else
+            # Some shards can legitimately have no matching tests; keep artifact shape stable.
+            mkdir -p "$(dirname "$target_file")"
+            echo '{}' > "$target_file"
+          fi
 
       - uses: actions/upload-artifact@v6
         with:

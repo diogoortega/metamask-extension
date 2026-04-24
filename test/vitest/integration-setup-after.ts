@@ -8,7 +8,6 @@
 import { vi, beforeEach } from 'vitest';
 import nock from 'nock';
 import { ACCOUNTS_API_BASE_URL } from '../../shared/constants/accounts';
-import '../integration/config/assets/index.css';
 import '../helpers/setup-after-helper';
 
 beforeEach(() => {

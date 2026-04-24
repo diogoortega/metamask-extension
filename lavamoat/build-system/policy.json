@@ -1337,7 +1337,7 @@
     "chokidar>anymatch": {
       "packages": {
         "chokidar>normalize-path": true,
-        "micromatch>picomatch": true
+        "chokidar>anymatch>picomatch": true
       }
     },
     "gulp>glob-watcher>anymatch": {
@@ -3160,7 +3160,7 @@
         "process.platform": true
       },
       "packages": {
-        "vitest>tinyglobby>picomatch": true
+        "vitest>picomatch": true
       }
     },
     "eslint>file-entry-cache": {
@@ -5010,6 +5010,16 @@
         "process.platform": true
       }
     },
+    "chokidar>anymatch>picomatch": {
+      "builtin": {
+        "path.basename": true,
+        "path.sep": true
+      },
+      "globals": {
+        "process.platform": true,
+        "process.version.slice": true
+      }
+    },
     "micromatch>picomatch": {
       "builtin": {
         "path.basename": true,
@@ -5020,7 +5030,17 @@
         "process.version.slice": true
       }
     },
-    "vitest>tinyglobby>picomatch": {
+    "chokidar>readdirp>picomatch": {
+      "builtin": {
+        "path.basename": true,
+        "path.sep": true
+      },
+      "globals": {
+        "process.platform": true,
+        "process.version.slice": true
+      }
+    },
+    "vitest>picomatch": {
       "globals": {
         "navigator": true,
         "process": true
@@ -6085,7 +6105,7 @@
         "process.versions.node.split": true
       },
       "packages": {
-        "micromatch>picomatch": true
+        "chokidar>readdirp>picomatch": true
       }
     },
     "@babel/preset-env>@babel/plugin-transform-dotall-regex>@babel/helper-create-regexp-features-plugin>regexpu-core>regenerate": {
@@ -6263,6 +6283,7 @@
         "process.versions.pnp": true
       },
       "packages": {
+        "string.prototype.matchall>es-errors": true,
         "depcheck>is-core-module": true,
         "depcheck>resolve>path-parse": true
       }
@@ -7523,7 +7544,7 @@
       },
       "packages": {
         "vitest>tinyglobby>fdir": true,
-        "vitest>tinyglobby>picomatch": true
+        "vitest>picomatch": true
       }
     },
     "gulp>vinyl-fs>glob-stream>to-absolute-glob": {
@@ -7760,7 +7781,8 @@
         "process.versions.pnp": true
       },
       "packages": {
-        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-darwin-arm64": true
+        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-darwin-arm64": true,
+        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-linux-x64-gnu": true
       }
     },
     "gulp>gulp-cli>matchdep>micromatch>snapdragon>base>cache-base>unset-value": {

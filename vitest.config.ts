@@ -46,7 +46,6 @@ export default defineConfig({
 
     setupFiles: [
       'test/vitest-compat.ts',
-      'vitest-canvas-mock',
       'test/vitest/setup-before.ts',
       'test/env.js',
       'test/vitest/setup-after.ts',

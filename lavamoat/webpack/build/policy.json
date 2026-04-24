@@ -297,7 +297,7 @@
         "node:path.sep": true
       },
       "packages": {
-        "@lavamoat/webpack>@lavamoat/aa>resolve": true
+        "depcheck>resolve": true
       }
     },
     "@lavamoat/webpack": {
@@ -717,12 +717,6 @@
         "define": true
       }
     },
-    "webpack-bundle-analyzer>acorn": {
-      "globals": {
-        "console": true,
-        "define": true
-      }
-    },
     "schema-utils>ajv-formats": {
       "packages": {
         "schema-utils>ajv": true
@@ -755,7 +749,7 @@
     "chokidar>anymatch": {
       "packages": {
         "chokidar>normalize-path": true,
-        "micromatch>picomatch": true
+        "chokidar>anymatch>picomatch": true
       }
     },
     "mockttp>@peculiar/asn1-x509>asn1js": {
@@ -1627,7 +1621,7 @@
         "process.platform": true
       },
       "packages": {
-        "vitest>tinyglobby>picomatch": true
+        "vitest>picomatch": true
       }
     },
     "chokidar>braces>fill-range": {
@@ -2305,6 +2299,16 @@
         "process": true
       }
     },
+    "chokidar>anymatch>picomatch": {
+      "builtin": {
+        "path.basename": true,
+        "path.sep": true
+      },
+      "globals": {
+        "process.platform": true,
+        "process.version.slice": true
+      }
+    },
     "micromatch>picomatch": {
       "builtin": {
         "path.basename": true,
@@ -2315,7 +2319,17 @@
         "process.version.slice": true
       }
     },
-    "vitest>tinyglobby>picomatch": {
+    "chokidar>readdirp>picomatch": {
+      "builtin": {
+        "path.basename": true,
+        "path.sep": true
+      },
+      "globals": {
+        "process.platform": true,
+        "process.version.slice": true
+      }
+    },
+    "vitest>picomatch": {
       "globals": {
         "navigator": true,
         "process": true
@@ -2488,7 +2502,7 @@
         "process.versions.node.split": true
       },
       "packages": {
-        "micromatch>picomatch": true
+        "chokidar>readdirp>picomatch": true
       }
     },
     "mockttp>@peculiar/x509>reflect-metadata": {
@@ -2518,37 +2532,6 @@
         "module._resolveFilename": true,
         "path.join": true,
         "path.resolve": true
-      }
-    },
-    "@lavamoat/webpack>@lavamoat/aa>resolve": {
-      "builtin": {
-        "fs.readFileSync": true,
-        "fs.realpathSync": true,
-        "fs.statSync": true,
-        "os.homedir": true,
-        "path.dirname": true,
-        "path.join": true,
-        "path.parse": true,
-        "path.relative": true,
-        "path.resolve": true
-      },
-      "globals": {
-        "process.env.HOME": true,
-        "process.env.HOMEDRIVE": true,
-        "process.env.HOMEPATH": true,
-        "process.env.LNAME": true,
-        "process.env.LOGNAME": true,
-        "process.env.USER": true,
-        "process.env.USERNAME": true,
-        "process.env.USERPROFILE": true,
-        "process.getuid": true,
-        "process.platform": true,
-        "process.versions.pnp": true
-      },
-      "packages": {
-        "string.prototype.matchall>es-errors": true,
-        "depcheck>is-core-module": true,
-        "depcheck>resolve>path-parse": true
       }
     },
     "depcheck>resolve": {
@@ -2581,6 +2564,7 @@
         "process.versions.pnp": true
       },
       "packages": {
+        "string.prototype.matchall>es-errors": true,
         "depcheck>is-core-module": true,
         "depcheck>resolve>path-parse": true
       }
@@ -3081,7 +3065,7 @@
       },
       "packages": {
         "vitest>tinyglobby>fdir": true,
-        "vitest>tinyglobby>picomatch": true
+        "vitest>picomatch": true
       }
     },
     "chokidar>braces>fill-range>to-regex-range": {
@@ -3478,12 +3462,12 @@
       "packages": {
         "webpack-cli>@discoveryjs/json-ext": true,
         "webpack-bundle-analyzer>acorn-walk": true,
-        "webpack-bundle-analyzer>acorn": true,
+        "jsdom>acorn": true,
         "webpack-bundle-analyzer>html-escaper": true,
         "http-server>opener": true,
         "postcss>picocolors": true,
         "webpack-bundle-analyzer>sirv": true,
-        "webpack-bundle-analyzer>ws": true
+        "ws": true
       }
     },
     "webpack-dev-server>webpack-dev-middleware": {
@@ -3601,44 +3585,6 @@
       }
     },
     "ws": {
-      "builtin": {
-        "buffer.isUtf8": true,
-        "crypto.createHash": true,
-        "crypto.randomBytes": true,
-        "crypto.randomFillSync": true,
-        "events": true,
-        "http.STATUS_CODES": true,
-        "http.createServer": true,
-        "http.request": true,
-        "https.request": true,
-        "net.connect": true,
-        "net.isIP": true,
-        "stream.Duplex": true,
-        "stream.Readable": true,
-        "stream.Writable": true,
-        "tls.connect": true,
-        "url.URL": true,
-        "zlib.Z_DEFAULT_WINDOWBITS": true,
-        "zlib.Z_SYNC_FLUSH": true,
-        "zlib.createDeflateRaw": true,
-        "zlib.createInflateRaw": true
-      },
-      "globals": {
-        "Blob": true,
-        "Buffer": true,
-        "clearTimeout": true,
-        "process.env.WS_NO_BUFFER_UTIL": true,
-        "process.env.WS_NO_UTF_8_VALIDATE": true,
-        "process.nextTick": true,
-        "setImmediate": true,
-        "setTimeout": true
-      },
-      "packages": {
-        "ws>bufferutil": true,
-        "ws>utf-8-validate": true
-      }
-    },
-    "webpack-bundle-analyzer>ws": {
       "builtin": {
         "buffer.isUtf8": true,
         "crypto.createHash": true,
