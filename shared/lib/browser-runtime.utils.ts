@@ -162,7 +162,9 @@ export function getChromiumExtensionCameraSiteSettingsUrl(
 }
 
 /**
- * Shortened `moz-extension://…` origin so users can match Firefox camera permission entries.
+ * Shortened `moz-extension://…` origin so users can match Firefox camera
+ * permission entries. Only meaningful on Firefox; on other browsers the
+ * `moz-extension://` URL scheme is not used and this returns an empty string.
  *
  * @returns Display string, or empty string if unavailable.
  */
