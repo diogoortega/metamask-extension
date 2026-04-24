@@ -2729,7 +2729,7 @@
         "tsx>get-tsconfig": true,
         "eslint-import-resolver-typescript>is-bun-module": true,
         "eslint-import-resolver-typescript>stable-hash": true,
-        "copy-webpack-plugin>tinyglobby": true,
+        "vitest>tinyglobby": true,
         "eslint-import-resolver-typescript>unrs-resolver": true
       }
     },
@@ -3151,7 +3151,7 @@
         "webpack-dev-server>sockjs>websocket-driver": true
       }
     },
-    "copy-webpack-plugin>tinyglobby>fdir": {
+    "vitest>tinyglobby>fdir": {
       "builtin": {
         "fs": true,
         "path": true
@@ -3160,7 +3160,7 @@
         "process.platform": true
       },
       "packages": {
-        "copy-webpack-plugin>tinyglobby>picomatch": true
+        "vitest>tinyglobby>picomatch": true
       }
     },
     "eslint>file-entry-cache": {
@@ -5020,7 +5020,7 @@
         "process.version.slice": true
       }
     },
-    "copy-webpack-plugin>tinyglobby>picomatch": {
+    "vitest>tinyglobby>picomatch": {
       "globals": {
         "navigator": true,
         "process": true
@@ -6263,7 +6263,6 @@
         "process.versions.pnp": true
       },
       "packages": {
-        "string.prototype.matchall>es-errors": true,
         "depcheck>is-core-module": true,
         "depcheck>resolve>path-parse": true
       }
@@ -7509,7 +7508,7 @@
         "mockttp>express>qs": true
       }
     },
-    "copy-webpack-plugin>tinyglobby": {
+    "vitest>tinyglobby": {
       "builtin": {
         "fs": true,
         "path": true,
@@ -7523,8 +7522,8 @@
         "process.platform": true
       },
       "packages": {
-        "copy-webpack-plugin>tinyglobby>fdir": true,
-        "copy-webpack-plugin>tinyglobby>picomatch": true
+        "vitest>tinyglobby>fdir": true,
+        "vitest>tinyglobby>picomatch": true
       }
     },
     "gulp>vinyl-fs>glob-stream>to-absolute-glob": {
@@ -7761,7 +7760,7 @@
         "process.versions.pnp": true
       },
       "packages": {
-        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-linux-x64-gnu": true
+        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-darwin-arm64": true
       }
     },
     "gulp>gulp-cli>matchdep>micromatch>snapdragon>base>cache-base>unset-value": {

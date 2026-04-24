@@ -1,13 +1,4 @@
-/**
- * Vitest equivalent of test/jest/setup.js  (setupFilesAfterEnv).
- *
- * Uses vi.* APIs directly so this file is self-contained even without the
- * jest-compat shim.  The custom matchers (toBeFulfilled / toNeverResolve) are
- * copied verbatim – they only depend on expect.extend which Vitest supports.
- */
-
 import '@testing-library/jest-dom';
-import { vi, expect } from 'vitest';
 
 vi.mock('webextension-polyfill', () => ({
   default: {
@@ -20,12 +11,6 @@ vi.mock('webextension-polyfill', () => ({
   },
 }));
 
-/**
- * Mock BrowserStorageAdapter with InMemoryStorageAdapter globally so tests
- * don't depend on browser.storage.local.
- * Tests that need the real implementation can call vi.unmock() or
- * await vi.importActual() directly.
- */
 vi.mock('../../app/scripts/lib/stores/browser-storage-adapter', async () => {
   const { InMemoryStorageAdapter } = await vi.importActual<
     typeof import('@metamask/storage-service')
@@ -33,18 +18,12 @@ vi.mock('../../app/scripts/lib/stores/browser-storage-adapter', async () => {
   return { BrowserStorageAdapter: InMemoryStorageAdapter };
 });
 
-// ---------------------------------------------------------------------------
-// Custom matchers
-// ---------------------------------------------------------------------------
-
 const UNRESOLVED = Symbol('timedOut');
 const originalSetTimeout = global.setTimeout;
 const TIME_TO_WAIT_UNTIL_UNRESOLVED = 100;
 
 function treatUnresolvedAfter(duration: number): Promise<symbol> {
-  return new Promise((resolve) => {
-    originalSetTimeout(resolve, duration, UNRESOLVED);
-  });
+  return new Promise((resolve) => originalSetTimeout(resolve, duration, UNRESOLVED));
 }
 
 expect.extend({

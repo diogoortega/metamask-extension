@@ -333,6 +333,7 @@
   "test/lib/render-helpers-navigate.js",
   "test/lib/render-helpers.js",
   "test/lib/timer-helpers.js",
+  "test/mocks/lightweight-charts.js",
   "test/setup.js",
   "test/stub/keyring-bridge.js",
   "test/stub/keyring-utils.js",

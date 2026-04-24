@@ -6,13 +6,8 @@ export default defineConfig({
     environment: 'jsdom',
     restoreMocks: true,
     testTimeout: 15000,
-    maxWorkers: '50%',
 
     include: ['test/integration/**/*.test.{js,ts,tsx}'],
-    exclude: [
-      '**/node_modules/**',
-      'test/integration/config/**',
-    ],
 
     setupFiles: [
       'test/vitest-compat.ts',
@@ -22,17 +17,11 @@ export default defineConfig({
     ],
 
     coverage: {
-      provider: 'v8',
       include: [
         'shared/**/*.{js,ts,tsx}',
         'ui/**/*.{js,ts,tsx}',
       ],
-      exclude: ['**/*.stories.*', '**/*.snap', '**/*.test.{js,ts,tsx}'],
-      reportsDirectory: './coverage/integration',
-      reporter: ['html', 'json'],
     },
-
-    pool: 'forks',
 
     environmentOptions: {
       customExportConditions: ['node', 'node-addons'],
