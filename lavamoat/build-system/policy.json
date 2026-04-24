@@ -7761,7 +7761,25 @@
         "process.versions.pnp": true
       },
       "packages": {
-        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-darwin-arm64": true
+        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-android-arm-eabi": true,
+        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-android-arm64": true,
+        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-darwin-arm64": true,
+        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-darwin-x64": true,
+        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-freebsd-x64": true,
+        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-linux-arm-gnueabihf": true,
+        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-linux-arm-musleabihf": true,
+        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-linux-arm64-gnu": true,
+        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-linux-arm64-musl": true,
+        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-linux-ppc64-gnu": true,
+        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-linux-riscv64-gnu": true,
+        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-linux-riscv64-musl": true,
+        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-linux-s390x-gnu": true,
+        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-linux-x64-gnu": true,
+        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-linux-x64-musl": true,
+        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-wasm32-wasi": true,
+        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-win32-arm64-msvc": true,
+        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-win32-ia32-msvc": true,
+        "eslint-import-resolver-typescript>unrs-resolver>@unrs/resolver-binding-win32-x64-msvc": true
       }
     },
     "gulp>gulp-cli>matchdep>micromatch>snapdragon>base>cache-base>unset-value": {
