@@ -1,8 +1,9 @@
-import type { PersistenceManager as PersistenceManagerType } from './stores/persistence-manager';
+import type { PersistenceManager as PersistenceManagerType } from '../../../shared/lib/stores/persistence-manager';
 
 const mockGet = jest.fn();
 const mockGetBackup = jest.fn();
 const mockCleanUpMostRecentRetrievedState = jest.fn();
+const mockPersistenceOn = jest.fn();
 let mockMostRecentRetrievedState: unknown = null;
 
 jest.mock('../platforms/extension', () => {
@@ -23,26 +24,36 @@ jest.mock('../../../shared/lib/object.utils', () => ({
   maskObject: jest.fn((obj) => obj),
 }));
 
-jest.mock('./stores/extension-store', () => {
+jest.mock('../../../shared/lib/stores/extension-store', () => {
   return jest.fn().mockImplementation(() => ({}));
 });
 
-jest.mock('./stores/fixture-extension-store', () => ({
+jest.mock('../../../shared/lib/stores/fixture-extension-store', () => ({
   FixtureExtensionStore: jest.fn().mockImplementation(() => ({})),
 }));
 
-jest.mock('./stores/persistence-manager', () => ({
-  PersistenceManager: jest.fn().mockImplementation(() => ({
-    get: mockGet,
-    getBackup: mockGetBackup,
-    cleanUpMostRecentRetrievedState: mockCleanUpMostRecentRetrievedState,
-    get mostRecentRetrievedState() {
-      return mockMostRecentRetrievedState;
-    },
-  })),
+jest.mock('../../../shared/lib/stores/persistence-manager', () => ({
+  PersistenceManager: jest.fn().mockImplementation(() => {
+    const instance = {
+      get: mockGet,
+      getBackup: mockGetBackup,
+      cleanUpMostRecentRetrievedState: mockCleanUpMostRecentRetrievedState,
+      on: (...args: unknown[]) => {
+        mockPersistenceOn(...args);
+        return instance;
+      },
+      off: jest.fn(),
+      get mostRecentRetrievedState() {
+        return mockMostRecentRetrievedState;
+      },
+    };
+    return instance;
+  }),
 }));
 
-const { FixtureExtensionStore } = await import('./stores/fixture-extension-store');
+const { FixtureExtensionStore } = await import(
+  '../../../shared/lib/stores/fixture-extension-store'
+);
 
 /**
  * Re-imports the module with a fresh module registry so top-level code
@@ -71,6 +82,7 @@ describe('setup-initial-state-hooks', () => {
     jest.resetModules();
     mockMostRecentRetrievedState = null;
     mockCleanUpMostRecentRetrievedState.mockClear();
+    mockPersistenceOn.mockClear();
     globalThis.stateHooks = {} as typeof stateHooks;
   });
 
@@ -161,6 +173,25 @@ describe('setup-initial-state-hooks', () => {
 
       expect(persistenceManager).toBeDefined();
       expect(persistenceManager.get).toBeDefined();
+    });
+
+    it('registers persistence lifecycle event listeners for analytics wiring', async () => {
+      setSelfHref('chrome-extension://abc123/home.html');
+      await importFresh();
+
+      expect(mockPersistenceOn).toHaveBeenCalledTimes(3);
+      expect(mockPersistenceOn).toHaveBeenCalledWith(
+        'vaultCorruptionDetected',
+        expect.any(Function),
+      );
+      expect(mockPersistenceOn).toHaveBeenCalledWith(
+        'splitStateMigrationSucceeded',
+        expect.any(Function),
+      );
+      expect(mockPersistenceOn).toHaveBeenCalledWith(
+        'splitStateMigrationFailed',
+        expect.any(Function),
+      );
     });
   });
 

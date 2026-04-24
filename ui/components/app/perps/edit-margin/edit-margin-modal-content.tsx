@@ -1,3 +1,4 @@
+import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import {
   Box,
   BoxFlexDirection,
@@ -16,23 +17,42 @@ import {
   IconColor,
 } from '@metamask/design-system-react';
 import type { Position as PerpsPosition } from '@metamask/perps-controller';
-import React, { useState, useCallback, useEffect, useMemo } from 'react';
-
+import {
+  formatPerpsFiat,
+  PRICE_RANGES_MINIMAL_VIEW,
+  PRICE_RANGES_UNIVERSAL,
+} from '../../../../../shared/lib/perps-formatters';
+import { useI18nContext } from '../../../../hooks/useI18nContext';
+import { TextField, TextFieldSize } from '../../../component-library';
 import {
   BorderRadius,
   BackgroundColor,
 } from '../../../../helpers/constants/design-system';
-import { usePerpsEligibility } from '../../../../hooks/perps';
-import { MARGIN_ADJUSTMENT_CONFIG } from '../../../../hooks/perps/marginUtils';
-import { usePerpsMarginCalculations } from '../../../../hooks/perps/usePerpsMarginCalculations';
-import { useFormatters } from '../../../../hooks/useFormatters';
-import { useI18nContext } from '../../../../hooks/useI18nContext';
-import { getPerpsStreamManager } from '../../../../providers/perps';
 import { submitRequestToBackground } from '../../../../store/background-connection';
-import { TextField, TextFieldSize } from '../../../component-library';
+import { getPerpsStreamManager } from '../../../../providers/perps';
+import {
+  usePerpsEligibility,
+  usePerpsEventTracking,
+} from '../../../../hooks/perps';
+import { usePerpsMarginCalculations } from '../../../../hooks/perps/usePerpsMarginCalculations';
+import { MetaMetricsEventName } from '../../../../../shared/constants/metametrics';
+import {
+  PERPS_EVENT_PROPERTY,
+  PERPS_EVENT_VALUE,
+} from '../../../../../shared/constants/perps-events';
+import { PERPS_TOAST_KEYS, usePerpsToast } from '../perps-toast';
+import { PerpsGeoBlockModal } from '../perps-geo-block-modal';
+import type { Position, AccountState, PerpsBackgroundResult } from '../types';
 import { PerpsSlider } from '../perps-slider';
-import type { Position, AccountState } from '../types';
-import { floorToDecimals } from '../utils/number';
+import { getDisplayName } from '../utils';
+
+const MARGIN_PRESETS = [25, 50, 100] as const;
+const MARGIN_FAILED_FALLBACK_ERROR_PATTERNS = [
+  /^an unknown error occurred$/iu,
+  /^failed to update margin$/iu,
+  /^unknown error$/iu,
+  /^error$/iu,
+];
 
 export type EditMarginModalContentProps = {
   position: Position;
@@ -77,12 +97,13 @@ export const EditMarginModalContent: React.FC<EditMarginModalContentProps> = ({
   onSavingChange,
 }) => {
   const t = useI18nContext();
-  const { formatNumber, formatCurrencyWithMinThreshold } = useFormatters();
   const { isEligible } = usePerpsEligibility();
+  const { replacePerpsToastByKey } = usePerpsToast();
+  const { track } = usePerpsEventTracking();
+  const [isGeoBlockModalOpen, setIsGeoBlockModalOpen] = useState(false);
 
   const [marginAmount, setMarginAmount] = useState<string>('');
   const [isSaving, setIsSaving] = useState(false);
-  const [marginError, setMarginError] = useState<string | null>(null);
 
   const calculations = usePerpsMarginCalculations({
     position,
@@ -99,19 +120,14 @@ export const EditMarginModalContent: React.FC<EditMarginModalContentProps> = ({
     anchorLiquidationDistance,
     estimatedLiquidationDistance,
     riskAssessment,
+    isValid,
   } = calculations;
-  const flooredMaxAmount = floorToDecimals(maxAmount);
-  const parsedAmount = useMemo(
+
+  const amountNumForDisplay = useMemo(
     () => Number.parseFloat(marginAmount.replaceAll(',', '')) || 0,
     [marginAmount],
   );
-  const currentMargin = Number.parseFloat(position.marginUsed) || 0;
-  const isAmountValid =
-    parsedAmount >= MARGIN_ADJUSTMENT_CONFIG.MinAdjustmentAmount &&
-    parsedAmount <= flooredMaxAmount &&
-    (marginMode === 'add' || parsedAmount <= currentMargin);
-
-  const showLiquidationComparison = parsedAmount > 0;
+  const showLiquidationComparison = amountNumForDisplay > 0;
 
   const liquidationPriceDisplay = useMemo(() => {
     if (
@@ -137,10 +153,8 @@ export const EditMarginModalContent: React.FC<EditMarginModalContentProps> = ({
           className="max-w-[65%] flex-wrap justify-end"
         >
           <Text variant={TextVariant.BodySm} color={TextColor.TextAlternative}>
-            $
-            {formatNumber(anchorLiquidationPrice, {
-              minimumFractionDigits: 2,
-              maximumFractionDigits: 2,
+            {formatPerpsFiat(anchorLiquidationPrice, {
+              ranges: PRICE_RANGES_UNIVERSAL,
             })}
           </Text>
           <Text variant={TextVariant.BodySm} color={TextColor.TextAlternative}>
@@ -150,11 +164,10 @@ export const EditMarginModalContent: React.FC<EditMarginModalContentProps> = ({
             variant={TextVariant.BodySm}
             color={TextColor.TextDefault}
             fontWeight={FontWeight.Medium}
+            data-testid="perps-edit-margin-liquidation-price-value"
           >
-            $
-            {formatNumber(estimatedLiquidationPrice, {
-              minimumFractionDigits: 2,
-              maximumFractionDigits: 2,
+            {formatPerpsFiat(estimatedLiquidationPrice ?? 0, {
+              ranges: PRICE_RANGES_UNIVERSAL,
             })}
           </Text>
         </Box>
@@ -165,52 +178,53 @@ export const EditMarginModalContent: React.FC<EditMarginModalContentProps> = ({
         variant={TextVariant.BodySm}
         color={TextColor.TextDefault}
         fontWeight={FontWeight.Medium}
+        data-testid="perps-edit-margin-liquidation-price-value"
       >
-        $
-        {formatNumber(estimatedLiquidationPrice ?? anchorLiquidationPrice, {
-          minimumFractionDigits: 2,
-          maximumFractionDigits: 2,
-        })}
+        {formatPerpsFiat(
+          estimatedLiquidationPrice ?? anchorLiquidationPrice ?? 0,
+          {
+            ranges: PRICE_RANGES_UNIVERSAL,
+          },
+        )}
       </Text>
     );
   }, [
     anchorLiquidationPrice,
     estimatedLiquidationPrice,
     showLiquidationComparison,
-    formatNumber,
   ]);
-
-  const formatAmount = useCallback(
-    (value: number): string =>
-      formatNumber(value, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-      }),
-    [formatNumber],
-  );
 
   const marginPercent = useMemo(() => {
     if (maxAmount <= 0) {
       return 0;
     }
-    return Math.min(100, Math.round((parsedAmount / maxAmount) * 100));
-  }, [parsedAmount, maxAmount]);
+    const n = Number.parseFloat(marginAmount.replaceAll(',', '')) || 0;
+    return Math.min(100, Math.round((n / maxAmount) * 100));
+  }, [marginAmount, maxAmount]);
+
+  const formatLiquidationDistance = useCallback((distance: number) => {
+    if (!Number.isFinite(distance)) {
+      return '-';
+    }
+    // Match mobile's adjust-margin view: liquidation distance is rounded to a whole percent.
+    return `${distance.toFixed(0)}%`;
+  }, []);
 
   const handleAmountChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const { value } = e.target;
       if (value === '' || /^[\d,]*\.?\d{0,2}$/u.test(value)) {
         let cleaned = value.replaceAll(',', '');
-        if (marginMode === 'remove' && flooredMaxAmount > 0) {
+        if (marginMode === 'remove' && maxAmount > 0) {
           const num = Number.parseFloat(cleaned) || 0;
-          if (num > flooredMaxAmount) {
-            cleaned = flooredMaxAmount.toFixed(2);
+          if (num > maxAmount) {
+            cleaned = maxAmount.toFixed(2);
           }
         }
         setMarginAmount(cleaned);
       }
     },
-    [marginMode, flooredMaxAmount],
+    [marginMode, maxAmount],
   );
 
   const handleSliderChange = useCallback(
@@ -224,47 +238,62 @@ export const EditMarginModalContent: React.FC<EditMarginModalContentProps> = ({
         return;
       }
       const raw = (maxAmount * percent) / 100;
-      const floored = floorToDecimals(raw);
+      const floored = Math.floor(raw * 100) / 100;
       if (floored <= 0) {
         setMarginAmount('');
         return;
       }
-      setMarginAmount(formatAmount(floored));
+      setMarginAmount(floored.toFixed(2));
     },
-    [maxAmount, formatAmount],
+    [maxAmount],
   );
 
   const handleSaveMargin = useCallback(async () => {
-    if (!isEligible || !isAmountValid) {
+    if (!isEligible) {
+      setIsGeoBlockModalOpen(true);
+      return;
+    }
+    if (!isValid) {
       return;
     }
 
     const rawMarginAmount = marginAmount.replaceAll(',', '');
-    if (parsedAmount <= 0) {
+    const amountNum = Number.parseFloat(rawMarginAmount) || 0;
+    if (amountNum <= 0) {
       return;
     }
 
     setIsSaving(true);
     onSavingChange?.(true);
-    setMarginError(null);
 
     try {
       const signedAmount =
         marginMode === 'add' ? rawMarginAmount : `-${rawMarginAmount}`;
 
-      const result = await submitRequestToBackground<{
-        success: boolean;
-        error?: string;
-      }>('perpsUpdateMargin', [
-        {
-          symbol: position.symbol,
-          amount: signedAmount,
-        },
-      ]);
+      const result = await submitRequestToBackground<PerpsBackgroundResult>(
+        'perpsUpdateMargin',
+        [
+          {
+            symbol: position.symbol,
+            amount: signedAmount,
+          },
+        ],
+      );
 
       if (!result.success) {
         throw new Error(result.error || 'Failed to update margin');
       }
+
+      const riskType =
+        marginMode === 'add'
+          ? PERPS_EVENT_VALUE.RISK_MANAGEMENT_TYPE.ADD_MARGIN
+          : PERPS_EVENT_VALUE.RISK_MANAGEMENT_TYPE.REMOVE_MARGIN;
+      track(MetaMetricsEventName.PerpsRiskManagement, {
+        [PERPS_EVENT_PROPERTY.ASSET]: position.symbol,
+        [PERPS_EVENT_PROPERTY.STATUS]: PERPS_EVENT_VALUE.STATUS.SUCCESS,
+        [PERPS_EVENT_PROPERTY.TYPE]: riskType,
+        [PERPS_EVENT_PROPERTY.SIZE]: rawMarginAmount,
+      });
 
       const streamManager = getPerpsStreamManager();
       const freshPositions = await submitRequestToBackground<PerpsPosition[]>(
@@ -272,13 +301,52 @@ export const EditMarginModalContent: React.FC<EditMarginModalContentProps> = ({
         [{ skipCache: true }],
       );
       streamManager.pushPositionsWithOverrides(freshPositions);
+      const displaySymbol = getDisplayName(position.symbol);
+
+      replacePerpsToastByKey({
+        key:
+          marginMode === 'add'
+            ? PERPS_TOAST_KEYS.MARGIN_ADD_SUCCESS
+            : PERPS_TOAST_KEYS.MARGIN_REMOVE_SUCCESS,
+        messageParams: [`$${marginAmount}`, displaySymbol],
+      });
 
       setMarginAmount('');
       onClose();
     } catch (error) {
       const errorMessage =
         error instanceof Error ? error.message : 'An unknown error occurred';
-      setMarginError(errorMessage);
+
+      const riskType =
+        marginMode === 'add'
+          ? PERPS_EVENT_VALUE.RISK_MANAGEMENT_TYPE.ADD_MARGIN
+          : PERPS_EVENT_VALUE.RISK_MANAGEMENT_TYPE.REMOVE_MARGIN;
+      track(MetaMetricsEventName.PerpsRiskManagement, {
+        [PERPS_EVENT_PROPERTY.ASSET]: position.symbol,
+        [PERPS_EVENT_PROPERTY.STATUS]: PERPS_EVENT_VALUE.STATUS.FAILED,
+        [PERPS_EVENT_PROPERTY.FAILURE_REASON]: errorMessage,
+        [PERPS_EVENT_PROPERTY.ERROR_MESSAGE]: errorMessage,
+        [PERPS_EVENT_PROPERTY.TYPE]: riskType,
+        [PERPS_EVENT_PROPERTY.SIZE]: rawMarginAmount,
+      });
+      track(MetaMetricsEventName.PerpsError, {
+        [PERPS_EVENT_PROPERTY.ERROR_TYPE]: PERPS_EVENT_VALUE.ERROR_TYPE.BACKEND,
+        [PERPS_EVENT_PROPERTY.ERROR_MESSAGE]: errorMessage,
+      });
+
+      const normalizedErrorMessage = errorMessage.trim();
+      const shouldUseFallbackDescription =
+        normalizedErrorMessage.length === 0 ||
+        MARGIN_FAILED_FALLBACK_ERROR_PATTERNS.some((pattern) =>
+          pattern.test(normalizedErrorMessage),
+        );
+
+      replacePerpsToastByKey({
+        key: PERPS_TOAST_KEYS.MARGIN_ADJUSTMENT_FAILED,
+        description: shouldUseFallbackDescription
+          ? t('perpsToastMarginAdjustmentFailedDescriptionFallback')
+          : normalizedErrorMessage,
+      });
     } finally {
       setIsSaving(false);
       onSavingChange?.(false);
@@ -287,11 +355,13 @@ export const EditMarginModalContent: React.FC<EditMarginModalContentProps> = ({
     isEligible,
     marginMode,
     marginAmount,
-    isAmountValid,
-    parsedAmount,
+    isValid,
     position.symbol,
     onClose,
     onSavingChange,
+    replacePerpsToastByKey,
+    track,
+    t,
   ]);
 
   const showRiskWarning =
@@ -301,7 +371,9 @@ export const EditMarginModalContent: React.FC<EditMarginModalContentProps> = ({
       riskAssessment.riskLevel === 'danger');
 
   const confirmDisabled =
-    !isEligible || !isAmountValid || isSaving || parsedAmount <= 0;
+    !isValid ||
+    isSaving ||
+    Number.parseFloat(marginAmount.replaceAll(',', '')) <= 0;
 
   useEffect(() => {
     if (onSaveRef) {
@@ -336,8 +408,11 @@ export const EditMarginModalContent: React.FC<EditMarginModalContentProps> = ({
           variant={TextVariant.BodySm}
           fontWeight={FontWeight.Medium}
           color={TextColor.TextAlternative}
+          data-testid="perps-edit-margin-available-value"
         >
-          {`${formatCurrencyWithMinThreshold(maxAmount, 'USD')} USDC`}
+          {`${formatPerpsFiat(maxAmount, {
+            ranges: PRICE_RANGES_MINIMAL_VIEW,
+          })} USDC`}
         </Text>
       </Box>
 
@@ -367,7 +442,7 @@ export const EditMarginModalContent: React.FC<EditMarginModalContentProps> = ({
               disabled={maxAmount <= 0 || isSaving}
             />
           </Box>
-          <Box className="w-[5.5rem] shrink-0">
+          <Box className="shrink-0">
             <TextField
               size={TextFieldSize.Md}
               value={marginAmount}
@@ -376,9 +451,8 @@ export const EditMarginModalContent: React.FC<EditMarginModalContentProps> = ({
               borderRadius={BorderRadius.MD}
               borderWidth={0}
               backgroundColor={BackgroundColor.backgroundMuted}
-              className="w-full"
               disabled={isSaving}
-              inputProps={{ inputMode: 'decimal' }}
+              inputProps={{ inputMode: 'decimal', size: 10 }}
               startAccessory={
                 <Text
                   variant={TextVariant.BodyMd}
@@ -427,11 +501,7 @@ export const EditMarginModalContent: React.FC<EditMarginModalContentProps> = ({
                 variant={TextVariant.BodySm}
                 color={TextColor.TextAlternative}
               >
-                {formatNumber(anchorLiquidationDistance, {
-                  minimumFractionDigits: 1,
-                  maximumFractionDigits: 1,
-                })}
-                %
+                {formatLiquidationDistance(anchorLiquidationDistance)}
               </Text>
               <Text
                 variant={TextVariant.BodySm}
@@ -443,12 +513,9 @@ export const EditMarginModalContent: React.FC<EditMarginModalContentProps> = ({
                 variant={TextVariant.BodySm}
                 color={TextColor.TextDefault}
                 fontWeight={FontWeight.Medium}
+                data-testid="perps-edit-margin-liquidation-distance-value"
               >
-                {formatNumber(estimatedLiquidationDistance, {
-                  minimumFractionDigits: 1,
-                  maximumFractionDigits: 1,
-                })}
-                %
+                {formatLiquidationDistance(estimatedLiquidationDistance)}
               </Text>
             </Box>
           ) : (
@@ -456,12 +523,9 @@ export const EditMarginModalContent: React.FC<EditMarginModalContentProps> = ({
               variant={TextVariant.BodySm}
               color={TextColor.TextDefault}
               fontWeight={FontWeight.Medium}
+              data-testid="perps-edit-margin-liquidation-distance-value"
             >
-              {formatNumber(anchorLiquidationDistance, {
-                minimumFractionDigits: 1,
-                maximumFractionDigits: 1,
-              })}
-              %
+              {formatLiquidationDistance(anchorLiquidationDistance)}
             </Text>
           )}
         </Box>
@@ -486,25 +550,6 @@ export const EditMarginModalContent: React.FC<EditMarginModalContentProps> = ({
         </Box>
       )}
 
-      {/* Error message */}
-      {marginError && (
-        <Box
-          className="bg-error-muted rounded-lg px-3 py-2"
-          flexDirection={BoxFlexDirection.Row}
-          alignItems={BoxAlignItems.Center}
-          gap={2}
-        >
-          <Icon
-            name={IconName.Warning}
-            size={IconSize.Sm}
-            color={IconColor.ErrorDefault}
-          />
-          <Text variant={TextVariant.BodySm} color={TextColor.ErrorDefault}>
-            {marginError}
-          </Text>
-        </Box>
-      )}
-
       {!externalSave && (
         <Button
           variant={ButtonVariant.Primary}
@@ -517,6 +562,10 @@ export const EditMarginModalContent: React.FC<EditMarginModalContentProps> = ({
           {getConfirmButtonLabel()}
         </Button>
       )}
+      <PerpsGeoBlockModal
+        isOpen={isGeoBlockModalOpen}
+        onClose={() => setIsGeoBlockModalOpen(false)}
+      />
     </Box>
   );
 };

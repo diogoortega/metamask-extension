@@ -21,6 +21,7 @@ const ShowConversionInTestnetsItem = createToggleItem({
   selector: getShowFiatInTestnets,
   action: setShowFiatConversionOnTestnetsPreference,
   dataTestId: 'developer-options-show-testnet-conversion-toggle',
+  trackEventProperty: 'show_fiat_in_testnets',
 });
 
 /** Registry of setting items for the Developer Options page. Add new items here */

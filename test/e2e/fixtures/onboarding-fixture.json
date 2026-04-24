@@ -4,13 +4,11 @@
       "hiddenAccountList": [],
       "pinnedAccountList": []
     },
-    "AccountTracker": {
-      "accountsByChainId": {
-        "0x1": {}
-      }
-    },
     "AccountTreeController": {
       "accountGroupsMetadata": {},
+      "accountTree": {
+        "wallets": {}
+      },
       "accountWalletsMetadata": {},
       "hasAccountTreeSyncingSyncedAtLeastOnce": false,
       "selectedAccountGroup": ""
@@ -37,7 +35,7 @@
       "announcements": {}
     },
     "AppMetadataController": {
-      "currentMigrationVersion": 201,
+      "currentMigrationVersion": 206,
       "firstTimeInfo": {
         "date": 0,
         "version": "13.17.0"
@@ -87,6 +85,14 @@
       "timeoutMinutes": 0,
       "trezorModel": null,
       "updateModalLastDismissedAt": null
+    },
+    "AssetsController": {
+      "assetPreferences": {},
+      "assetsBalance": {},
+      "assetsInfo": {},
+      "assetsPrice": {},
+      "customAssets": {},
+      "selectedCurrency": "usd"
     },
     "AuthenticationController": {
       "isSignedIn": false
@@ -329,9 +335,7 @@
           "nativeCurrency": "ETH",
           "rpcEndpoints": [
             {
-              "failoverUrls": [
-                "https://dimensional-special-breeze.quiknode.pro/d5e2d185c1561ef5ecb9aadf1ae7cc58863f4fa4/"
-              ],
+              "failoverUrls": [],
               "networkClientId": "mainnet",
               "type": "infura",
               "url": "https://mainnet.infura.io/v3/{infuraProjectId}"
@@ -363,9 +367,7 @@
           "nativeCurrency": "ETH",
           "rpcEndpoints": [
             {
-              "failoverUrls": [
-                "https://ancient-quaint-water.base-mainnet.quiknode.pro/a2cb04635063b578dba24f656fe376a55e8d9939/"
-              ],
+              "failoverUrls": [],
               "networkClientId": "base-mainnet",
               "type": "infura",
               "url": "https://base-mainnet.infura.io/v3/{infuraProjectId}"
@@ -413,9 +415,7 @@
           "nativeCurrency": "POL",
           "rpcEndpoints": [
             {
-              "failoverUrls": [
-                "https://powerful-radial-aura.matic.quiknode.pro/edaa1cc73ef2a19230e2e715e766b6783ad8126a/"
-              ],
+              "failoverUrls": [],
               "networkClientId": "polygon-mainnet",
               "type": "infura",
               "url": "https://polygon-mainnet.infura.io/v3/{infuraProjectId}"
@@ -431,9 +431,7 @@
           "nativeCurrency": "ETH",
           "rpcEndpoints": [
             {
-              "failoverUrls": [
-                "https://holy-convincing-diagram.optimism.quiknode.pro/4804f72f80b7566982ad24a7a1d8e1ae48bca208/"
-              ],
+              "failoverUrls": [],
               "networkClientId": "optimism-mainnet",
               "type": "infura",
               "url": "https://optimism-mainnet.infura.io/v3/{infuraProjectId}"
@@ -449,9 +447,7 @@
           "nativeCurrency": "ETH",
           "rpcEndpoints": [
             {
-              "failoverUrls": [
-                "https://purple-young-mansion.arbitrum-mainnet.quiknode.pro/f48c5cbfd1f5b39f0e5542d3b23c181b4085a2b5/"
-              ],
+              "failoverUrls": [],
               "networkClientId": "arbitrum-mainnet",
               "type": "infura",
               "url": "https://arbitrum-mainnet.infura.io/v3/{infuraProjectId}"
@@ -499,9 +495,7 @@
           "nativeCurrency": "ETH",
           "rpcEndpoints": [
             {
-              "failoverUrls": [
-                "https://patient-sleek-daylight.linea-mainnet.quiknode.pro/d0e608bf5f231ef9ae6756de4d7876cb0f5ece55/"
-              ],
+              "failoverUrls": [],
               "networkClientId": "linea-mainnet",
               "type": "infura",
               "url": "https://linea-mainnet.infura.io/v3/{infuraProjectId}"
@@ -652,6 +646,44 @@
             }
           }
         },
+        "https://app-beta.signer.cubist.dev": {
+          "origin": "https://app-beta.signer.cubist.dev",
+          "permissions": {
+            "wallet_snap": {
+              "caveats": [
+                {
+                  "type": "snapIds",
+                  "value": {
+                    "npm:@metamask/institutional-wallet-snap": {}
+                  }
+                }
+              ],
+              "date": 1764061389884,
+              "id": "Xm8kPqR3vDnYj2cAzBw4T",
+              "invoker": "https://app-beta.signer.cubist.dev",
+              "parentCapability": "wallet_snap"
+            }
+          }
+        },
+        "https://app-gamma.signer.cubist.dev": {
+          "origin": "https://app-gamma.signer.cubist.dev",
+          "permissions": {
+            "wallet_snap": {
+              "caveats": [
+                {
+                  "type": "snapIds",
+                  "value": {
+                    "npm:@metamask/institutional-wallet-snap": {}
+                  }
+                }
+              ],
+              "date": 1764061389884,
+              "id": "Lh6nWsQ9uEoYk5bCxDm7G",
+              "invoker": "https://app-gamma.signer.cubist.dev",
+              "parentCapability": "wallet_snap"
+            }
+          }
+        },
         "https://app.bitgo-test.com": {
           "origin": "https://app.bitgo-test.com",
           "permissions": {
@@ -705,6 +737,25 @@
               "date": 1764061389877,
               "id": "fYsfFXNA_41cOKy-O4dN0",
               "invoker": "https://app.metamask.io",
+              "parentCapability": "wallet_snap"
+            }
+          }
+        },
+        "https://app.signer.cubist.dev": {
+          "origin": "https://app.signer.cubist.dev",
+          "permissions": {
+            "wallet_snap": {
+              "caveats": [
+                {
+                  "type": "snapIds",
+                  "value": {
+                    "npm:@metamask/institutional-wallet-snap": {}
+                  }
+                }
+              ],
+              "date": 1764061389884,
+              "id": "Tp4mNrJ7yFwZh8eBvCk2H",
+              "invoker": "https://app.signer.cubist.dev",
               "parentCapability": "wallet_snap"
             }
           }
@@ -1530,6 +1581,9 @@
                       "https://console.dev.mpcvault.com",
                       "https://saturn-custody-ui.metamask-institutional.io",
                       "https://console.mpcvault.com",
+                      "https://app-beta.signer.cubist.dev",
+                      "https://app-gamma.signer.cubist.dev",
+                      "https://app.signer.cubist.dev",
                       "https://app.bitgo.com",
                       "https://app.bitgo-test.com",
                       "https://apps-portal.safe.global",
@@ -1978,12 +2032,12 @@
         "hyperliquid": {}
       },
       "securityAlertsEnabled": true,
+      "showSidePanelMigrationToast": false,
       "snapRegistryList": {},
       "snapsAddSnapAccountModalDismissed": false,
       "theme": "os",
       "use4ByteResolution": true,
       "useAddressBarEnsResolution": true,
-      "useBlockie": false,
       "useCurrencyRateCheck": true,
       "useExternalNameSources": true,
       "useExternalServices": true,
@@ -2023,9 +2077,12 @@
         "http://localhost:3000": "mainnet",
         "http://localhost:8000": "mainnet",
         "https://alpha.mycactus.io": "mainnet",
+        "https://app-beta.signer.cubist.dev": "mainnet",
+        "https://app-gamma.signer.cubist.dev": "mainnet",
         "https://app.bitgo-test.com": "mainnet",
         "https://app.bitgo.com": "mainnet",
         "https://app.metamask.io": "mainnet",
+        "https://app.signer.cubist.dev": "mainnet",
         "https://apps-portal.safe.global": "mainnet",
         "https://console.dev.mpcvault.com": "mainnet",
         "https://console.fireblocks.io": "mainnet",
@@ -2187,6 +2244,6 @@
   },
   "meta": {
     "storageKind": "split",
-    "version": 201
+    "version": 206
   }
 }

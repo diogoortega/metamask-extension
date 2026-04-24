@@ -1,5 +1,4 @@
 import React from 'react';
-import { MetaMetricsEventName } from '../../../../shared/constants/metametrics';
 import { SMART_TRANSACTIONS_LEARN_MORE_URL } from '../../../../shared/constants/smartTransactions';
 import {
   SECURITY_ALERTS_LEARN_MORE_LINK,
@@ -46,6 +45,7 @@ const TransactionSimulationsItem = createToggleItem({
   action: setUseTransactionSimulations,
   dataTestId: 'transactions-simulations-toggle',
   disabledSelector: selectIsDisabledByShieldSubscription,
+  trackEventProperty: 'use_transaction_simulations',
 });
 
 const SecurityAlertsItem = createToggleItem({
@@ -60,14 +60,7 @@ const SecurityAlertsItem = createToggleItem({
   dataTestId: 'transactions-security-alerts-toggle',
   containerDataTestId: 'securityAlert',
   disabledSelector: selectIsDisabledByShieldSubscription,
-  trackEvent: {
-    event: MetaMetricsEventName.SettingsUpdated,
-    properties: (newValue) => ({
-      // Analytics property name required by backend
-      // eslint-disable-next-line @typescript-eslint/naming-convention
-      blockaid_alerts_enabled: newValue,
-    }),
-  },
+  trackEventProperty: 'blockaid_alerts_enabled',
 });
 
 const SmartTransactionsItem = createToggleItem({
@@ -100,6 +93,7 @@ const ProposedNicknamesItem = createToggleItem({
     Boolean(getUseExternalNameSources(state)),
   action: setUseExternalNameSources,
   dataTestId: 'transactions-proposed-nicknames-toggle',
+  trackEventProperty: 'use_external_name_sources',
 });
 
 const ShowHexDataItem = createToggleItem({
@@ -111,6 +105,7 @@ const ShowHexDataItem = createToggleItem({
   action: (value: boolean) => setFeatureFlag('sendHexData', value, ''),
   dataTestId: 'transactions-show-hex-data-toggle',
   containerDataTestId: 'transactions-settings-hex-data-toggle',
+  trackEventProperty: 'send_hex_data',
 });
 
 const TRANSACTION_SETTING_ITEMS: SettingItemConfig[] = [
