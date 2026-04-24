@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`PermitSimulation renders component correctly 1`] = `
+exports[`PermitSimulation > renders component correctly 1`] = `
 <div>
   <div
     class="mm-box mm-box--margin-bottom-4 mm-box--padding-top-1 mm-box--padding-bottom-1 mm-box--padding-inline-2 mm-box--background-color-background-section mm-box--rounded-lg"
@@ -12,7 +12,7 @@ exports[`PermitSimulation renders component correctly 1`] = `
     >
       <div
         class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-        style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+        style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
       >
         <div
           class="mm-box mm-box--display-flex mm-box--align-items-center"
@@ -34,7 +34,6 @@ exports[`PermitSimulation renders component correctly 1`] = `
             >
               <span
                 class="mm-box mm-icon mm-icon--size-sm mm-box--margin-left-1 mm-box--display-inline-block mm-box--color-icon-alternative"
-                style="mask-image: url('./images/icons/question.svg');"
               />
             </div>
           </div>
@@ -57,7 +56,7 @@ exports[`PermitSimulation renders component correctly 1`] = `
     >
       <div
         class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-        style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+        style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
       >
         <div
           class="mm-box mm-box--display-flex mm-box--align-items-center"
@@ -113,7 +112,6 @@ exports[`PermitSimulation renders component correctly 1`] = `
               >
                 <span
                   class="mm-box name__icon mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-inherit"
-                  style="mask-image: url('./images/icons/question.svg');"
                 />
                 <p
                   class="mm-box mm-text name__value mm-text--body-md mm-box--color-text-default"
@@ -133,7 +131,7 @@ exports[`PermitSimulation renders component correctly 1`] = `
 </div>
 `;
 
-exports[`PermitSimulation renders correctly for NFT permit 1`] = `
+exports[`PermitSimulation > renders correctly for NFT permit 1`] = `
 <div>
   <div
     class="mm-box mm-box--margin-bottom-4 mm-box--padding-top-1 mm-box--padding-bottom-1 mm-box--padding-inline-2 mm-box--background-color-background-section mm-box--rounded-lg"
@@ -145,7 +143,7 @@ exports[`PermitSimulation renders correctly for NFT permit 1`] = `
     >
       <div
         class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-        style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+        style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
       >
         <div
           class="mm-box mm-box--display-flex mm-box--align-items-center"
@@ -167,7 +165,6 @@ exports[`PermitSimulation renders correctly for NFT permit 1`] = `
             >
               <span
                 class="mm-box mm-icon mm-icon--size-sm mm-box--margin-left-1 mm-box--display-inline-block mm-box--color-icon-alternative"
-                style="mask-image: url('./images/icons/question.svg');"
               />
             </div>
           </div>
@@ -190,7 +187,7 @@ exports[`PermitSimulation renders correctly for NFT permit 1`] = `
     >
       <div
         class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-        style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+        style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
       >
         <div
           class="mm-box mm-box--display-flex mm-box--align-items-center"
@@ -235,7 +232,6 @@ exports[`PermitSimulation renders correctly for NFT permit 1`] = `
               >
                 <span
                   class="mm-box name__icon mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-inherit"
-                  style="mask-image: url('./images/icons/question.svg');"
                 />
                 <p
                   class="mm-box mm-text name__value mm-text--body-md mm-box--color-text-default"

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ConfirmDecryptMessage Component should match snapshot when preference is ETH currency 1`] = `
+exports[`ConfirmDecryptMessage Component > should match snapshot when preference is ETH currency 1`] = `
 <div>
   <div
     class="request-encryption-public-key__container"
@@ -55,7 +55,7 @@ exports[`ConfirmDecryptMessage Component should match snapshot when preference i
                     class="flex [&>div]:!rounded-none"
                   >
                     <div
-                      style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 24px; height: 24px; display: inline-block; background: rgb(245, 228, 0);"
+                      style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 24px; height: 24px; display: inline-block; background: #F5E400;"
                     >
                       <svg
                         height="24"
@@ -139,7 +139,7 @@ exports[`ConfirmDecryptMessage Component should match snapshot when preference i
               class="flex [&>div]:!rounded-none"
             >
               <div
-                style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 40px; height: 40px; display: inline-block; background: rgb(245, 228, 0);"
+                style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 40px; height: 40px; display: inline-block; background: #F5E400;"
               >
                 <svg
                   height="40"

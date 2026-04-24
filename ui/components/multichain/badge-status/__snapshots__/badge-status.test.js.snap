@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Badge Status should not render the badge if showConnectedStatus is false 1`] = `
+exports[`Badge Status > should not render the badge if showConnectedStatus is false 1`] = `
 <div>
   <button
     class="mm-box multichain-badge-status pr-1 mm-box--display-flex mm-box--justify-content-center mm-box--align-items-center mm-box--background-color-transparent"
@@ -16,7 +16,7 @@ exports[`Badge Status should not render the badge if showConnectedStatus is fals
           class="flex [&>div]:!rounded-none"
         >
           <div
-            style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: rgb(250, 58, 0);"
+            style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: #FA3A00;"
           >
             <svg
               height="32"
@@ -60,7 +60,7 @@ exports[`Badge Status should not render the badge if showConnectedStatus is fals
 </div>
 `;
 
-exports[`Badge Status should render correctly 1`] = `
+exports[`Badge Status > should render correctly 1`] = `
 <div>
   <button
     class="mm-box multichain-badge-status pr-1 mm-box--display-flex mm-box--justify-content-center mm-box--align-items-center mm-box--background-color-transparent"
@@ -85,7 +85,7 @@ exports[`Badge Status should render correctly 1`] = `
               class="flex [&>div]:!rounded-none"
             >
               <div
-                style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: rgb(250, 58, 0);"
+                style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: #FA3A00;"
               >
                 <svg
                   height="32"

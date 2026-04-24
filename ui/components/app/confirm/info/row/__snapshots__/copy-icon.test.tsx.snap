@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`CopyIcon should match snapshot 1`] = `
+exports[`CopyIcon > should match snapshot 1`] = `
 <div>
   <button
     aria-label="copy-button"
@@ -9,7 +9,6 @@ exports[`CopyIcon should match snapshot 1`] = `
   >
     <span
       class="mm-box mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-inherit"
-      style="mask-image: url('./images/icons/copy.svg');"
     />
   </button>
 </div>

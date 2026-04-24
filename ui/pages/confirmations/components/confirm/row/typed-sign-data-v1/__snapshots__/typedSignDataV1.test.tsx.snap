@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ConfirmInfoRowTypedSignData should match snapshot 1`] = `
+exports[`ConfirmInfoRowTypedSignData > should match snapshot 1`] = `
 <div>
   <div
     class="mm-box mm-box--width-full"
@@ -19,7 +19,7 @@ exports[`ConfirmInfoRowTypedSignData should match snapshot 1`] = `
         >
           <div
             class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-            style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+            style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
           >
             <div
               class="mm-box mm-box--display-flex mm-box--align-items-center"
@@ -50,7 +50,7 @@ exports[`ConfirmInfoRowTypedSignData should match snapshot 1`] = `
         >
           <div
             class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-            style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+            style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
           >
             <div
               class="mm-box mm-box--display-flex mm-box--align-items-center"

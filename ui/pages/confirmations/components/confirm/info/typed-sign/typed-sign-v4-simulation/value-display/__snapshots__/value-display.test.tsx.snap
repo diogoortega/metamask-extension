@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`PermitSimulationValueDisplay renders component correctly 1`] = `
+exports[`PermitSimulationValueDisplay > renders component correctly 1`] = `
 <div>
   <div
     class="mm-box mm-box--margin-left-auto"
@@ -41,7 +41,6 @@ exports[`PermitSimulationValueDisplay renders component correctly 1`] = `
         >
           <span
             class="mm-box name__icon mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-inherit"
-            style="mask-image: url('./images/icons/question.svg');"
           />
           <p
             class="mm-box mm-text name__value mm-text--body-md mm-box--color-text-default"

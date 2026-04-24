@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SrpInputForm render matches snapshot 1`] = `
+exports[`SrpInputForm > render matches snapshot 1`] = `
 <div>
   <div
     class="flex flex-col gap-4 h-full"
@@ -42,7 +42,7 @@ exports[`SrpInputForm render matches snapshot 1`] = `
           >
             <div
               class="mm-box srp-input-import__srp-note mm-box--padding-4 mm-box--rounded-lg"
-              style="flex: 1;"
+              style="flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
             >
               <textarea
                 class="mm-box mm-text mm-textarea mm-textarea--resize-none mm-text--body-md mm-box--padding-top-0 mm-box--padding-right-0 mm-box--padding-bottom-0 mm-box--padding-left-0 mm-box--width-full mm-box--color-text-default mm-box--background-color-transparent mm-box--rounded-sm mm-box--border-color-transparent mm-box--border-width-1 box--border-style-solid"

@@ -1,10 +1,7 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`UpdateModal renders correctly with required props 1`] = `
+exports[`UpdateModal > renders correctly with required props 1`] = `
 <body>
-  <div
-    id="popover-content"
-  />
   <div />
   <div
     class="mm-modal"
@@ -46,7 +43,6 @@ exports[`UpdateModal renders correctly with required props 1`] = `
               >
                 <span
                   class="mm-box mm-icon mm-icon--size-md mm-box--display-inline-block mm-box--color-inherit"
-                  style="mask-image: url('./images/icons/close.svg');"
                 />
               </button>
             </div>

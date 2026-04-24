@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Security Tab should match snapshot 1`] = `
+exports[`Security Tab > should match snapshot 1`] = `
 <div>
   <div
     class="settings-page__body"
@@ -28,17 +28,17 @@ exports[`Security Tab should match snapshot 1`] = `
               style="display: flex; width: 52px; align-items: center; justify-content: flex-start; position: relative; cursor: pointer; background-color: transparent; border: 0px; padding: 0px; user-select: none;"
             >
               <div
-                style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; background-color: rgb(186, 187, 190);"
+                style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; border: none none; background-color: rgb(186, 187, 190);"
               >
                 <div
-                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgb(250, 250, 250); margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 0; width: 26px; height: 20px; left: 4px;"
+                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: #FAFAFA; margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 0; width: 26px; height: 20px; left: 4px;"
                 />
                 <div
-                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 1;"
+                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 1;"
                 />
               </div>
               <div
-                style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; flex: 1; align-self: stretch; align-items: center; justify-content: flex-start;"
+                style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; align-self: stretch; align-items: center; justify-content: flex-start; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
               >
                 <div
                   style="width: 18px; height: 18px; display: flex; align-self: center; box-shadow: var(--shadow-size-xs) var(--color-shadow-default); border-radius: 50%; box-sizing: border-box; position: relative; background-color: rgb(255, 255, 255); left: 3px;"
@@ -118,7 +118,6 @@ exports[`Security Tab should match snapshot 1`] = `
           >
             <span
               class="mm-box mm-icon mm-icon--size-lg mm-box--display-inline-block mm-box--color-success-default"
-              style="mask-image: url('./images/icons/confirmation.svg');"
             />
             <div
               class="mm-box mm-box--min-width-0"
@@ -224,17 +223,17 @@ exports[`Security Tab should match snapshot 1`] = `
               style="display: flex; width: 52px; align-items: center; justify-content: flex-start; position: relative; cursor: pointer; background-color: transparent; border: 0px; padding: 0px; user-select: none;"
             >
               <div
-                style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; background-color: rgb(186, 187, 190);"
+                style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; border: none none; background-color: rgb(186, 187, 190);"
               >
                 <div
-                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgb(250, 250, 250); margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 0; width: 26px; height: 20px; left: 4px;"
+                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: #FAFAFA; margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 0; width: 26px; height: 20px; left: 4px;"
                 />
                 <div
-                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 1;"
+                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 1;"
                 />
               </div>
               <div
-                style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; flex: 1; align-self: stretch; align-items: center; justify-content: flex-start;"
+                style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; align-self: stretch; align-items: center; justify-content: flex-start; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
               >
                 <div
                   style="width: 18px; height: 18px; display: flex; align-self: center; box-shadow: var(--shadow-size-xs) var(--color-shadow-default); border-radius: 50%; box-sizing: border-box; position: relative; background-color: rgb(255, 255, 255); left: 3px;"
@@ -306,17 +305,17 @@ exports[`Security Tab should match snapshot 1`] = `
               style="display: flex; width: 52px; align-items: center; justify-content: flex-start; position: relative; cursor: pointer; background-color: transparent; border: 0px; padding: 0px; user-select: none;"
             >
               <div
-                style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; background-color: rgb(68, 89, 255);"
+                style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; border: none none; background-color: rgb(68, 89, 255);"
               >
                 <div
-                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgb(250, 250, 250); margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 1; width: 26px; height: 20px; left: 4px;"
+                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: #FAFAFA; margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 1; width: 26px; height: 20px; left: 4px;"
                 />
                 <div
-                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 0;"
+                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 0;"
                 />
               </div>
               <div
-                style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; flex: 1; align-self: stretch; align-items: center; justify-content: flex-start;"
+                style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; align-self: stretch; align-items: center; justify-content: flex-start; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
               >
                 <div
                   style="width: 18px; height: 18px; display: flex; align-self: center; box-shadow: var(--shadow-size-xs) var(--color-shadow-default); border-radius: 50%; box-sizing: border-box; position: relative; background-color: rgb(255, 255, 255); left: 18px;"
@@ -381,17 +380,17 @@ exports[`Security Tab should match snapshot 1`] = `
                 style="display: flex; width: 52px; align-items: center; justify-content: flex-start; position: relative; cursor: pointer; background-color: transparent; border: 0px; padding: 0px; user-select: none;"
               >
                 <div
-                  style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; background-color: rgb(186, 187, 190);"
+                  style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; border: none none; background-color: rgb(186, 187, 190);"
                 >
                   <div
-                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgb(250, 250, 250); margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 0; width: 26px; height: 20px; left: 4px;"
+                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: #FAFAFA; margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 0; width: 26px; height: 20px; left: 4px;"
                   />
                   <div
-                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 1;"
+                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 1;"
                   />
                 </div>
                 <div
-                  style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; flex: 1; align-self: stretch; align-items: center; justify-content: flex-start;"
+                  style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; align-self: stretch; align-items: center; justify-content: flex-start; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
                 >
                   <div
                     style="width: 18px; height: 18px; display: flex; align-self: center; box-shadow: var(--shadow-size-xs) var(--color-shadow-default); border-radius: 50%; box-sizing: border-box; position: relative; background-color: rgb(255, 255, 255); left: 3px;"
@@ -459,17 +458,17 @@ exports[`Security Tab should match snapshot 1`] = `
               style="display: flex; width: 52px; align-items: center; justify-content: flex-start; position: relative; cursor: pointer; background-color: transparent; border: 0px; padding: 0px; user-select: none;"
             >
               <div
-                style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; background-color: rgb(68, 89, 255);"
+                style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; border: none none; background-color: rgb(68, 89, 255);"
               >
                 <div
-                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgb(250, 250, 250); margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 1; width: 26px; height: 20px; left: 4px;"
+                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: #FAFAFA; margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 1; width: 26px; height: 20px; left: 4px;"
                 />
                 <div
-                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 0;"
+                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 0;"
                 />
               </div>
               <div
-                style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; flex: 1; align-self: stretch; align-items: center; justify-content: flex-start;"
+                style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; align-self: stretch; align-items: center; justify-content: flex-start; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
               >
                 <div
                   style="width: 18px; height: 18px; display: flex; align-self: center; box-shadow: var(--shadow-size-xs) var(--color-shadow-default); border-radius: 50%; box-sizing: border-box; position: relative; background-color: rgb(255, 255, 255); left: 18px;"
@@ -562,17 +561,17 @@ exports[`Security Tab should match snapshot 1`] = `
               style="display: flex; width: 52px; align-items: center; justify-content: flex-start; position: relative; cursor: pointer; background-color: transparent; border: 0px; padding: 0px; user-select: none;"
             >
               <div
-                style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; background-color: rgb(68, 89, 255);"
+                style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; border: none none; background-color: rgb(68, 89, 255);"
               >
                 <div
-                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgb(250, 250, 250); margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 1; width: 26px; height: 20px; left: 4px;"
+                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: #FAFAFA; margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 1; width: 26px; height: 20px; left: 4px;"
                 />
                 <div
-                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 0;"
+                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 0;"
                 />
               </div>
               <div
-                style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; flex: 1; align-self: stretch; align-items: center; justify-content: flex-start;"
+                style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; align-self: stretch; align-items: center; justify-content: flex-start; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
               >
                 <div
                   style="width: 18px; height: 18px; display: flex; align-self: center; box-shadow: var(--shadow-size-xs) var(--color-shadow-default); border-radius: 50%; box-sizing: border-box; position: relative; background-color: rgb(255, 255, 255); left: 18px;"
@@ -640,17 +639,17 @@ exports[`Security Tab should match snapshot 1`] = `
               style="display: flex; width: 52px; align-items: center; justify-content: flex-start; position: relative; cursor: pointer; background-color: transparent; border: 0px; padding: 0px; user-select: none;"
             >
               <div
-                style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; background-color: rgb(186, 187, 190);"
+                style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; border: none none; background-color: rgb(186, 187, 190);"
               >
                 <div
-                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgb(250, 250, 250); margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 0; width: 26px; height: 20px; left: 4px;"
+                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: #FAFAFA; margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 0; width: 26px; height: 20px; left: 4px;"
                 />
                 <div
-                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 1;"
+                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 1;"
                 />
               </div>
               <div
-                style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; flex: 1; align-self: stretch; align-items: center; justify-content: flex-start;"
+                style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; align-self: stretch; align-items: center; justify-content: flex-start; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
               >
                 <div
                   style="width: 18px; height: 18px; display: flex; align-self: center; box-shadow: var(--shadow-size-xs) var(--color-shadow-default); border-radius: 50%; box-sizing: border-box; position: relative; background-color: rgb(255, 255, 255); left: 3px;"
@@ -774,17 +773,17 @@ exports[`Security Tab should match snapshot 1`] = `
                 style="display: flex; width: 52px; align-items: center; justify-content: flex-start; position: relative; cursor: pointer; background-color: transparent; border: 0px; padding: 0px; user-select: none;"
               >
                 <div
-                  style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; background-color: rgb(186, 187, 190);"
+                  style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; border: none none; background-color: rgb(186, 187, 190);"
                 >
                   <div
-                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgb(250, 250, 250); margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 0; width: 26px; height: 20px; left: 4px;"
+                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: #FAFAFA; margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 0; width: 26px; height: 20px; left: 4px;"
                   />
                   <div
-                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 1;"
+                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 1;"
                   />
                 </div>
                 <div
-                  style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; flex: 1; align-self: stretch; align-items: center; justify-content: flex-start;"
+                  style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; align-self: stretch; align-items: center; justify-content: flex-start; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
                 >
                   <div
                     style="width: 18px; height: 18px; display: flex; align-self: center; box-shadow: var(--shadow-size-xs) var(--color-shadow-default); border-radius: 50%; box-sizing: border-box; position: relative; background-color: rgb(255, 255, 255); left: 3px;"
@@ -845,17 +844,17 @@ exports[`Security Tab should match snapshot 1`] = `
                 style="display: flex; width: 52px; align-items: center; justify-content: flex-start; position: relative; cursor: pointer; background-color: transparent; border: 0px; padding: 0px; user-select: none;"
               >
                 <div
-                  style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; background-color: rgb(68, 89, 255);"
+                  style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; border: none none; background-color: rgb(68, 89, 255);"
                 >
                   <div
-                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgb(250, 250, 250); margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 1; width: 26px; height: 20px; left: 4px;"
+                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: #FAFAFA; margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 1; width: 26px; height: 20px; left: 4px;"
                   />
                   <div
-                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 0;"
+                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 0;"
                   />
                 </div>
                 <div
-                  style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; flex: 1; align-self: stretch; align-items: center; justify-content: flex-start;"
+                  style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; align-self: stretch; align-items: center; justify-content: flex-start; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
                 >
                   <div
                     style="width: 18px; height: 18px; display: flex; align-self: center; box-shadow: var(--shadow-size-xs) var(--color-shadow-default); border-radius: 50%; box-sizing: border-box; position: relative; background-color: rgb(255, 255, 255); left: 18px;"
@@ -959,17 +958,17 @@ exports[`Security Tab should match snapshot 1`] = `
                 style="display: flex; width: 52px; align-items: center; justify-content: flex-start; position: relative; cursor: pointer; background-color: transparent; border: 0px; padding: 0px; user-select: none;"
               >
                 <div
-                  style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; background-color: rgb(186, 187, 190);"
+                  style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; border: none none; background-color: rgb(186, 187, 190);"
                 >
                   <div
-                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgb(250, 250, 250); margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 0; width: 26px; height: 20px; left: 4px;"
+                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: #FAFAFA; margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 0; width: 26px; height: 20px; left: 4px;"
                   />
                   <div
-                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 1;"
+                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 1;"
                   />
                 </div>
                 <div
-                  style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; flex: 1; align-self: stretch; align-items: center; justify-content: flex-start;"
+                  style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; align-self: stretch; align-items: center; justify-content: flex-start; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
                 >
                   <div
                     style="width: 18px; height: 18px; display: flex; align-self: center; box-shadow: var(--shadow-size-xs) var(--color-shadow-default); border-radius: 50%; box-sizing: border-box; position: relative; background-color: rgb(255, 255, 255); left: 3px;"
@@ -1049,17 +1048,17 @@ exports[`Security Tab should match snapshot 1`] = `
               style="display: flex; width: 52px; align-items: center; justify-content: flex-start; position: relative; cursor: pointer; background-color: transparent; border: 0px; padding: 0px; user-select: none;"
             >
               <div
-                style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; background-color: rgb(68, 89, 255);"
+                style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; border: none none; background-color: rgb(68, 89, 255);"
               >
                 <div
-                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgb(250, 250, 250); margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 1; width: 26px; height: 20px; left: 4px;"
+                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: #FAFAFA; margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 1; width: 26px; height: 20px; left: 4px;"
                 />
                 <div
-                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 0;"
+                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 0;"
                 />
               </div>
               <div
-                style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; flex: 1; align-self: stretch; align-items: center; justify-content: flex-start;"
+                style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; align-self: stretch; align-items: center; justify-content: flex-start; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
               >
                 <div
                   style="width: 18px; height: 18px; display: flex; align-self: center; box-shadow: var(--shadow-size-xs) var(--color-shadow-default); border-radius: 50%; box-sizing: border-box; position: relative; background-color: rgb(255, 255, 255); left: 18px;"
@@ -1115,17 +1114,17 @@ exports[`Security Tab should match snapshot 1`] = `
               style="display: flex; width: 52px; align-items: center; justify-content: flex-start; position: relative; cursor: pointer; background-color: transparent; border: 0px; padding: 0px; user-select: none;"
             >
               <div
-                style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; background-color: rgb(186, 187, 190);"
+                style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; border: none none; background-color: rgb(186, 187, 190);"
               >
                 <div
-                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgb(250, 250, 250); margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 0; width: 26px; height: 20px; left: 4px;"
+                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: #FAFAFA; margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 0; width: 26px; height: 20px; left: 4px;"
                 />
                 <div
-                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 1;"
+                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 1;"
                 />
               </div>
               <div
-                style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; flex: 1; align-self: stretch; align-items: center; justify-content: flex-start;"
+                style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; align-self: stretch; align-items: center; justify-content: flex-start; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
               >
                 <div
                   style="width: 18px; height: 18px; display: flex; align-self: center; box-shadow: var(--shadow-size-xs) var(--color-shadow-default); border-radius: 50%; box-sizing: border-box; position: relative; background-color: rgb(255, 255, 255); left: 3px;"
@@ -1182,17 +1181,17 @@ exports[`Security Tab should match snapshot 1`] = `
               style="display: flex; width: 52px; align-items: center; justify-content: flex-start; position: relative; cursor: pointer; background-color: transparent; border: 0px; padding: 0px; user-select: none;"
             >
               <div
-                style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; background-color: rgb(68, 89, 255);"
+                style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; border: none none; background-color: rgb(68, 89, 255);"
               >
                 <div
-                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgb(250, 250, 250); margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 1; width: 26px; height: 20px; left: 4px;"
+                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: #FAFAFA; margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 1; width: 26px; height: 20px; left: 4px;"
                 />
                 <div
-                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 0;"
+                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 0;"
                 />
               </div>
               <div
-                style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; flex: 1; align-self: stretch; align-items: center; justify-content: flex-start;"
+                style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; align-self: stretch; align-items: center; justify-content: flex-start; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
               >
                 <div
                   style="width: 18px; height: 18px; display: flex; align-self: center; box-shadow: var(--shadow-size-xs) var(--color-shadow-default); border-radius: 50%; box-sizing: border-box; position: relative; background-color: rgb(255, 255, 255); left: 18px;"
@@ -1248,17 +1247,17 @@ exports[`Security Tab should match snapshot 1`] = `
               style="display: flex; width: 52px; align-items: center; justify-content: flex-start; position: relative; cursor: pointer; background-color: transparent; border: 0px; padding: 0px; user-select: none;"
             >
               <div
-                style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; background-color: rgb(68, 89, 255);"
+                style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; border: none none; background-color: rgb(68, 89, 255);"
               >
                 <div
-                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgb(250, 250, 250); margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 1; width: 26px; height: 20px; left: 4px;"
+                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: #FAFAFA; margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 1; width: 26px; height: 20px; left: 4px;"
                 />
                 <div
-                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 0;"
+                  style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 0;"
                 />
               </div>
               <div
-                style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; flex: 1; align-self: stretch; align-items: center; justify-content: flex-start;"
+                style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; align-self: stretch; align-items: center; justify-content: flex-start; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
               >
                 <div
                   style="width: 18px; height: 18px; display: flex; align-self: center; box-shadow: var(--shadow-size-xs) var(--color-shadow-default); border-radius: 50%; box-sizing: border-box; position: relative; background-color: rgb(255, 255, 255); left: 18px;"
@@ -1327,17 +1326,17 @@ exports[`Security Tab should match snapshot 1`] = `
                 style="display: flex; width: 52px; align-items: center; justify-content: flex-start; position: relative; cursor: pointer; background-color: transparent; border: 0px; padding: 0px; user-select: none;"
               >
                 <div
-                  style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; background-color: rgb(186, 187, 190);"
+                  style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; border: none none; background-color: rgb(186, 187, 190);"
                 >
                   <div
-                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgb(250, 250, 250); margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 0; width: 26px; height: 20px; left: 4px;"
+                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: #FAFAFA; margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 0; width: 26px; height: 20px; left: 4px;"
                   />
                   <div
-                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 1;"
+                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 1;"
                   />
                 </div>
                 <div
-                  style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; flex: 1; align-self: stretch; align-items: center; justify-content: flex-start;"
+                  style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; align-self: stretch; align-items: center; justify-content: flex-start; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
                 >
                   <div
                     style="width: 18px; height: 18px; display: flex; align-self: center; box-shadow: var(--shadow-size-xs) var(--color-shadow-default); border-radius: 50%; box-sizing: border-box; position: relative; background-color: rgb(255, 255, 255); left: 3px;"
@@ -1399,17 +1398,17 @@ exports[`Security Tab should match snapshot 1`] = `
                 style="display: flex; width: 52px; align-items: center; justify-content: flex-start; position: relative; cursor: pointer; background-color: transparent; border: 0px; padding: 0px; user-select: none;"
               >
                 <div
-                  style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; background-color: rgb(186, 187, 190);"
+                  style="width: 40px; height: 24px; padding: 0px; border-radius: 26px; display: flex; align-items: center; justify-content: center; border: none none; background-color: rgb(186, 187, 190);"
                 >
                   <div
-                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgb(250, 250, 250); margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 0; width: 26px; height: 20px; left: 4px;"
+                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: #FAFAFA; margin-top: auto; margin-bottom: auto; line-height: 0; opacity: 0; width: 26px; height: 20px; left: 4px;"
                   />
                   <div
-                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 1;"
+                    style="font-size: 11px; display: flex; align-items: center; justify-content: center; font-family: "Helvetica Neue", Helvetica, sans-serif; position: relative; color: rgba(255, 255, 255, 0.6); bottom: 0px; margin-top: auto; margin-bottom: auto; padding-right: 5px; line-height: 0; width: 26px; height: 20px; opacity: 1;"
                   />
                 </div>
                 <div
-                  style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; flex: 1; align-self: stretch; align-items: center; justify-content: flex-start;"
+                  style="position: absolute; height: 100%; top: 0px; left: 0px; display: flex; align-self: stretch; align-items: center; justify-content: flex-start; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
                 >
                   <div
                     style="width: 18px; height: 18px; display: flex; align-self: center; box-shadow: var(--shadow-size-xs) var(--color-shadow-default); border-radius: 50%; box-sizing: border-box; position: relative; background-color: rgb(255, 255, 255); left: 3px;"
@@ -1474,7 +1473,6 @@ exports[`Security Tab should match snapshot 1`] = `
           >
             <span
               class="mm-box mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-inherit"
-              style="mask-image: url('./images/icons/info.svg');"
             />
             <p
               class="mm-box mm-text mm-text--body-xs mm-box--margin-bottom-2 mm-box--margin-left-1 mm-box--color-text-default"

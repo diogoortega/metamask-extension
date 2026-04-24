@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<SnapAccountRedirect /> renders the url and message when provided and isBlockedUrl is false 1`] = `
+exports[`<SnapAccountRedirect /> > renders the url and message when provided and isBlockedUrl is false 1`] = `
 <div>
   <div
     class="mm-box create-snap-account-page mm-box--flex-direction-column mm-box--align-items-center mm-box--width-full mm-box--height-full mm-box--border-style-none"
@@ -19,7 +19,7 @@ exports[`<SnapAccountRedirect /> renders the url and message when provided and i
         >
           <div
             class="mm-box mm-text mm-avatar-base mm-avatar-base--size-sm mm-text--body-sm mm-text--text-transform-uppercase mm-box--display-flex mm-box--justify-content-center mm-box--align-items-center mm-box--color-text-alternative mm-box--background-color-background-alternative mm-box--rounded-full"
-            style="border-width: 0px;"
+            style="border-width: 0px; background-color: var(--color-background-alternative-hover);"
           >
             m
           </div>
@@ -39,7 +39,6 @@ exports[`<SnapAccountRedirect /> renders the url and message when provided and i
         >
           <span
             class="mm-box mm-icon mm-icon--size-md mm-box--display-inline-block mm-box--color-inherit"
-            style="mask-image: url('./images/icons/info.svg');"
           />
         </div>
       </div>
@@ -80,7 +79,6 @@ exports[`<SnapAccountRedirect /> renders the url and message when provided and i
                 >
                   <span
                     class="mm-box mm-icon mm-icon--size-xs mm-box--display-inline-block mm-box--color-info-inverse"
-                    style="mask-image: url('./images/icons/snaps.svg');"
                   />
                 </div>
                 <p
@@ -118,7 +116,6 @@ exports[`<SnapAccountRedirect /> renders the url and message when provided and i
                   >
                     <span
                       class="mm-box mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-inherit"
-                      style="mask-image: url('./images/icons/export.svg');"
                     />
                   </button>
                 </div>

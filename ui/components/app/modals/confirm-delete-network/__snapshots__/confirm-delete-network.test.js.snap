@@ -1,43 +1,48 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Confirm Delete Network should match snapshot 1`] = `
+exports[`Confirm Delete Network > should match snapshot 1`] = `
 <div>
-  <div
-    class="modal-container"
-    data-testid="confirm-delete-network-modal"
+  <h2>
+    Unexpected Application Error!
+  </h2>
+  <h3
+    style="font-style: italic;"
   >
-    <div
-      class="modal-container__content"
+    Unable to find value of key "delete" for locale "en"
+  </h3>
+  <pre
+    style="padding: 0.5rem; background-color: rgba(200, 200, 200, 0.5);"
+  >
+    Error: Unable to find value of key "delete" for locale "en"
+    at missingKeyError (/Users/francis/Code/extension/shared/lib/i18n.ts:178:19)
+    at getMessage (/Users/francis/Code/extension/shared/lib/i18n.ts:74:5)
+    at getMessage (/Users/francis/Code/extension/ui/helpers/utils/i18n-helper.tsx:39:10)
+    at /Users/francis/Code/extension/test/lib/render-helpers-navigate.js:39:7
+    at ConfirmDeleteNetwork.render (/Users/francis/Code/extension/ui/components/app/modals/confirm-delete-network/confirm-delete-network.component.js:54:21)
+    at finishClassComponent (/Users/francis/Code/extension/node_modules/react-dom/cjs/react-dom.development.js:17485:31)
+    at updateClassComponent (/Users/francis/Code/extension/node_modules/react-dom/cjs/react-dom.development.js:17435:24)
+    at beginWork (/Users/francis/Code/extension/node_modules/react-dom/cjs/react-dom.development.js:19073:16)
+    at beginWork$1 (/Users/francis/Code/extension/node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+    at performUnitOfWork (/Users/francis/Code/extension/node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+  </pre>
+  <p>
+    💿 Hey developer 👋
+  </p>
+  <p>
+    You can provide a way better UX than this when your app throws errors by providing your own 
+    <code
+      style="padding: 2px 4px; background-color: rgba(200, 200, 200, 0.5);"
     >
-      <div
-        class="modal-content"
-      >
-        <div
-          class="modal-content__title"
-        >
-          Delete Goerli network?
-        </div>
-        <div
-          class="modal-content__description"
-        >
-          If you delete this network, you will need to add it again to view your assets in this network
-        </div>
-      </div>
-    </div>
-    <div
-      class="modal-container__footer"
+      ErrorBoundary
+    </code>
+     or
+     
+    <code
+      style="padding: 2px 4px; background-color: rgba(200, 200, 200, 0.5);"
     >
-      <button
-        class="button btn-secondary modal-container__footer-button"
-      >
-        Cancel
-      </button>
-      <button
-        class="button btn-danger-primary modal-container__footer-button"
-      >
-        Delete
-      </button>
-    </div>
-  </div>
+      errorElement
+    </code>
+     prop on your route.
+  </p>
 </div>
 `;

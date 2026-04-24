@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`PickerNetwork should render multiple avatars when avatarGroupProps is present 1`] = `
+exports[`PickerNetwork > should render multiple avatars when avatarGroupProps is present 1`] = `
 <div>
   <button
     class="mm-box mm-picker-network mm-box--padding-right-2 mm-box--padding-left-2 mm-box--display-flex mm-box--gap-2 mm-box--align-items-center mm-box--background-color-background-alternative mm-box--rounded-pill"
@@ -56,13 +56,12 @@ exports[`PickerNetwork should render multiple avatars when avatarGroupProps is p
     </p>
     <span
       class="mm-box mm-picker-network__arrow-down-icon mm-icon mm-icon--size-xs mm-box--margin-left-auto mm-box--display-inline-block mm-box--color-icon-default"
-      style="mask-image: url('./images/icons/arrow-down.svg');"
     />
   </button>
 </div>
 `;
 
-exports[`PickerNetwork should render multiple avatars with a stacked tag when isTagOverlay is present 1`] = `
+exports[`PickerNetwork > should render multiple avatars with a stacked tag when isTagOverlay is present 1`] = `
 <div>
   <button
     class="mm-box mm-picker-network mm-box--padding-right-2 mm-box--padding-left-2 mm-box--display-flex mm-box--gap-2 mm-box--align-items-center mm-box--background-color-background-alternative mm-box--rounded-pill"
@@ -118,13 +117,12 @@ exports[`PickerNetwork should render multiple avatars with a stacked tag when is
     </p>
     <span
       class="mm-box mm-picker-network__arrow-down-icon mm-icon mm-icon--size-xs mm-box--margin-left-auto mm-box--display-inline-block mm-box--color-icon-default"
-      style="mask-image: url('./images/icons/arrow-down.svg');"
     />
   </button>
 </div>
 `;
 
-exports[`PickerNetwork should render the label inside the PickerNetwork 1`] = `
+exports[`PickerNetwork > should render the label inside the PickerNetwork 1`] = `
 <div>
   <button
     class="mm-box mm-picker-network mm-box--padding-right-2 mm-box--padding-left-2 mm-box--display-flex mm-box--gap-2 mm-box--align-items-center mm-box--background-color-background-alternative mm-box--rounded-pill"
@@ -142,7 +140,6 @@ exports[`PickerNetwork should render the label inside the PickerNetwork 1`] = `
     </p>
     <span
       class="mm-box mm-picker-network__arrow-down-icon mm-icon mm-icon--size-xs mm-box--margin-left-auto mm-box--display-inline-block mm-box--color-icon-default"
-      style="mask-image: url('./images/icons/arrow-down.svg');"
     />
   </button>
 </div>

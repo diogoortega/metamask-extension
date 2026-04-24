@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`NFT Details should match minimal props and state snapshot 1`] = `
+exports[`NFT Details > should match minimal props and state snapshot 1`] = `
 <div>
   <div
     class="mm-box multichain-page multichain-page--has-app-header mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-center mm-box--width-full mm-box--height-full mm-box--background-color-background-default"
@@ -23,7 +23,6 @@ exports[`NFT Details should match minimal props and state snapshot 1`] = `
           >
             <span
               class="mm-box mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-inherit"
-              style="mask-image: url('./images/icons/arrow-left.svg');"
             />
           </button>
           <div
@@ -36,7 +35,6 @@ exports[`NFT Details should match minimal props and state snapshot 1`] = `
             >
               <span
                 class="mm-box mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-inherit"
-                style="mask-image: url('./images/icons/more-vertical.svg');"
               />
             </button>
           </div>
@@ -104,7 +102,7 @@ exports[`NFT Details should match minimal props and state snapshot 1`] = `
             <p
               class="mm-box mm-text mm-text--body-md mm-text--font-weight-medium mm-box--color-text-alternative"
               data-testid="nft-details__description"
-              style="display: -webkit-box; overflow: hidden;"
+              style="overflow: hidden;"
             >
               At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
             </p>
@@ -139,7 +137,6 @@ exports[`NFT Details should match minimal props and state snapshot 1`] = `
               >
                 <span
                   class="mm-box mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-inherit"
-                  style="mask-image: url('./images/icons/copy.svg');"
                 />
               </button>
             </div>

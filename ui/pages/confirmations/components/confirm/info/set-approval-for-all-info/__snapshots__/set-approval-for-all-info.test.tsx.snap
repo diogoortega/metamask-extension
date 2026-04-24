@@ -1,8 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<SetApprovalForAllInfo /> does not render component when no transaction is in state 1`] = `<div />`;
+exports[`<SetApprovalForAllInfo /> > does not render component when no transaction is in state 1`] = `<div />`;
 
-exports[`<SetApprovalForAllInfo /> renders component for approve request 1`] = `
+exports[`<SetApprovalForAllInfo /> > renders component for approve request 1`] = `
 <div>
   <div
     class="mm-box mm-box--margin-bottom-4 mm-box--padding-top-1 mm-box--padding-bottom-1 mm-box--padding-inline-2 mm-box--background-color-background-section mm-box--rounded-lg"
@@ -14,7 +14,7 @@ exports[`<SetApprovalForAllInfo /> renders component for approve request 1`] = `
     >
       <div
         class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-        style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+        style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
       >
         <div
           class="mm-box mm-box--display-flex mm-box--align-items-center"
@@ -36,7 +36,6 @@ exports[`<SetApprovalForAllInfo /> renders component for approve request 1`] = `
             >
               <span
                 class="mm-box mm-icon mm-icon--size-sm mm-box--margin-left-1 mm-box--display-inline-block mm-box--color-icon-alternative"
-                style="mask-image: url('./images/icons/question.svg');"
               />
             </div>
           </div>
@@ -59,7 +58,7 @@ exports[`<SetApprovalForAllInfo /> renders component for approve request 1`] = `
     >
       <div
         class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-        style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+        style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
       >
         <div
           class="mm-box mm-box--display-flex mm-box--align-items-center"
@@ -97,7 +96,6 @@ exports[`<SetApprovalForAllInfo /> renders component for approve request 1`] = `
             >
               <span
                 class="mm-box name__icon mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-inherit"
-                style="mask-image: url('./images/icons/question.svg');"
               />
               <p
                 class="mm-box mm-text name__value mm-text--body-md mm-box--color-text-default"
@@ -121,7 +119,7 @@ exports[`<SetApprovalForAllInfo /> renders component for approve request 1`] = `
     >
       <div
         class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-        style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+        style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
       >
         <div
           class="mm-box mm-box--display-flex mm-box--align-items-center"
@@ -144,7 +142,6 @@ exports[`<SetApprovalForAllInfo /> renders component for approve request 1`] = `
               <span
                 class="mm-box mm-icon mm-icon--size-sm mm-box--margin-left-1 mm-box--display-inline-block mm-box--color-icon-alternative"
                 data-testid="confirmation__approve-spender-tooltip"
-                style="mask-image: url('./images/icons/question.svg');"
               />
             </div>
           </div>
@@ -161,7 +158,6 @@ exports[`<SetApprovalForAllInfo /> renders component for approve request 1`] = `
           >
             <span
               class="mm-box name__icon mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-inherit"
-              style="mask-image: url('./images/icons/question.svg');"
             />
             <p
               class="mm-box mm-text name__value mm-text--body-md mm-box--color-text-default"
@@ -176,7 +172,7 @@ exports[`<SetApprovalForAllInfo /> renders component for approve request 1`] = `
       style="padding-top: 8px; padding-bottom: 8px;"
     >
       <div
-        style="height: 1px; margin-left: -8px; margin-right: -8px;"
+        style="height: 1px; background-color: var(--color-border-muted); margin-left: -8px; margin-right: -8px;"
       />
     </div>
     <div
@@ -185,7 +181,7 @@ exports[`<SetApprovalForAllInfo /> renders component for approve request 1`] = `
     >
       <div
         class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-        style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+        style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
       >
         <div
           class="mm-box mm-box--display-flex mm-box--align-items-center"
@@ -222,7 +218,7 @@ exports[`<SetApprovalForAllInfo /> renders component for approve request 1`] = `
     >
       <div
         class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-        style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+        style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
       >
         <div
           class="mm-box mm-box--display-flex mm-box--align-items-center"
@@ -245,7 +241,6 @@ exports[`<SetApprovalForAllInfo /> renders component for approve request 1`] = `
               <span
                 class="mm-box mm-icon mm-icon--size-sm mm-box--margin-left-1 mm-box--display-inline-block mm-box--color-icon-alternative"
                 data-testid="transaction-details-origin-row-tooltip"
-                style="mask-image: url('./images/icons/question.svg');"
               />
             </div>
           </div>
@@ -268,7 +263,7 @@ exports[`<SetApprovalForAllInfo /> renders component for approve request 1`] = `
     >
       <div
         class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-        style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+        style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
       >
         <div
           class="mm-box mm-box--display-flex mm-box--align-items-center"
@@ -291,7 +286,6 @@ exports[`<SetApprovalForAllInfo /> renders component for approve request 1`] = `
               <span
                 class="mm-box mm-icon mm-icon--size-sm mm-box--margin-left-1 mm-box--display-inline-block mm-box--color-icon-alternative"
                 data-testid="transaction-details-recipient-row-tooltip"
-                style="mask-image: url('./images/icons/question.svg');"
               />
             </div>
           </div>
@@ -308,7 +302,6 @@ exports[`<SetApprovalForAllInfo /> renders component for approve request 1`] = `
           >
             <span
               class="mm-box name__icon mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-inherit"
-              style="mask-image: url('./images/icons/question.svg');"
             />
             <p
               class="mm-box mm-text name__value mm-text--body-md mm-box--color-text-default"
@@ -334,7 +327,7 @@ exports[`<SetApprovalForAllInfo /> renders component for approve request 1`] = `
       >
         <div
           class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-          style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+          style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
         >
           <div
             class="mm-box mm-box--display-flex mm-box--align-items-center"
@@ -357,7 +350,6 @@ exports[`<SetApprovalForAllInfo /> renders component for approve request 1`] = `
                 <span
                   class="mm-box mm-icon mm-icon--size-sm mm-box--margin-left-1 mm-box--display-inline-block mm-box--color-icon-alternative"
                   data-testid="edit-gas-fees-row-tooltip"
-                  style="mask-image: url('./images/icons/question.svg');"
                 />
               </div>
             </div>
@@ -373,7 +365,6 @@ exports[`<SetApprovalForAllInfo /> renders component for approve request 1`] = `
           >
             <span
               class="mm-box mm-icon mm-icon--size-sm mm-box--margin-inline-end-1 mm-box--display-inline-block mm-box--color-inherit"
-              style="mask-image: url('./images/icons/edit.svg');"
             />
             <span
               class="mm-box mm-text mm-text--inherit mm-box--color-primary-default"
@@ -435,7 +426,7 @@ exports[`<SetApprovalForAllInfo /> renders component for approve request 1`] = `
     >
       <div
         class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-        style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+        style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
       >
         <div
           class="mm-box mm-box--display-flex mm-box--align-items-center"

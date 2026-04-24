@@ -1,9 +1,139 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`NicknamePopover matches snapshot 1`] = `
+exports[`NicknamePopover > matches snapshot 1`] = `
 <div>
   <div
     class="nickname-popover"
-  />
+  >
+    <div
+      class="popover-container"
+    >
+      <div
+        class="popover-bg"
+      />
+      <section
+        class="popover-wrap nickname-popover__popover-wrap"
+      >
+        <div
+          class="box popover-header box--padding-6 box--sm:padding-4 box--md:padding-4 box--display-flex box--flex-direction-column box--background-color-background-default box--rounded-xl"
+        >
+          <div
+            class="box popover-header__title box--margin-bottom-2 box--display-flex box--flex-direction-row box--justify-content-space-between box--align-items-center"
+          >
+            <h2
+              class="mm-box mm-text flex-1 mm-text--heading-sm mm-text--ellipsis mm-text--text-align-start mm-box--width-full mm-box--color-text-default"
+            />
+            <button
+              aria-label="Close"
+              class="mm-box mm-button-icon mm-button-icon--size-sm mm-box--display-inline-flex mm-box--justify-content-center mm-box--align-items-center mm-box--color-icon-default mm-box--background-color-transparent mm-box--rounded-lg"
+              data-testid="popover-close"
+            >
+              <span
+                class="mm-box mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-inherit"
+              />
+            </button>
+          </div>
+        </div>
+        <div
+          class="box popover-content box--display-flex box--flex-direction-column box--justify-content-flex-start box--align-items-stretch box--rounded-xl"
+        >
+          <div
+            class="inline-flex shrink-0 items-center justify-center overflow-hidden bg-section rounded-[10px] h-10 w-10 nickname-popover__identicon"
+          >
+            <div
+              class="flex [&>div]:!rounded-none"
+            >
+              <div
+                style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 40px; height: 40px; display: inline-block; background: #FA3A00;"
+              >
+                <svg
+                  height="40"
+                  width="40"
+                  x="0"
+                  y="0"
+                >
+                  <rect
+                    fill="#18CDF2"
+                    height="40"
+                    transform="translate(-1.31049187974243 -4.13035508682562) rotate(328.9 20.00000000000000 20.00000000000000)"
+                    width="40"
+                    x="0"
+                    y="0"
+                  />
+                  <rect
+                    fill="#035E56"
+                    height="40"
+                    transform="translate(-22.87307713604006 13.24057733968575) rotate(176.2 20.00000000000000 20.00000000000000)"
+                    width="40"
+                    x="0"
+                    y="0"
+                  />
+                  <rect
+                    fill="#F26602"
+                    height="40"
+                    transform="translate(20.83480252277991 -17.75642465374635) rotate(468.9 20.00000000000000 20.00000000000000)"
+                    width="40"
+                    x="0"
+                    y="0"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            class="nickname-popover__address"
+          >
+            0x0dcd5...3e7bc
+          </div>
+          <div
+            class="nickname-popover__public-address"
+          >
+            <div
+              class="nickname-popover__public-address__constant"
+            >
+              0x0dcd5d886577d5081b0c52e242ef29e70be3e7bc
+            </div>
+            <div>
+              <div
+                aria-describedby="tippy-tooltip-1"
+                class=""
+                data-original-title="Copy to clipboard"
+                data-tooltipped=""
+                style="display: inline;"
+                tabindex="0"
+              >
+                <button
+                  class="mm-box mm-button-icon mm-button-icon--size-sm mm-box--display-inline-flex mm-box--justify-content-center mm-box--align-items-center mm-box--color-icon-default mm-box--background-color-transparent mm-box--rounded-lg"
+                >
+                  <span
+                    class="mm-box mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-inherit"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="nickname-popover__view-on-block-explorer"
+          >
+            <a
+              class="button btn-link nickname-popover__etherscan-link"
+              rel="noopener noreferrer"
+              role="button"
+              tabindex="0"
+              target="_blank"
+              title="View account on Etherscan"
+            >
+              View on block explorer
+            </a>
+          </div>
+          <button
+            class="button btn-primary nickname-popover__footer-button"
+          >
+            Add a nickname
+          </button>
+        </div>
+      </section>
+    </div>
+  </div>
 </div>
 `;

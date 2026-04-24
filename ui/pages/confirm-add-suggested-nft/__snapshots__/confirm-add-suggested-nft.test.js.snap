@@ -1,12 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ConfirmAddSuggestedNFT Component should match snapshot 1`] = `
+exports[`ConfirmAddSuggestedNFT Component > should match snapshot 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
-    <div
-      id="popover-content"
-    />
     <div>
       <div
         class="mm-box confirm-add-suggested-nft page-container h-full confirm-add-suggested-nft--has-app-header-multichain mm-box--display-flex mm-box--flex-direction-column mm-box--width-full mm-box--height-full"
@@ -30,7 +27,7 @@ exports[`ConfirmAddSuggestedNFT Component should match snapshot 1`] = `
                     class="flex [&>div]:!rounded-none"
                   >
                     <div
-                      style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: rgb(250, 58, 0);"
+                      style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: #FA3A00;"
                     >
                       <svg
                         height="32"
@@ -244,7 +241,7 @@ exports[`ConfirmAddSuggestedNFT Component should match snapshot 1`] = `
                   class="flex [&>div]:!rounded-none"
                 >
                   <div
-                    style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: rgb(250, 58, 0);"
+                    style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: #FA3A00;"
                   >
                     <svg
                       height="32"

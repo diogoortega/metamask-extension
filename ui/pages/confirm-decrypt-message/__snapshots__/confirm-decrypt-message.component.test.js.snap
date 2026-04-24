@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ConfirmDecryptMessage Component matches snapshot 1`] = `
+exports[`ConfirmDecryptMessage Component > matches snapshot 1`] = `
 <div>
   <div
     class="request-decrypt-message__container"
@@ -55,7 +55,7 @@ exports[`ConfirmDecryptMessage Component matches snapshot 1`] = `
                     class="flex [&>div]:!rounded-none"
                   >
                     <div
-                      style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 24px; height: 24px; display: inline-block; background: rgb(250, 58, 0);"
+                      style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 24px; height: 24px; display: inline-block; background: #FA3A00;"
                     >
                       <svg
                         height="24"
@@ -189,9 +189,9 @@ exports[`ConfirmDecryptMessage Component matches snapshot 1`] = `
 </div>
 `;
 
-exports[`ConfirmDecryptMessage Component matches snapshot if no unapproved decrypt messages 1`] = `<div />`;
+exports[`ConfirmDecryptMessage Component > matches snapshot if no unapproved decrypt messages 1`] = `<div />`;
 
-exports[`ConfirmDecryptMessage Component shows error on decrypt inline error 1`] = `
+exports[`ConfirmDecryptMessage Component > shows error on decrypt inline error 1`] = `
 <div>
   <div
     class="request-decrypt-message__container"
@@ -246,7 +246,7 @@ exports[`ConfirmDecryptMessage Component shows error on decrypt inline error 1`]
                     class="flex [&>div]:!rounded-none"
                   >
                     <div
-                      style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 24px; height: 24px; display: inline-block; background: rgb(250, 58, 0);"
+                      style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 24px; height: 24px; display: inline-block; background: #FA3A00;"
                     >
                       <svg
                         height="24"
@@ -380,7 +380,7 @@ exports[`ConfirmDecryptMessage Component shows error on decrypt inline error 1`]
 </div>
 `;
 
-exports[`ConfirmDecryptMessage Component shows the correct message data 1`] = `
+exports[`ConfirmDecryptMessage Component > shows the correct message data 1`] = `
 <div>
   <div
     class="request-decrypt-message__container"
@@ -435,7 +435,7 @@ exports[`ConfirmDecryptMessage Component shows the correct message data 1`] = `
                     class="flex [&>div]:!rounded-none"
                   >
                     <div
-                      style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 24px; height: 24px; display: inline-block; background: rgb(250, 58, 0);"
+                      style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 24px; height: 24px; display: inline-block; background: #FA3A00;"
                     >
                       <svg
                         height="24"
@@ -566,7 +566,6 @@ exports[`ConfirmDecryptMessage Component shows the correct message data 1`] = `
               </div>
               <span
                 class="mm-box mm-icon mm-icon--size-md mm-box--display-inline-block mm-box--color-primary-default"
-                style="mask-image: url('./images/icons/copy.svg');"
               />
             </div>
           </div>

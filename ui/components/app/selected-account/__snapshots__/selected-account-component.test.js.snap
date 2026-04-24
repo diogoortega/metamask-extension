@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SelectedAccount Component should match snapshot 1`] = `
+exports[`SelectedAccount Component > should match snapshot 1`] = `
 <div>
   <div
     class="selected-account"
@@ -37,7 +37,6 @@ exports[`SelectedAccount Component should match snapshot 1`] = `
             >
               <span
                 class="mm-box mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-icon-alternative"
-                style="mask-image: url('./images/icons/copy.svg');"
               />
             </div>
           </p>

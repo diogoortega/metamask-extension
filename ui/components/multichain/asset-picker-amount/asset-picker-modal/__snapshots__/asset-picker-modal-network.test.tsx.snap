@@ -1,10 +1,7 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`AssetPickerModalNetwork renders modal with no network list by default 1`] = `
+exports[`AssetPickerModalNetwork > renders modal with no network list by default 1`] = `
 <body>
-  <div
-    id="popover-content"
-  />
   <div />
   <div
     class="mm-modal multichain-asset-picker__network-modal"
@@ -51,7 +48,6 @@ exports[`AssetPickerModalNetwork renders modal with no network list by default 1
               >
                 <span
                   class="mm-box mm-icon mm-icon--size-md mm-box--display-inline-block mm-box--color-inherit"
-                  style="mask-image: url('./images/icons/close.svg');"
                 />
               </button>
             </div>
@@ -75,11 +71,8 @@ exports[`AssetPickerModalNetwork renders modal with no network list by default 1
 </body>
 `;
 
-exports[`AssetPickerModalNetwork should not show selected network when network prop is not passed in 1`] = `
+exports[`AssetPickerModalNetwork > should not show selected network when network prop is not passed in 1`] = `
 <body>
-  <div
-    id="popover-content"
-  />
   <div />
   <div
     class="mm-modal multichain-asset-picker__network-modal"
@@ -126,7 +119,6 @@ exports[`AssetPickerModalNetwork should not show selected network when network p
               >
                 <span
                   class="mm-box mm-icon mm-icon--size-md mm-box--display-inline-block mm-box--color-inherit"
-                  style="mask-image: url('./images/icons/close.svg');"
                 />
               </button>
             </div>
@@ -233,11 +225,8 @@ exports[`AssetPickerModalNetwork should not show selected network when network p
 </body>
 `;
 
-exports[`AssetPickerModalNetwork should use passed in network as default when network prop is passed in 1`] = `
+exports[`AssetPickerModalNetwork > should use passed in network as default when network prop is passed in 1`] = `
 <body>
-  <div
-    id="popover-content"
-  />
   <div />
   <div
     class="mm-modal multichain-asset-picker__network-modal"
@@ -275,7 +264,6 @@ exports[`AssetPickerModalNetwork should use passed in network as default when ne
               >
                 <span
                   class="mm-box mm-icon mm-icon--size-md mm-box--display-inline-block mm-box--color-inherit"
-                  style="mask-image: url('./images/icons/arrow-left.svg');"
                 />
               </button>
             </div>
@@ -298,7 +286,6 @@ exports[`AssetPickerModalNetwork should use passed in network as default when ne
               >
                 <span
                   class="mm-box mm-icon mm-icon--size-md mm-box--display-inline-block mm-box--color-inherit"
-                  style="mask-image: url('./images/icons/close.svg');"
                 />
               </button>
             </div>

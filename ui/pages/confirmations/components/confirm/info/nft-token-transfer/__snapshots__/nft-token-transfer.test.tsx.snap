@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`NFTTokenTransferInfo renders correctly 1`] = `
+exports[`NFTTokenTransferInfo > renders correctly 1`] = `
 <div>
   <div
     class="flex flex-col mb-2 pb-3 px-0"
@@ -79,7 +79,7 @@ exports[`NFTTokenTransferInfo renders correctly 1`] = `
       >
         <div
           class=""
-          style="flex: 1; min-width: 0;"
+          style="min-width: 0; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
         >
           <div
             class="mm-box confirm-info-row mm-box--margin-top-2 mm-box--margin-bottom-2 mm-box--padding-right-2 mm-box--padding-left-2 mm-box--display-flex mm-box--flex-direction-row mm-box--flex-wrap-wrap mm-box--justify-content-space-between mm-box--align-items-flex-start mm-box--color-text-default mm-box--rounded-lg"
@@ -87,7 +87,7 @@ exports[`NFTTokenTransferInfo renders correctly 1`] = `
           >
             <div
               class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-              style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+              style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
             >
               <div
                 class="mm-box mm-box--display-flex mm-box--align-items-center"
@@ -125,7 +125,7 @@ exports[`NFTTokenTransferInfo renders correctly 1`] = `
             class="flex [&>div]:!rounded-none"
           >
             <div
-              style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: rgb(250, 58, 0);"
+              style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: #FA3A00;"
             >
               <svg
                 height="32"
@@ -164,13 +164,14 @@ exports[`NFTTokenTransferInfo renders correctly 1`] = `
       </div>
       <div
         class="mt-1 mb-1 ml-2"
+        style="border-top-width: var(--color-border-muted); border-top-style: var(--color-border-muted); border-top-color: var(--color-border-muted);"
       />
       <div
         class="flex flex-row gap-2 items-center"
       >
         <div
           class=""
-          style="flex: 1; min-width: 0;"
+          style="min-width: 0; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
         >
           <div
             class="mm-box confirm-info-row mm-box--margin-top-2 mm-box--margin-bottom-2 mm-box--padding-right-2 mm-box--padding-left-2 mm-box--display-flex mm-box--flex-direction-row mm-box--flex-wrap-wrap mm-box--justify-content-space-between mm-box--align-items-flex-start mm-box--color-text-default mm-box--rounded-lg"
@@ -178,7 +179,7 @@ exports[`NFTTokenTransferInfo renders correctly 1`] = `
           >
             <div
               class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-              style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+              style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
             >
               <div
                 class="mm-box mm-box--display-flex mm-box--align-items-center"
@@ -225,7 +226,7 @@ exports[`NFTTokenTransferInfo renders correctly 1`] = `
             class="flex [&>div]:!rounded-none"
           >
             <div
-              style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: rgb(24, 100, 242);"
+              style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: #1864F2;"
             >
               <svg
                 height="32"
@@ -283,7 +284,7 @@ exports[`NFTTokenTransferInfo renders correctly 1`] = `
           >
             <div
               class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-              style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+              style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
             >
               <div
                 class="mm-box mm-box--display-flex mm-box--align-items-center"
@@ -305,7 +306,6 @@ exports[`NFTTokenTransferInfo renders correctly 1`] = `
                   >
                     <span
                       class="mm-box mm-icon mm-icon--size-sm mm-box--margin-left-1 mm-box--display-inline-block mm-box--color-icon-alternative"
-                      style="mask-image: url('./images/icons/question.svg');"
                     />
                   </div>
                 </div>
@@ -331,7 +331,7 @@ exports[`NFTTokenTransferInfo renders correctly 1`] = `
     >
       <div
         class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-        style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+        style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
       >
         <div
           class="mm-box mm-box--display-flex mm-box--align-items-center"
@@ -368,7 +368,7 @@ exports[`NFTTokenTransferInfo renders correctly 1`] = `
     >
       <div
         class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-        style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+        style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
       >
         <div
           class="mm-box mm-box--display-flex mm-box--align-items-center"
@@ -391,7 +391,6 @@ exports[`NFTTokenTransferInfo renders correctly 1`] = `
               <span
                 class="mm-box mm-icon mm-icon--size-sm mm-box--margin-left-1 mm-box--display-inline-block mm-box--color-icon-alternative"
                 data-testid="transaction-details-origin-row-tooltip"
-                style="mask-image: url('./images/icons/question.svg');"
               />
             </div>
           </div>
@@ -411,7 +410,7 @@ exports[`NFTTokenTransferInfo renders correctly 1`] = `
       style="padding-top: 8px; padding-bottom: 8px;"
     >
       <div
-        style="height: 1px; margin-left: -8px; margin-right: -8px;"
+        style="height: 1px; background-color: var(--color-border-muted); margin-left: -8px; margin-right: -8px;"
       />
     </div>
     <div
@@ -420,7 +419,7 @@ exports[`NFTTokenTransferInfo renders correctly 1`] = `
     >
       <div
         class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-        style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+        style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
       >
         <div
           class="mm-box mm-box--display-flex mm-box--align-items-center"
@@ -442,7 +441,6 @@ exports[`NFTTokenTransferInfo renders correctly 1`] = `
             >
               <span
                 class="mm-box mm-icon mm-icon--size-sm mm-box--margin-left-1 mm-box--display-inline-block mm-box--color-icon-alternative"
-                style="mask-image: url('./images/icons/question.svg');"
               />
             </div>
           </div>
@@ -459,7 +457,6 @@ exports[`NFTTokenTransferInfo renders correctly 1`] = `
           >
             <span
               class="mm-box name__icon mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-inherit"
-              style="mask-image: url('./images/icons/question.svg');"
             />
             <p
               class="mm-box mm-text name__value mm-text--body-md mm-box--color-text-default"
@@ -485,7 +482,7 @@ exports[`NFTTokenTransferInfo renders correctly 1`] = `
       >
         <div
           class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-          style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+          style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
         >
           <div
             class="mm-box mm-box--display-flex mm-box--align-items-center"
@@ -508,7 +505,6 @@ exports[`NFTTokenTransferInfo renders correctly 1`] = `
                 <span
                   class="mm-box mm-icon mm-icon--size-sm mm-box--margin-left-1 mm-box--display-inline-block mm-box--color-icon-alternative"
                   data-testid="edit-gas-fees-row-tooltip"
-                  style="mask-image: url('./images/icons/question.svg');"
                 />
               </div>
             </div>
@@ -524,7 +520,6 @@ exports[`NFTTokenTransferInfo renders correctly 1`] = `
           >
             <span
               class="mm-box mm-icon mm-icon--size-sm mm-box--margin-inline-end-1 mm-box--display-inline-block mm-box--color-inherit"
-              style="mask-image: url('./images/icons/edit.svg');"
             />
             <span
               class="mm-box mm-text mm-text--inherit mm-box--color-primary-default"
@@ -586,7 +581,7 @@ exports[`NFTTokenTransferInfo renders correctly 1`] = `
     >
       <div
         class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-        style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+        style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
       >
         <div
           class="mm-box mm-box--display-flex mm-box--align-items-center"

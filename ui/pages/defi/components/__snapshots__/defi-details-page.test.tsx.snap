@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`DeFiDetailsPage renders defi asset page 1`] = `
+exports[`DeFiDetailsPage > renders defi asset page 1`] = `
 <div>
   <div
     class="mm-box main-container asset__container"
@@ -15,7 +15,6 @@ exports[`DeFiDetailsPage renders defi asset page 1`] = `
       >
         <span
           class="mm-box mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-inherit"
-          style="mask-image: url('./images/icons/arrow-left.svg');"
         />
       </button>
     </div>
@@ -69,7 +68,9 @@ exports[`DeFiDetailsPage renders defi asset page 1`] = `
     <div
       class="mm-box mm-box--padding-right-4 mm-box--padding-bottom-4 mm-box--padding-left-4"
     >
-      <hr />
+      <hr
+        style="border: 1px solid; border-width: var(--border-muted,#858B9A33); border-style: var(--border-muted,#858B9A33); border-color: var(--border-muted,#858B9A33);"
+      />
     </div>
     <div
       class="mm-box mm-box--display-flex mm-box--flex-direction-column"

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Gator Permissions Page render renders correctly 1`] = `
+exports[`Gator Permissions Page > render > renders correctly 1`] = `
 <div>
   <div
     class="mm-box multichain-page multichain-page--has-app-header mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-center mm-box--width-full mm-box--height-full mm-box--background-color-background-default"
@@ -23,7 +23,6 @@ exports[`Gator Permissions Page render renders correctly 1`] = `
           >
             <span
               class="mm-box mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-inherit"
-              style="mask-image: url('./images/icons/arrow-left.svg');"
             />
           </button>
         </div>
@@ -66,14 +65,14 @@ exports[`Gator Permissions Page render renders correctly 1`] = `
             <button
               class="inline-flex items-center justify-center rounded-xl px-4 font-medium min-w-20 overflow-hidden relative h-12 transition-all duration-100 ease-linear active:scale-[0.97] active:ease-[cubic-bezier(0.3,0.8,0.3,1)] bg-icon-default text-primary-inverse hover:bg-icon-default-hover active:bg-icon-default-pressed focus-visible:ring-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-default"
               role="button"
-              style="width: 100%; background-color: transparent; padding: 0px;"
+              style="width: 100%; background-color: transparent; border: none none; padding: 0px;"
             >
               <div
                 class="mm-box mm-box--padding-4 mm-box--display-flex mm-box--gap-4 mm-box--flex-direction-row mm-box--align-items-baseline mm-box--width-full"
               >
                 <div
                   class="mm-box mm-box--display-flex mm-box--gap-2 mm-box--flex-direction-row mm-box--align-items-center"
-                  style="flex: 1; align-self: center;"
+                  style="align-self: center; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
                 >
                   <p
                     class="mm-box mm-text mm-text--body-md mm-text--ellipsis mm-text--text-align-left mm-box--color-text-default"
@@ -83,7 +82,7 @@ exports[`Gator Permissions Page render renders correctly 1`] = `
                 </div>
                 <div
                   class="mm-box mm-box--display-flex mm-box--gap-2 mm-box--flex-direction-row mm-box--justify-content-flex-end mm-box--align-items-center"
-                  style="flex: 1; align-self: center;"
+                  style="align-self: center; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
                 >
                   <span
                     class="mm-box mm-text mm-text--body-md mm-box--width-max mm-box--color-text-alternative"
@@ -92,7 +91,6 @@ exports[`Gator Permissions Page render renders correctly 1`] = `
                   </span>
                   <span
                     class="mm-box mm-icon mm-icon--size-sm mm-box--display-flex mm-box--color-icon-default mm-box--background-color-background-default"
-                    style="mask-image: url('./images/icons/arrow-right.svg');"
                   />
                 </div>
               </div>
@@ -114,14 +112,14 @@ exports[`Gator Permissions Page render renders correctly 1`] = `
             <button
               class="inline-flex items-center justify-center rounded-xl px-4 font-medium min-w-20 overflow-hidden relative h-12 transition-all duration-100 ease-linear active:scale-[0.97] active:ease-[cubic-bezier(0.3,0.8,0.3,1)] bg-icon-default text-primary-inverse hover:bg-icon-default-hover active:bg-icon-default-pressed focus-visible:ring-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-default"
               role="button"
-              style="width: 100%; background-color: transparent; padding: 0px;"
+              style="width: 100%; background-color: transparent; border: none none; padding: 0px;"
             >
               <div
                 class="mm-box mm-box--padding-4 mm-box--display-flex mm-box--gap-4 mm-box--flex-direction-row mm-box--align-items-baseline mm-box--width-full"
               >
                 <div
                   class="mm-box mm-box--display-flex mm-box--gap-2 mm-box--flex-direction-row mm-box--align-items-center"
-                  style="flex: 1; align-self: center;"
+                  style="align-self: center; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
                 >
                   <p
                     class="mm-box mm-text mm-text--body-md mm-text--ellipsis mm-text--text-align-left mm-box--color-text-default"
@@ -131,7 +129,7 @@ exports[`Gator Permissions Page render renders correctly 1`] = `
                 </div>
                 <div
                   class="mm-box mm-box--display-flex mm-box--gap-2 mm-box--flex-direction-row mm-box--justify-content-flex-end mm-box--align-items-center"
-                  style="flex: 1; align-self: center;"
+                  style="align-self: center; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
                 >
                   <span
                     class="mm-box mm-text mm-text--body-md mm-box--width-max mm-box--color-text-alternative"
@@ -140,7 +138,6 @@ exports[`Gator Permissions Page render renders correctly 1`] = `
                   </span>
                   <span
                     class="mm-box mm-icon mm-icon--size-sm mm-box--display-flex mm-box--color-icon-default mm-box--background-color-background-default"
-                    style="mask-image: url('./images/icons/arrow-right.svg');"
                   />
                 </div>
               </div>

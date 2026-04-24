@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ConfirmInfoRowAddress renders appropriately with PetNames enabled 1`] = `
+exports[`ConfirmInfoRowAddress > renders appropriately with PetNames enabled 1`] = `
 <div>
   <div
     class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--align-items-center"
@@ -13,7 +13,6 @@ exports[`ConfirmInfoRowAddress renders appropriately with PetNames enabled 1`] =
       >
         <span
           class="mm-box name__icon mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-inherit"
-          style="mask-image: url('./images/icons/question.svg');"
         />
         <p
           class="mm-box mm-text name__value mm-text--body-md mm-box--color-text-default"

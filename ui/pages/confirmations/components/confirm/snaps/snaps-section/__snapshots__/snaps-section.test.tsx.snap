@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SnapsSection renders section for typed sign request 1`] = `
+exports[`SnapsSection > renders section for typed sign request 1`] = `
 <div>
   <div
     class="mm-box mm-box--margin-bottom-4 mm-box--display-flex mm-box--gap-4 mm-box--flex-direction-column"
@@ -32,7 +32,6 @@ exports[`SnapsSection renders section for typed sign request 1`] = `
         </div>
         <span
           class="mm-box mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-primary-default"
-          style="mask-image: url('./images/icons/arrow-up.svg');"
         />
       </div>
       <div
@@ -62,7 +61,7 @@ exports[`SnapsSection renders section for typed sign request 1`] = `
 </div>
 `;
 
-exports[`SnapsSection renders section personal sign request 1`] = `
+exports[`SnapsSection > renders section personal sign request 1`] = `
 <div>
   <div
     class="mm-box mm-box--margin-bottom-4 mm-box--display-flex mm-box--gap-4 mm-box--flex-direction-column"
@@ -94,7 +93,6 @@ exports[`SnapsSection renders section personal sign request 1`] = `
         </div>
         <span
           class="mm-box mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-primary-default"
-          style="mask-image: url('./images/icons/arrow-up.svg');"
         />
       </div>
       <div

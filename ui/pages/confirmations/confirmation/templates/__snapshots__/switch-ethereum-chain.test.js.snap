@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`switch-ethereum-chain confirmation should match snapshot 1`] = `
+exports[`switch-ethereum-chain confirmation > should match snapshot 1`] = `
 <div>
   <div
     class="confirmation-page h-full"
@@ -29,7 +29,6 @@ exports[`switch-ethereum-chain confirmation should match snapshot 1`] = `
         >
           <span
             class="mm-box mm-icon mm-icon--size-md mm-box--display-inline-block mm-box--color-icon-default"
-            style="mask-image: url('./images/icons/global.svg');"
           />
         </div>
         <h6
@@ -112,7 +111,7 @@ exports[`switch-ethereum-chain confirmation should match snapshot 1`] = `
 </div>
 `;
 
-exports[`switch-ethereum-chain confirmation should show alert if there are pending txs 1`] = `
+exports[`switch-ethereum-chain confirmation > should show alert if there are pending txs 1`] = `
 <div>
   <div
     class="confirmation-page h-full"
@@ -141,7 +140,6 @@ exports[`switch-ethereum-chain confirmation should show alert if there are pendi
         >
           <span
             class="mm-box mm-icon mm-icon--size-md mm-box--display-inline-block mm-box--color-icon-default"
-            style="mask-image: url('./images/icons/global.svg');"
           />
         </div>
         <h6
@@ -230,7 +228,6 @@ exports[`switch-ethereum-chain confirmation should show alert if there are pendi
         >
           <span
             class="mm-box mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-inherit"
-            style="mask-image: url('./images/icons/close.svg');"
           />
         </button>
       </div>

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SnapUIAddressInput renders the matched address info in a disabled state 1`] = `
+exports[`SnapUIAddressInput > renders the matched address info in a disabled state 1`] = `
 <div>
   <div
     class="mm-box snap-ui-renderer__content mm-box--height-full mm-box--background-color-background-alternative"
@@ -26,7 +26,7 @@ exports[`SnapUIAddressInput renders the matched address info in a disabled state
                 class="flex [&>div]:!rounded-none"
               >
                 <div
-                  style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 24px; height: 24px; display: inline-block; background: rgb(250, 58, 0);"
+                  style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 24px; height: 24px; display: inline-block; background: #FA3A00;"
                 >
                   <svg
                     height="24"
@@ -64,11 +64,11 @@ exports[`SnapUIAddressInput renders the matched address info in a disabled state
             </div>
             <div
               class="mm-box mm-box--display-flex mm-box--gap-2 mm-box--align-items-center"
-              style="flex: 1; min-width: 0;"
+              style="min-width: 0; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
             >
               <div
                 class="mm-box mm-box--gap-2 mm-box--flex-direction-column"
-                style="min-width: 0; flex: 1;"
+                style="min-width: 0; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
               >
                 <p
                   class="mm-box mm-text mm-text--body-md mm-text--font-weight-medium mm-box--color-text-default"
@@ -84,7 +84,7 @@ exports[`SnapUIAddressInput renders the matched address info in a disabled state
             </div>
             <span
               class="mm-box snap-ui-renderer__matched-account-info__clear-button mm-icon mm-icon--size-md mm-box--display-inline-block mm-box--color-info-default"
-              style="mask-image: url('./images/icons/close.svg'); cursor: not-allowed; flex-shrink: 0;"
+              style="cursor: not-allowed; flex-shrink: 0;"
             />
           </div>
         </div>
@@ -98,7 +98,7 @@ exports[`SnapUIAddressInput renders the matched address info in a disabled state
 </div>
 `;
 
-exports[`SnapUIAddressInput renders with an invalid CAIP Account ID 1`] = `
+exports[`SnapUIAddressInput > renders with an invalid CAIP Account ID 1`] = `
 <div>
   <div
     class="mm-box snap-ui-renderer__content mm-box--height-full mm-box--background-color-background-alternative"
@@ -126,7 +126,7 @@ exports[`SnapUIAddressInput renders with an invalid CAIP Account ID 1`] = `
             />
             <span
               class="mm-box snap-ui-renderer__address-input__clear-button mm-icon mm-icon--size-md mm-box--display-inline-block mm-box--color-info-default"
-              style="mask-image: url('./images/icons/close.svg'); cursor: pointer;"
+              style="cursor: pointer;"
             />
           </div>
         </div>
@@ -140,7 +140,7 @@ exports[`SnapUIAddressInput renders with an invalid CAIP Account ID 1`] = `
 </div>
 `;
 
-exports[`SnapUIAddressInput will not render avatar when displayAvatar is false 1`] = `
+exports[`SnapUIAddressInput > will not render avatar when displayAvatar is false 1`] = `
 <div>
   <div
     class="mm-box snap-ui-renderer__content mm-box--height-full mm-box--background-color-background-alternative"
@@ -168,7 +168,7 @@ exports[`SnapUIAddressInput will not render avatar when displayAvatar is false 1
             />
             <span
               class="mm-box snap-ui-renderer__address-input__clear-button mm-icon mm-icon--size-md mm-box--display-inline-block mm-box--color-info-default"
-              style="mask-image: url('./images/icons/close.svg'); cursor: pointer;"
+              style="cursor: pointer;"
             />
           </div>
         </div>
@@ -182,7 +182,7 @@ exports[`SnapUIAddressInput will not render avatar when displayAvatar is false 1
 </div>
 `;
 
-exports[`SnapUIAddressInput will render 1`] = `
+exports[`SnapUIAddressInput > will render 1`] = `
 <div>
   <div
     class="mm-box snap-ui-renderer__content mm-box--height-full mm-box--background-color-background-alternative"
@@ -220,7 +220,7 @@ exports[`SnapUIAddressInput will render 1`] = `
 </div>
 `;
 
-exports[`SnapUIAddressInput will render a matched address name 1`] = `
+exports[`SnapUIAddressInput > will render a matched address name 1`] = `
 <div>
   <div
     class="mm-box snap-ui-renderer__content mm-box--height-full mm-box--background-color-background-alternative"
@@ -246,7 +246,7 @@ exports[`SnapUIAddressInput will render a matched address name 1`] = `
                 class="flex [&>div]:!rounded-none"
               >
                 <div
-                  style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 24px; height: 24px; display: inline-block; background: rgb(250, 58, 0);"
+                  style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 24px; height: 24px; display: inline-block; background: #FA3A00;"
                 >
                   <svg
                     height="24"
@@ -284,11 +284,11 @@ exports[`SnapUIAddressInput will render a matched address name 1`] = `
             </div>
             <div
               class="mm-box mm-box--display-flex mm-box--gap-2 mm-box--align-items-center"
-              style="flex: 1; min-width: 0;"
+              style="min-width: 0; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
             >
               <div
                 class="mm-box mm-box--gap-2 mm-box--flex-direction-column"
-                style="min-width: 0; flex: 1;"
+                style="min-width: 0; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
               >
                 <p
                   class="mm-box mm-text mm-text--body-md mm-text--font-weight-medium mm-box--color-text-default"
@@ -304,7 +304,7 @@ exports[`SnapUIAddressInput will render a matched address name 1`] = `
             </div>
             <span
               class="mm-box snap-ui-renderer__matched-account-info__clear-button mm-icon mm-icon--size-md mm-box--display-inline-block mm-box--color-info-default"
-              style="mask-image: url('./images/icons/close.svg'); cursor: pointer; flex-shrink: 0;"
+              style="cursor: pointer; flex-shrink: 0;"
             />
           </div>
         </div>
@@ -318,7 +318,7 @@ exports[`SnapUIAddressInput will render a matched address name 1`] = `
 </div>
 `;
 
-exports[`SnapUIAddressInput will render avatar when displayAvatar is true 1`] = `
+exports[`SnapUIAddressInput > will render avatar when displayAvatar is true 1`] = `
 <div>
   <div
     class="mm-box snap-ui-renderer__content mm-box--height-full mm-box--background-color-background-alternative"
@@ -343,7 +343,7 @@ exports[`SnapUIAddressInput will render avatar when displayAvatar is true 1`] = 
                 class="flex [&>div]:!rounded-none"
               >
                 <div
-                  style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 24px; height: 24px; display: inline-block; background: rgb(242, 202, 2);"
+                  style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 24px; height: 24px; display: inline-block; background: #F2CA02;"
                 >
                   <svg
                     height="24"
@@ -389,7 +389,7 @@ exports[`SnapUIAddressInput will render avatar when displayAvatar is true 1`] = 
             />
             <span
               class="mm-box snap-ui-renderer__address-input__clear-button mm-icon mm-icon--size-md mm-box--display-inline-block mm-box--color-info-default"
-              style="mask-image: url('./images/icons/close.svg'); cursor: pointer;"
+              style="cursor: pointer;"
             />
           </div>
         </div>

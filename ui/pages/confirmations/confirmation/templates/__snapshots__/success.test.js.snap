@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`success template matches the snapshot 1`] = `
+exports[`success template > matches the snapshot 1`] = `
 <div>
   <div
     class="confirmation-page h-full"
@@ -26,7 +26,6 @@ exports[`success template matches the snapshot 1`] = `
           >
             <span
               class="mm-box mm-icon mm-icon--size-xl mm-box--display-inline-block mm-box--color-inherit"
-              style="mask-image: url('./images/icons/confirmation.svg');"
             />
           </div>
           <h3

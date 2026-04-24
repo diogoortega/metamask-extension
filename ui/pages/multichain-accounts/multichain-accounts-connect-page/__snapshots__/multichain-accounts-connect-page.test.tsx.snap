@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`MultichainConnectPage renders correctly 1`] = `
+exports[`MultichainConnectPage > renders correctly 1`] = `
 <div>
   <div
     class="mm-box multichain-page multichain-page--has-app-header mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-center mm-box--width-full mm-box--height-full mm-box--background-color-background-default"
@@ -103,7 +103,7 @@ exports[`MultichainConnectPage renders correctly 1`] = `
                 >
                   <div
                     class="mm-box mm-box--display-flex mm-box--justify-content-flex-start mm-box--align-items-center"
-                    style="min-width: 0; flex: 1;"
+                    style="min-width: 0; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
                   >
                     <div
                       class="flex flex-row items-center justify-center border-2 border-transparent w-10 h-10 flex-shrink-0"
@@ -123,7 +123,7 @@ exports[`MultichainConnectPage renders correctly 1`] = `
                               class="flex [&>div]:!rounded-none"
                             >
                               <div
-                                style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: rgb(3, 94, 89);"
+                                style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: #035E59;"
                               >
                                 <svg
                                   height="32"
@@ -202,7 +202,6 @@ exports[`MultichainConnectPage renders correctly 1`] = `
                 >
                   <span
                     class="mm-box mm-icon mm-icon--size-md mm-box--display-inline-block mm-box--color-info-default"
-                    style="mask-image: url('./images/icons/edit.svg');"
                   />
                 </div>
                 <button
@@ -245,7 +244,7 @@ exports[`MultichainConnectPage renders correctly 1`] = `
 </div>
 `;
 
-exports[`MultichainConnectPage renders with existing permissions correctly 1`] = `
+exports[`MultichainConnectPage > renders with existing permissions correctly 1`] = `
 <div>
   <div
     class="mm-box multichain-page multichain-page--has-app-header mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-center mm-box--width-full mm-box--height-full mm-box--background-color-background-default"
@@ -348,7 +347,7 @@ exports[`MultichainConnectPage renders with existing permissions correctly 1`] =
                 >
                   <div
                     class="mm-box mm-box--display-flex mm-box--justify-content-flex-start mm-box--align-items-center"
-                    style="min-width: 0; flex: 1;"
+                    style="min-width: 0; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
                   >
                     <div
                       class="flex flex-row items-center justify-center border-2 border-transparent w-10 h-10 flex-shrink-0"
@@ -368,7 +367,7 @@ exports[`MultichainConnectPage renders with existing permissions correctly 1`] =
                               class="flex [&>div]:!rounded-none"
                             >
                               <div
-                                style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: rgb(3, 94, 89);"
+                                style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: #035E59;"
                               >
                                 <svg
                                   height="32"
@@ -447,7 +446,6 @@ exports[`MultichainConnectPage renders with existing permissions correctly 1`] =
                 >
                   <span
                     class="mm-box mm-icon mm-icon--size-md mm-box--display-inline-block mm-box--color-info-default"
-                    style="mask-image: url('./images/icons/edit.svg');"
                   />
                 </div>
                 <button
@@ -490,7 +488,7 @@ exports[`MultichainConnectPage renders with existing permissions correctly 1`] =
 </div>
 `;
 
-exports[`MultichainConnectPage renders with multichain origin request correctly 1`] = `
+exports[`MultichainConnectPage > renders with multichain origin request correctly 1`] = `
 <div>
   <div
     class="mm-box multichain-page multichain-page--has-app-header mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-center mm-box--width-full mm-box--height-full mm-box--background-color-background-default"
@@ -593,7 +591,7 @@ exports[`MultichainConnectPage renders with multichain origin request correctly 
                 >
                   <div
                     class="mm-box mm-box--display-flex mm-box--justify-content-flex-start mm-box--align-items-center"
-                    style="min-width: 0; flex: 1;"
+                    style="min-width: 0; flex-grow: 1; flex-shrink: 1; flex-basis: 0%;"
                   >
                     <div
                       class="flex flex-row items-center justify-center border-2 border-transparent w-10 h-10 flex-shrink-0"
@@ -613,7 +611,7 @@ exports[`MultichainConnectPage renders with multichain origin request correctly 
                               class="flex [&>div]:!rounded-none"
                             >
                               <div
-                                style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: rgb(3, 94, 89);"
+                                style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: #035E59;"
                               >
                                 <svg
                                   height="32"
@@ -692,7 +690,6 @@ exports[`MultichainConnectPage renders with multichain origin request correctly 
                 >
                   <span
                     class="mm-box mm-icon mm-icon--size-md mm-box--display-inline-block mm-box--color-info-default"
-                    style="mask-image: url('./images/icons/edit.svg');"
                   />
                 </div>
                 <button

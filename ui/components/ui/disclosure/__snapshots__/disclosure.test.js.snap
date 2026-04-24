@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Disclosure matches snapshot with title prop 1`] = `
+exports[`Disclosure > matches snapshot with title prop 1`] = `
 <div>
   <div
     class="disclosure"
@@ -12,7 +12,6 @@ exports[`Disclosure matches snapshot with title prop 1`] = `
       >
         <span
           class="mm-box disclosure__summary--icon mm-icon mm-icon--size-sm mm-box--margin-inline-end-2 mm-box--display-inline-block mm-box--color-inherit"
-          style="mask-image: url('./images/icons/add.svg');"
         />
         Test Title
       </summary>
@@ -29,7 +28,7 @@ exports[`Disclosure matches snapshot with title prop 1`] = `
 </div>
 `;
 
-exports[`Disclosure matches snapshot without title prop 1`] = `
+exports[`Disclosure > matches snapshot without title prop 1`] = `
 <div>
   <div
     class="disclosure"

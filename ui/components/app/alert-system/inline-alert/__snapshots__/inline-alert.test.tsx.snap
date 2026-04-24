@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Inline Alert renders alert with danger severity 1`] = `
+exports[`Inline Alert > renders alert with danger severity 1`] = `
 <div>
   <div
     class="mm-box mm-box--display-flex"
@@ -12,18 +12,16 @@ exports[`Inline Alert renders alert with danger severity 1`] = `
     >
       <span
         class="mm-box mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-inherit"
-        style="mask-image: url('./images/icons/danger.svg');"
       />
       <span
         class="mm-box mm-icon mm-icon--size-xs mm-box--display-inline-block mm-box--color-inherit"
-        style="mask-image: url('./images/icons/arrow-right.svg');"
       />
     </div>
   </div>
 </div>
 `;
 
-exports[`Inline Alert renders alert with informative severity 1`] = `
+exports[`Inline Alert > renders alert with informative severity 1`] = `
 <div>
   <div
     class="mm-box mm-box--display-flex"
@@ -35,18 +33,16 @@ exports[`Inline Alert renders alert with informative severity 1`] = `
     >
       <span
         class="mm-box mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-inherit"
-        style="mask-image: url('./images/icons/info.svg');"
       />
       <span
         class="mm-box mm-icon mm-icon--size-xs mm-box--display-inline-block mm-box--color-inherit"
-        style="mask-image: url('./images/icons/arrow-right.svg');"
       />
     </div>
   </div>
 </div>
 `;
 
-exports[`Inline Alert renders alert with warning severity 1`] = `
+exports[`Inline Alert > renders alert with warning severity 1`] = `
 <div>
   <div
     class="mm-box mm-box--display-flex"
@@ -58,11 +54,9 @@ exports[`Inline Alert renders alert with warning severity 1`] = `
     >
       <span
         class="mm-box mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-inherit"
-        style="mask-image: url('./images/icons/info.svg');"
       />
       <span
         class="mm-box mm-icon mm-icon--size-xs mm-box--display-inline-block mm-box--color-inherit"
-        style="mask-image: url('./images/icons/arrow-right.svg');"
       />
     </div>
   </div>

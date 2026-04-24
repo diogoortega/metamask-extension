@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SelectedToken renders the component with initial props 1`] = `
+exports[`SelectedToken > renders the component with initial props 1`] = `
 <div>
   <div
     class="selected-token"
@@ -38,14 +38,13 @@ exports[`SelectedToken renders the component with initial props 1`] = `
       </div>
       <span
         class="mm-box mm-icon mm-icon--size-xs mm-box--margin-right-3 mm-box--display-inline-block mm-box--color-icon-alternative"
-        style="mask-image: url('./images/icons/arrow-down.svg');"
       />
     </div>
   </div>
 </div>
 `;
 
-exports[`SelectedToken renders the component with no token selected 1`] = `
+exports[`SelectedToken > renders the component with no token selected 1`] = `
 <div>
   <div
     class="selected-token"
@@ -74,7 +73,6 @@ exports[`SelectedToken renders the component with no token selected 1`] = `
       </div>
       <span
         class="mm-box mm-icon mm-icon--size-xs mm-box--margin-right-3 mm-box--display-inline-block mm-box--color-icon-alternative"
-        style="mask-image: url('./images/icons/arrow-down.svg');"
       />
     </div>
   </div>

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`TokenDetailsSection renders correctly 1`] = `
+exports[`TokenDetailsSection > renders correctly 1`] = `
 <div>
   <div
     class="mm-box mm-box--margin-bottom-4 mm-box--padding-top-1 mm-box--padding-bottom-1 mm-box--padding-inline-2 mm-box--background-color-background-section mm-box--rounded-lg"
@@ -12,7 +12,7 @@ exports[`TokenDetailsSection renders correctly 1`] = `
     >
       <div
         class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-        style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+        style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
       >
         <div
           class="mm-box mm-box--display-flex mm-box--align-items-center"
@@ -49,7 +49,7 @@ exports[`TokenDetailsSection renders correctly 1`] = `
     >
       <div
         class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-        style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+        style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
       >
         <div
           class="mm-box mm-box--display-flex mm-box--align-items-center"
@@ -72,7 +72,6 @@ exports[`TokenDetailsSection renders correctly 1`] = `
               <span
                 class="mm-box mm-icon mm-icon--size-sm mm-box--margin-left-1 mm-box--display-inline-block mm-box--color-icon-alternative"
                 data-testid="transaction-details-origin-row-tooltip"
-                style="mask-image: url('./images/icons/question.svg');"
               />
             </div>
           </div>
@@ -92,7 +91,7 @@ exports[`TokenDetailsSection renders correctly 1`] = `
       style="padding-top: 8px; padding-bottom: 8px;"
     >
       <div
-        style="height: 1px; margin-left: -8px; margin-right: -8px;"
+        style="height: 1px; background-color: var(--color-border-muted); margin-left: -8px; margin-right: -8px;"
       />
     </div>
     <div
@@ -101,7 +100,7 @@ exports[`TokenDetailsSection renders correctly 1`] = `
     >
       <div
         class="mm-box mm-box--display-flex mm-box--flex-direction-row mm-box--justify-content-flex-start mm-box--align-items-flex-start mm-box--color-text-alternative"
-        style="flex-shrink: 0; flex-basis: auto; max-width: 100%;"
+        style="flex-shrink: 0; flex-basis: auto; width: fit-content; max-width: 100%;"
       >
         <div
           class="mm-box mm-box--display-flex mm-box--align-items-center"
@@ -123,7 +122,6 @@ exports[`TokenDetailsSection renders correctly 1`] = `
             >
               <span
                 class="mm-box mm-icon mm-icon--size-sm mm-box--margin-left-1 mm-box--display-inline-block mm-box--color-icon-alternative"
-                style="mask-image: url('./images/icons/question.svg');"
               />
             </div>
           </div>
@@ -140,7 +138,6 @@ exports[`TokenDetailsSection renders correctly 1`] = `
           >
             <span
               class="mm-box name__icon mm-icon mm-icon--size-sm mm-box--display-inline-block mm-box--color-inherit"
-              style="mask-image: url('./images/icons/question.svg');"
             />
             <p
               class="mm-box mm-text name__value mm-text--body-md mm-box--color-text-default"

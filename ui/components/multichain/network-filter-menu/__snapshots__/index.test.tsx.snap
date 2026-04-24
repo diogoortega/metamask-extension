@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`NetworkFilterComponent should render correctly 1`] = `
+exports[`NetworkFilterComponent > should render correctly 1`] = `
 <div>
   <div
     class="mm-box mm-box--margin-right-2 mm-box--margin-left-2 mm-box--justify-content-space-between"
@@ -16,7 +16,6 @@ exports[`NetworkFilterComponent should render correctly 1`] = `
       </span>
       <span
         class="mm-box mm-icon mm-icon--size-sm mm-box--margin-inline-start-1 mm-box--display-inline-block mm-box--color-inherit"
-        style="mask-image: url('./images/icons/arrow-down.svg');"
       />
     </button>
   </div>

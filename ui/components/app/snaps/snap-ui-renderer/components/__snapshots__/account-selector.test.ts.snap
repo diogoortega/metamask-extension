@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SnapUIAccountSelector renders an account selector 1`] = `
+exports[`SnapUIAccountSelector > renders an account selector 1`] = `
 <div>
   <div
     class="mm-box snap-ui-renderer__content mm-box--height-full mm-box--background-color-background-alternative"
@@ -48,7 +48,7 @@ exports[`SnapUIAccountSelector renders an account selector 1`] = `
                             class="flex [&>div]:!rounded-none"
                           >
                             <div
-                              style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: rgb(250, 58, 0);"
+                              style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: #FA3A00;"
                             >
                               <svg
                                 height="32"
@@ -100,7 +100,7 @@ exports[`SnapUIAccountSelector renders an account selector 1`] = `
                         class="flex [&>div]:!rounded-none"
                       >
                         <div
-                          style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: rgb(250, 58, 0);"
+                          style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: #FA3A00;"
                         >
                           <svg
                             height="32"
@@ -291,7 +291,6 @@ exports[`SnapUIAccountSelector renders an account selector 1`] = `
             </span>
             <span
               class="mm-box mm-icon mm-icon--size-sm mm-box--margin-inline-start-1 mm-box--display-inline-block mm-box--color-primary-default"
-              style="mask-image: url('./images/icons/arrow-down.svg');"
             />
           </button>
         </div>
@@ -305,7 +304,7 @@ exports[`SnapUIAccountSelector renders an account selector 1`] = `
 </div>
 `;
 
-exports[`SnapUIAccountSelector renders inside a field 1`] = `
+exports[`SnapUIAccountSelector > renders inside a field 1`] = `
 <div>
   <div
     class="mm-box snap-ui-renderer__content mm-box--height-full mm-box--background-color-background-alternative"
@@ -359,7 +358,7 @@ exports[`SnapUIAccountSelector renders inside a field 1`] = `
                             class="flex [&>div]:!rounded-none"
                           >
                             <div
-                              style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: rgb(250, 58, 0);"
+                              style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: #FA3A00;"
                             >
                               <svg
                                 height="32"
@@ -411,7 +410,7 @@ exports[`SnapUIAccountSelector renders inside a field 1`] = `
                         class="flex [&>div]:!rounded-none"
                       >
                         <div
-                          style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: rgb(250, 58, 0);"
+                          style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: #FA3A00;"
                         >
                           <svg
                             height="32"
@@ -602,7 +601,6 @@ exports[`SnapUIAccountSelector renders inside a field 1`] = `
             </span>
             <span
               class="mm-box mm-icon mm-icon--size-sm mm-box--margin-inline-start-1 mm-box--display-inline-block mm-box--color-primary-default"
-              style="mask-image: url('./images/icons/arrow-down.svg');"
             />
           </button>
         </div>

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`AddressListItem displays duplicate contact warning icon 1`] = `
+exports[`AddressListItem > displays duplicate contact warning icon 1`] = `
 <div>
   <button
     class="mm-box address-list-item gap-4 mm-box--padding-4 mm-box--display-flex mm-box--align-items-center mm-box--width-full mm-box--background-color-transparent"
@@ -18,7 +18,7 @@ exports[`AddressListItem displays duplicate contact warning icon 1`] = `
             class="flex [&>div]:!rounded-none"
           >
             <div
-              style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: rgb(3, 73, 94);"
+              style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: #03495E;"
             >
               <svg
                 height="32"
@@ -112,7 +112,6 @@ exports[`AddressListItem displays duplicate contact warning icon 1`] = `
         >
           <span
             class="mm-box mm-icon mm-icon--size-md mm-box--display-inline-block mm-box--color-warning-default"
-            style="mask-image: url('./images/icons/danger.svg');"
           />
         </div>
       </div>
@@ -121,7 +120,7 @@ exports[`AddressListItem displays duplicate contact warning icon 1`] = `
 </div>
 `;
 
-exports[`AddressListItem renders the address and label without duplicate contact warning icon 1`] = `
+exports[`AddressListItem > renders the address and label without duplicate contact warning icon 1`] = `
 <div>
   <button
     class="mm-box address-list-item gap-4 mm-box--padding-4 mm-box--display-flex mm-box--align-items-center mm-box--width-full mm-box--background-color-transparent"
@@ -139,7 +138,7 @@ exports[`AddressListItem renders the address and label without duplicate contact
             class="flex [&>div]:!rounded-none"
           >
             <div
-              style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: rgb(3, 73, 94);"
+              style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: #03495E;"
             >
               <svg
                 height="32"
@@ -223,7 +222,7 @@ exports[`AddressListItem renders the address and label without duplicate contact
 </div>
 `;
 
-exports[`AddressListItem uses a confusable when it should 1`] = `
+exports[`AddressListItem > uses a confusable when it should 1`] = `
 <div>
   <button
     class="mm-box address-list-item gap-4 mm-box--padding-4 mm-box--display-flex mm-box--align-items-center mm-box--width-full mm-box--background-color-transparent"
@@ -241,7 +240,7 @@ exports[`AddressListItem uses a confusable when it should 1`] = `
             class="flex [&>div]:!rounded-none"
           >
             <div
-              style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: rgb(3, 73, 94);"
+              style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 32px; height: 32px; display: inline-block; background: #03495E;"
             >
               <svg
                 height="32"
