@@ -30,11 +30,11 @@ type ManualMockEntry = {
 };
 
 function slash(p: string): string {
-  return p.replace(/\\/g, '/');
+  return p.replace(/\\/gu, '/');
 }
 
 function toFsPath(file: string): string {
-  const withoutQuery = file.split('?')[0];
+  const [withoutQuery] = file.split('?');
   if (withoutQuery.startsWith('file:')) {
     try {
       return fileURLToPath(withoutQuery);
@@ -46,7 +46,7 @@ function toFsPath(file: string): string {
 }
 
 function stripKnownExtension(p: string): string {
-  return p.replace(/\.(mjs|cjs|ts|tsx|js|jsx)$/, '');
+  return p.replace(/\.(mjs|cjs|ts|tsx|js|jsx)$/u, '');
 }
 
 /** First stack frame after any `vitest-compat` frame (the real caller). */
@@ -71,7 +71,7 @@ function getCallerFileAboveCompat(): string | undefined {
   return undefined;
 }
 
-function requireActualBareSpecifierSync<T>(moduleName: string): T {
+function requireActualBareSpecifierSync<TModule>(moduleName: string): TModule {
   const caller = getCallerFileAboveCompat();
   if (!caller) {
     throw new Error(
@@ -79,10 +79,13 @@ function requireActualBareSpecifierSync<T>(moduleName: string): T {
     );
   }
   const req = createRequire(caller);
-  return req(moduleName) as T;
+  return req(moduleName) as TModule;
 }
 
-function resolveRelativeSpecifierToFile(caller: string, specifier: string): string {
+function resolveRelativeSpecifierToFile(
+  caller: string,
+  specifier: string,
+): string {
   const base = pathResolve(dirname(caller), specifier);
   const candidates = [
     base,
@@ -105,14 +108,17 @@ function resolveRelativeSpecifierToFile(caller: string, specifier: string): stri
   );
 }
 
-async function importActualRelative<T>(moduleName: string): Promise<T> {
+async function importActualRelative<TModule>(
+  moduleName: string,
+): Promise<TModule> {
   const caller = getCallerFileAboveCompat();
   if (!caller) {
-    return vi.importActual<T>(moduleName);
+    return vi.importActual<TModule>(moduleName);
   }
   const file = resolveRelativeSpecifierToFile(caller, moduleName);
-  const href = pathToFileURL(file).href;
-  return import(/* @vite-ignore */ href) as Promise<T>;
+  const { href } = pathToFileURL(file);
+  // eslint-disable-next-line jsdoc/no-bad-blocks
+  return import(/* @vite-ignore */ href) as Promise<TModule>;
 }
 
 /**
@@ -121,21 +127,28 @@ async function importActualRelative<T>(moduleName: string): Promise<T> {
  * they are loaded via dynamic `import()` from the caller file (see
  * `async-relative-require-actual` transform in vitest.config.ts).
  */
-function requireActualJestCompat<T>(moduleName: string): T | Promise<T> {
+/**
+ * Compatibility layer for Jest's `requireActual`.
+ *
+ * @param moduleName - Module specifier passed by tests.
+ */
+function requireActualJestCompat<TModule>(
+  moduleName: string,
+): TModule | Promise<TModule> {
   if (moduleName.startsWith('.') || moduleName.startsWith('/')) {
-    return importActualRelative<T>(moduleName);
+    return importActualRelative<TModule>(moduleName);
   }
   try {
-    return requireActualBareSpecifierSync<T>(moduleName);
+    return requireActualBareSpecifierSync<TModule>(moduleName);
   } catch {
-    return vi.importActual<T>(moduleName);
+    return vi.importActual<TModule>(moduleName);
   }
 }
 
-function requireMockSync<T>(moduleName: string): T {
+function requireMockSync<TModule>(moduleName: string): TModule {
   const mocker = (
     globalThis as {
-      __vitest_mocker__?: {
+      ['__vitest_mocker__']?: {
         getMockerRegistry: () => {
           registryById: Map<string, ManualMockEntry | { type: string }>;
         };
@@ -160,9 +173,7 @@ function requireMockSync<T>(moduleName: string): T {
   let resolvedByNode: string | null = null;
   if (moduleName.startsWith('.') && caller) {
     try {
-      resolvedByNode = slash(
-        createRequire(caller).resolve(moduleName),
-      );
+      resolvedByNode = slash(createRequire(caller).resolve(moduleName));
     } catch {
       resolvedByNode = null;
     }
@@ -183,7 +194,7 @@ function requireMockSync<T>(moduleName: string): T {
       }
       const manual = mock as ManualMockEntry;
       if (manual.raw === moduleName) {
-        return manual.resolve() as T;
+        return manual.resolve() as TModule;
       }
       if (caller && moduleName.startsWith('.')) {
         const idFs = slash(toFsPath(manual.id));
@@ -194,7 +205,7 @@ function requireMockSync<T>(moduleName: string): T {
             (idFs === cand ||
               stripKnownExtension(idFs) === stripKnownExtension(cand))
           ) {
-            return manual.resolve() as T;
+            return manual.resolve() as TModule;
           }
         }
         // createRequire often cannot resolve extensionless TS specifiers; match
@@ -205,7 +216,7 @@ function requireMockSync<T>(moduleName: string): T {
           const idBase = stripKnownExtension(basename(idFs));
           const idDir = slash(dirname(idFs));
           if (wantBase === idBase && wantDir === idDir) {
-            return manual.resolve() as T;
+            return manual.resolve() as TModule;
           }
         }
       }
@@ -222,15 +233,15 @@ function requireMockSync<T>(moduleName: string): T {
 // after each test (mirrors Jest 29's jest.replaceProperty behaviour).
 // ---------------------------------------------------------------------------
 
-type Replaced<T> = { restore: () => void; value: T };
+type Replaced<TValue> = { restore: () => void; value: TValue };
 
-const _replacements: Array<() => void> = [];
+const _replacements: (() => void)[] = [];
 
-function replaceProperty<T extends object, K extends keyof T>(
-  obj: T,
-  key: K,
-  value: T[K],
-): Replaced<T[K]> {
+function replaceProperty<TObject extends object, TKey extends keyof TObject>(
+  obj: TObject,
+  key: TKey,
+  value: TObject[TKey],
+): Replaced<TObject[TKey]> {
   const descriptor = Object.getOwnPropertyDescriptor(obj, key);
   const originalValue = obj[key];
 
@@ -273,7 +284,10 @@ function wrapArrowImplementation(impl: unknown): unknown {
     !Object.prototype.hasOwnProperty.call(impl, 'prototype')
   ) {
     const fn = impl as (...args: unknown[]) => unknown;
-    return function compatConstructorWrapper(this: unknown, ...args: unknown[]) {
+    return function compatConstructorWrapper(
+      this: unknown,
+      ...args: unknown[]
+    ) {
       return fn.apply(this, args);
     };
   }

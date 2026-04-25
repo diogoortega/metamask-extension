@@ -3,10 +3,12 @@ import '@testing-library/jest-dom';
 vi.mock('webextension-polyfill', () => ({
   default: {
     runtime: {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       getManifest: () => ({ manifest_version: 2 }),
     },
   },
   runtime: {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     getManifest: () => ({ manifest_version: 2 }),
   },
 }));
@@ -23,7 +25,9 @@ const originalSetTimeout = global.setTimeout;
 const TIME_TO_WAIT_UNTIL_UNRESOLVED = 100;
 
 function treatUnresolvedAfter(duration: number): Promise<symbol> {
-  return new Promise((resolve) => originalSetTimeout(resolve, duration, UNRESOLVED));
+  return new Promise((resolve) =>
+    originalSetTimeout(resolve, duration, UNRESOLVED),
+  );
 }
 
 expect.extend({
@@ -44,7 +48,9 @@ expect.extend({
     if (rejectionValue !== UNRESOLVED) {
       return {
         message: () =>
-          `Expected promise to be fulfilled, but it was rejected with ${rejectionValue}.`,
+          `Expected promise to be fulfilled, but it was rejected with ${String(
+            rejectionValue,
+          )}.`,
         pass: false,
       };
     }
@@ -86,8 +92,8 @@ expect.extend({
           message: () =>
             `Expected promise to never resolve after ${TIME_TO_WAIT_UNTIL_UNRESOLVED}ms, but it ${
               rejectionValue
-                ? `was rejected with ${rejectionValue}`
-                : `resolved with ${resolutionValue}`
+                ? `was rejected with ${String(rejectionValue)}`
+                : `resolved with ${String(resolutionValue)}`
             }`,
           pass: false,
         };

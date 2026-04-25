@@ -5,21 +5,27 @@ export function createHoistJestMockPlugin(): PluginOption {
     name: 'hoist-jest-mock',
     enforce: 'pre',
     transform(code, id) {
-      if (id.includes('node_modules')) return;
+      if (id.includes('node_modules')) {
+        return;
+      }
 
-      const codeWithoutLineComments = code.replace(/\/\/[^\n]*/g, '');
-      const hasMock = /\bjest\s*\.\s*(mock|unmock|hoisted)\s*\(/.test(
+      const codeWithoutLineComments = code.replace(/\/\/[^\n]*/gu, '');
+      const hasMock = /\bjest\s*\.\s*(mock|unmock|hoisted)\s*\(/u.test(
         codeWithoutLineComments,
       );
-      if (!hasMock) return;
+      if (!hasMock) {
+        return;
+      }
 
       const replaced = code
-        .replace(/\bjest\s*\.\s*mock\s*\(/g, 'vi.mock(')
-        .replace(/\bjest\s*\.\s*unmock\s*\(/g, 'vi.unmock(')
-        .replace(/\bjest\s*\.\s*hoisted\s*\(/g, 'vi.hoisted(');
+        .replace(/\bjest\s*\.\s*mock\s*\(/gu, 'vi.mock(')
+        .replace(/\bjest\s*\.\s*unmock\s*\(/gu, 'vi.unmock(')
+        .replace(/\bjest\s*\.\s*hoisted\s*\(/gu, 'vi.hoisted(');
 
-      const isTestFile = /\.(test|spec)\.[jt]sx?$/.test(id);
-      if (!isTestFile) return replaced;
+      const isTestFile = /\.(test|spec)\.[jt]sx?$/u.test(id);
+      if (!isTestFile) {
+        return replaced;
+      }
 
       const preamble = `
 const __vitest_jest_compat__ = vi.hoisted(() => {
@@ -67,26 +73,29 @@ export function createAsyncRelativeRequireActualPlugin(): PluginOption {
       if (id.includes('node_modules')) {
         return;
       }
-      if (!/\.(test|spec)\.[jt]sx?$/.test(id)) {
+      if (!/\.(test|spec)\.[jt]sx?$/u.test(id)) {
         return;
       }
-      const codeWithoutLineComments = code.replace(/\/\/[^\n]*/g, '');
+      const codeWithoutLineComments = code.replace(/\/\/[^\n]*/gu, '');
       if (
-        !/\bjest\s*\.\s*requireActual\s*\(\s*['"]\.\.?\//.test(
+        !/\bjest\s*\.\s*requireActual\s*\(\s*['"]\.\.?\//u.test(
           codeWithoutLineComments,
         )
       ) {
         return;
       }
       let out = code.replace(
-        /\bjest\s*\.\s*requireActual\s*\(\s*(['"])((?:\.\.?\/)[^'"]*)\1/g,
+        /\bjest\s*\.\s*requireActual\s*\(\s*(['"])((?:\.\.?\/)[^'"]*)\1/gu,
         'await jest.requireActual($1$2$1',
       );
       out = out.replace(
-        /(\bjest\.mock\([^,]+),\s*\(\)\s*=>/g,
+        /(\bjest\.mock\([^,]+),\s*\(\)\s*=>/gu,
         '$1, async () =>',
       );
-      out = out.replace(/(\bvi\.mock\([^,]+),\s*\(\)\s*=>/g, '$1, async () =>');
+      out = out.replace(
+        /(\bvi\.mock\([^,]+),\s*\(\)\s*=>/gu,
+        '$1, async () =>',
+      );
       return out;
     },
   };
