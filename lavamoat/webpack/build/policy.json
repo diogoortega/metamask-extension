@@ -2370,6 +2370,7 @@
       },
       "packages": {
         "postcss-loader>cosmiconfig": true,
+        "tailwindcss>jiti": true,
         "vite>jiti": true,
         "postcss": true,
         "semver": true

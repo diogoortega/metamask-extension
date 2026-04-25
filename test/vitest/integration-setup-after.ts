@@ -18,7 +18,7 @@ beforeEach(() => {
 
   nock(ACCOUNTS_API_BASE_URL)
     .persist()
-    .get(/\/v1\/users\/.*\/surveys/)
+    .get(/\/v1\/users\/.*\/surveys/u)
     .reply(200, { surveys: {} });
 });
 
