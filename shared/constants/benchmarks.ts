@@ -71,7 +71,6 @@ export type TimerStatistics = {
   p99: number;
   samples: number;
   outliers: number;
-  trimmedCount?: number;
   dataQuality: 'good' | 'poor' | 'unreliable';
 };
 
@@ -109,8 +108,6 @@ export type BenchmarkResults = {
   stdDev: StatisticalResult;
   p75: StatisticalResult;
   p95: StatisticalResult;
-  trimmedCount?: StatisticalResult;
-  outliers?: StatisticalResult;
   webVitals?: WebVitalsSummary;
 };
 
@@ -168,14 +165,6 @@ export type ThresholdViolation = {
   value: number;
   threshold: number;
   severity: ThresholdSeverity;
-  /**
-   * Multiplicative factor applied to the base threshold because the observed
-   * CV for this metric fell in the adaptive-widening band (25% ≤ CV ≤ 50%).
-   * Undefined when no CV adjustment was applied. The `threshold` field above
-   * already carries the fully-adjusted (CI × CV) effective value; this factor
-   * lets downstream consumers recover the pre-widening threshold if needed.
-   */
-  cvAdjustment?: number;
 };
 
 /**

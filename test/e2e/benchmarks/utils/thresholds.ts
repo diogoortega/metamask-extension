@@ -3,55 +3,8 @@ import { type ThresholdConfig } from '../../../../shared/constants/benchmarks';
 /**
  * Default CI multiplier for thresholds.
  * CI environments are typically slower than local machines.
- *
- * Per-metric overrides below are calibrated from the 30-day variance audit
- * (MetaMask-planning#7180 / see `benchmark-variance-audit.md`). In general:
- * - Low-CV metrics (CV < 15%) → tighter multiplier (1.2–1.3) to catch real
- * regressions that 1.5× would hide.
- * - Moderate-CV metrics (CV 15–25%) → 1.5× is appropriate.
- * - High-CV metrics (CV 25–50%) → looser multiplier AND the adaptive
- * `(1 + CV/200)` widening in `getEffectiveThreshold` keeps false positives
- * below the Phase 3 target of <5%.
- *
- * Metrics above CV 50% (e.g. `assetClickToPriceChart`) are classified
- * "unreliable" and skipped in `validateThresholds`; no multiplier applies.
  */
 export const DEFAULT_CI_MULTIPLIER = 1.5;
-
-/**
- * Multiplier for startup metrics on the `standard` persona.
- * Audit: CV 8–9% (GOOD, tight). 1.5× was loose enough to miss regressions.
- */
-const CI_MULTIPLIER_STARTUP_STANDARD = 1.2;
-
-/**
- * Multiplier for startup metrics on the `powerUser` persona.
- * Audit: CV 30–34% (POOR) driven by CI-machine variance amplified by heavier
- * state. Expected to tighten after outlier trimming lands (#7185 / #41520).
- */
-const CI_MULTIPLIER_STARTUP_POWER_USER = 2.0;
-
-/**
- * Multiplier for onboarding flow totals and long single-step waits.
- * Audit: CV 7–14% across onboardingImportWallet/onboardingNewWallet totals
- * and `doneButtonTo*` steps. Stable enough for a tighter gate than 1.5×.
- */
-const CI_MULTIPLIER_ONBOARDING_TOTAL = 1.3;
-
-/**
- * Multiplier for account-menu rendering steps.
- * Audit: CV 26–37% — driven by test nondeterminism (render depends on
- * controller state-sync timing). Interim value until deterministic waits
- * ship (#7185-B); revisit after that work.
- */
-const CI_MULTIPLIER_ACCOUNT_MENU = 1.8;
-
-/**
- * Multiplier for importSrpHome steps.
- * Audit: CV 5.7–18.3% across loginToHomeScreen / homeAfterImportWithNewWallet
- * / total. Stable enough for a tighter gate than 1.5×.
- */
-const CI_MULTIPLIER_IMPORT_SRP_HOME = 1.3;
 
 /**
  * CLS (Cumulative Layout Shift) canary thresholds.
@@ -96,12 +49,12 @@ const ONBOARDING_IMPORT_WALLET: ThresholdConfig = {
   doneButtonToHomeScreen: {
     p75: { warn: 10500, fail: 14000 },
     p95: { warn: 16000, fail: 21000 },
-    ciMultiplier: CI_MULTIPLIER_ONBOARDING_TOTAL,
+    ciMultiplier: DEFAULT_CI_MULTIPLIER,
   },
   openAccountMenuToAccountListLoaded: {
     p75: { warn: 43000, fail: 50000 },
     p95: { warn: 50000, fail: 60000 },
-    ciMultiplier: CI_MULTIPLIER_ACCOUNT_MENU,
+    ciMultiplier: DEFAULT_CI_MULTIPLIER,
   },
   ...CLS_THRESHOLDS,
 };
@@ -135,7 +88,7 @@ const ONBOARDING_NEW_WALLET: ThresholdConfig = {
   doneButtonToAssetList: {
     p75: { warn: 10500, fail: 14000 },
     p95: { warn: 16000, fail: 21000 },
-    ciMultiplier: CI_MULTIPLIER_ONBOARDING_TOTAL,
+    ciMultiplier: DEFAULT_CI_MULTIPLIER,
   },
   ...CLS_THRESHOLDS,
 };
@@ -144,17 +97,17 @@ const IMPORT_SRP_HOME: ThresholdConfig = {
   loginToHomeScreen: {
     p75: { warn: 5000, fail: 7000 },
     p95: { warn: 8000, fail: 10500 },
-    ciMultiplier: CI_MULTIPLIER_IMPORT_SRP_HOME,
+    ciMultiplier: DEFAULT_CI_MULTIPLIER,
   },
   openAccountMenuAfterLogin: {
     p75: { warn: 2700, fail: 3500 },
     p95: { warn: 4200, fail: 5200 },
-    ciMultiplier: CI_MULTIPLIER_ACCOUNT_MENU,
+    ciMultiplier: DEFAULT_CI_MULTIPLIER,
   },
   homeAfterImportWithNewWallet: {
     p75: { warn: 20000, fail: 27000 },
     p95: { warn: 32000, fail: 40000 },
-    ciMultiplier: CI_MULTIPLIER_IMPORT_SRP_HOME,
+    ciMultiplier: DEFAULT_CI_MULTIPLIER,
   },
   ...CLS_THRESHOLDS,
 };
@@ -214,17 +167,17 @@ const STANDARD_HOME: ThresholdConfig = {
   uiStartup: {
     p75: { warn: 2000, fail: 2500 },
     p95: { warn: 2500, fail: 3200 },
-    ciMultiplier: CI_MULTIPLIER_STARTUP_STANDARD,
+    ciMultiplier: DEFAULT_CI_MULTIPLIER,
   },
   load: {
     p75: { warn: 1600, fail: 2200 },
     p95: { warn: 2200, fail: 2800 },
-    ciMultiplier: CI_MULTIPLIER_STARTUP_STANDARD,
+    ciMultiplier: DEFAULT_CI_MULTIPLIER,
   },
   loadScripts: {
     p75: { warn: 1400, fail: 1800 },
     p95: { warn: 1800, fail: 2400 },
-    ciMultiplier: CI_MULTIPLIER_STARTUP_STANDARD,
+    ciMultiplier: DEFAULT_CI_MULTIPLIER,
   },
   ...CLS_THRESHOLDS,
 };
@@ -233,17 +186,17 @@ const POWER_USER_HOME: ThresholdConfig = {
   uiStartup: {
     p75: { warn: 4000, fail: 4700 },
     p95: { warn: 7000, fail: 10000 },
-    ciMultiplier: CI_MULTIPLIER_STARTUP_POWER_USER,
+    ciMultiplier: DEFAULT_CI_MULTIPLIER,
   },
   load: {
     p75: { warn: 2500, fail: 3500 },
     p95: { warn: 3500, fail: 4500 },
-    ciMultiplier: CI_MULTIPLIER_STARTUP_POWER_USER,
+    ciMultiplier: DEFAULT_CI_MULTIPLIER,
   },
   loadScripts: {
     p75: { warn: 2000, fail: 2800 },
     p95: { warn: 2800, fail: 3800 },
-    ciMultiplier: CI_MULTIPLIER_STARTUP_POWER_USER,
+    ciMultiplier: DEFAULT_CI_MULTIPLIER,
   },
   ...CLS_THRESHOLDS,
 };

@@ -59,12 +59,9 @@ export const RecipientRow = ({ recipient }: { recipient?: Hex } = {}) => {
   const { currentConfirmation } = useConfirmContext<TransactionMeta>();
   const { isUpgrade } = useIsUpgradeTransaction();
   const isDowngrade = useIsDowngradeTransaction();
-  const { nestedTransactions, txParams, txParamsOriginal, chainId, id } =
+  const { nestedTransactions, txParams, chainId, id } =
     currentConfirmation ?? {};
-  const { from } = txParams ?? {};
-  // Prefer the original `to` so that container wrapping (e.g. enforced
-  // simulations) does not display the delegation manager as the recipient.
-  const txTo = txParamsOriginal?.to ?? txParams?.to;
+  const { from, to: txTo } = txParams ?? {};
   const to = recipient ?? txTo;
 
   const isBatch =
@@ -120,11 +117,7 @@ const AmountRow = () => {
     currentConfirmation?.chainId,
   );
 
-  // Prefer the original `value` so that container wrapping (e.g. enforced
-  // simulations) does not zero out the displayed amount.
-  const value =
-    currentConfirmation?.txParamsOriginal?.value ??
-    currentConfirmation?.txParams?.value;
+  const value = currentConfirmation?.txParams?.value;
 
   if (!value || value === HEX_ZERO) {
     return null;

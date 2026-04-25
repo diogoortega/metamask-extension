@@ -1,6 +1,6 @@
 {
   "name": "metamask-crx",
-  "version": "13.30.0",
+  "version": "13.29.0",
   "private": true,
   "repository": {
     "type": "git",
@@ -323,13 +323,13 @@
     "@metamask/delegation-controller": "^2.0.2",
     "@metamask/delegation-core": "^1.1.0",
     "@metamask/delegation-deployments": "^1.0.0",
-    "@metamask/design-system-react": "^0.17.1",
+    "@metamask/design-system-react": "^0.17.0",
     "@metamask/design-system-tailwind-preset": "^0.6.1",
     "@metamask/design-tokens": "^8.3.0",
     "@metamask/eip-5792-middleware": "3.0.3",
     "@metamask/eip-7702-internal-rpc-middleware": "^0.1.0",
     "@metamask/ens-controller": "^19.1.0",
-    "@metamask/ens-resolver-snap": "^1.2.0",
+    "@metamask/ens-resolver-snap": "^1.1.0",
     "@metamask/eth-hd-keyring": "^13.1.0",
     "@metamask/eth-json-rpc-filters": "^9.0.0",
     "@metamask/eth-json-rpc-middleware": "^23.1.2",
@@ -501,7 +501,7 @@
     "xml2js": "^0.6.2"
   },
   "devDependencies": {
-    "@actions/core": "^1.10.1",
+    "@actions/core": "^1.10.0",
     "@actions/github": "^5.1.1",
     "@anthropic-ai/sdk": "^0.32.1",
     "@babel/code-frame": "^7.25.9",
@@ -527,7 +527,7 @@
     "@metamask/browser-playground": "0.6.2",
     "@metamask/build-utils": "^3.0.0",
     "@metamask/client-mcp-core": "^0.1.1",
-    "@metamask/design-system-shared": "^0.12.0",
+    "@metamask/design-system-shared": "^0.11.0",
     "@metamask/eslint-config": "^13.0.0",
     "@metamask/eslint-config-jest": "^13.0.0",
     "@metamask/eslint-config-mocha": "^13.0.0",

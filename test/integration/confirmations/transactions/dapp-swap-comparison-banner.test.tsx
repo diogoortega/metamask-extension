@@ -254,7 +254,6 @@ const getMetaMaskStateWithDappSwap = ({
       ),
     ],
     currentCurrency: 'usd',
-    selectedCurrency: 'usd',
     remoteFeatureFlags: {
       dappSwapMetrics: {
         enabled: dappSwapMetricsEnabled,
