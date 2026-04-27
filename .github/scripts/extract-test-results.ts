@@ -1,7 +1,7 @@
 import { existsSync, readdirSync, readFileSync } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { normalizeTestPath, XML } from './shared/utils';
+import { normalizeTestPath, XML } from './shared/utils.js';
 
 /**
  * Result of extracting test paths from previous run results.

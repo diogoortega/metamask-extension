@@ -6,7 +6,7 @@ import {
   getTestFilesSortedByTime,
   TestChunk,
   TestRun,
-} from './shared/test-reports';
+} from './shared/test-reports.js';
 
 // Extra Quality Gate Runs for each new/changed test
 const RETRIES_FOR_NEW_OR_CHANGED_TESTS = 2;
