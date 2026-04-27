@@ -111,21 +111,6 @@ ignores:
   # perps poc
   - '@metamask/perps-controller'
 
-# depcheck 1.4.3 only registers **/*.ts and **/*.tsx by default and the
-# `parsers` map *replaces* defaults, so re-list everything we use plus
-# Node's ESM/CJS-explicit TS extensions (.mts / .cts).
-parsers:
-  '**/*.js': jsx
-  '**/*.jsx': jsx
-  '**/*.ts': typescript
-  '**/*.tsx': typescript
-  '**/*.mts': typescript
-  '**/*.cts': typescript
-  '**/*.vue': vue
-  '**/*.svelte': svelte
-  '**/*.sass': sass
-  '**/*.scss': sass
-
 # files depcheck should not parse
 ignorePatterns:
   # seems to incorrectly parse scss @include pragmas?
@@ -133,3 +118,5 @@ ignorePatterns:
   # self-contained bundle used for testing
   - '**/send-eth-with-private-key-test/web3js.js'
   - '**/send-eth-with-private-key-test/ethereumjs-tx.js'
+  # vendored Yarn plugin bundles
+  - '.yarn/plugins/**'
