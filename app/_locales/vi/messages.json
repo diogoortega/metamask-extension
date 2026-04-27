@@ -1558,10 +1558,6 @@
   "confirmFieldPeriodDurationMonthly": {
     "message": "Hằng tháng"
   },
-  "confirmFieldPeriodDurationSeconds": {
-    "message": "$1 giây",
-    "description": "$1 is the number of seconds in the permission period (shown when the period is not a standard hour/day/week/etc.)"
-  },
   "confirmFieldPeriodDurationWeekly": {
     "message": "Hằng tuần"
   },
@@ -5422,9 +5418,6 @@
     "message": "khả dụng",
     "description": "is the available balance amount"
   },
-  "perpsAvailableBalance": {
-    "message": "Số dư Hợp đồng vĩnh cửu khả dụng: "
-  },
   "perpsAvailableToAdd": {
     "message": "Có thể cộng"
   },
@@ -5587,9 +5580,6 @@
   "perpsFundingPayments": {
     "message": "Thanh toán phí tài trợ"
   },
-  "perpsFundingRate": {
-    "message": "Tỷ lệ tài trợ"
-  },
   "perpsFundingRateTooltip": {
     "message": "Một khoản phí theo giờ giữa các nhà giao dịch để giữ giá phù hợp với thị trường. Nếu tỷ lệ dương, người mua khống sẽ trả cho người bán khống. Nếu tỷ lệ âm, người bán khống sẽ trả cho người mua khống."
   },
@@ -5681,25 +5671,11 @@
   "perpsNoTransactions": {
     "message": "Chưa có giao dịch nào"
   },
-  "perpsOpenInterest": {
-    "message": "Lãi suất mở"
-  },
   "perpsOpenInterestTooltip": {
     "message": "Tổng giá trị của tất cả các vị thế mở cho hợp đồng vĩnh cửu này"
   },
-  "perpsOpenLong": {
-    "message": "Mở vị thế mua khống $1",
-    "description": "$1 is the asset symbol (e.g., BTC, ETH)"
-  },
   "perpsOpenOrders": {
     "message": "Lệnh mở"
-  },
-  "perpsOpenShort": {
-    "message": "Mở vị thế bán khống $1",
-    "description": "$1 is the asset symbol (e.g., BTC, ETH)"
-  },
-  "perpsOraclePrice": {
-    "message": "Giá nguồn cấp dữ liệu"
   },
   "perpsOraclePriceTooltip": {
     "message": "Giá trung vị từ các nguồn bên ngoài do người xác thực báo cáo, được dùng để tính tỷ lệ tài trợ"
@@ -5736,9 +5712,6 @@
   },
   "perpsRateLimitExceeded": {
     "message": "Quá nhiều yêu cầu. Vui lòng chờ và thử lại."
-  },
-  "perpsRecentActivity": {
-    "message": "Hoạt động gần đây"
   },
   "perpsReduceExposure": {
     "message": "Giảm mức tiếp xúc"
@@ -5779,10 +5752,6 @@
   },
   "perpsSearchMarkets": {
     "message": "Tìm kiếm thị trường"
-  },
-  "perpsSeeAll": {
-    "message": "Xem tất cả",
-    "description": "Accessible label for the arrow button that navigates to the full activity list"
   },
   "perpsServiceUnavailable": {
     "message": "Dịch vụ tạm thời không khả dụng. Vui lòng thử lại sau."

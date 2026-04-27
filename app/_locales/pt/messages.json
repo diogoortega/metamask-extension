@@ -1558,10 +1558,6 @@
   "confirmFieldPeriodDurationMonthly": {
     "message": "Mensal"
   },
-  "confirmFieldPeriodDurationSeconds": {
-    "message": "$1 segundos",
-    "description": "$1 is the number of seconds in the permission period (shown when the period is not a standard hour/day/week/etc.)"
-  },
   "confirmFieldPeriodDurationWeekly": {
     "message": "Semanal"
   },
@@ -5422,9 +5418,6 @@
     "message": "disponível",
     "description": "is the available balance amount"
   },
-  "perpsAvailableBalance": {
-    "message": "Saldo de perps disponível: "
-  },
   "perpsAvailableToAdd": {
     "message": "Disponível para adicionar"
   },
@@ -5587,9 +5580,6 @@
   "perpsFundingPayments": {
     "message": "Pagamentos de funding"
   },
-  "perpsFundingRate": {
-    "message": "Taxa de depósito de fundos"
-  },
   "perpsFundingRateTooltip": {
     "message": "Uma taxa horária paga entre traders para manter os preços alinhados com o mercado. Se a taxa for positiva, posições long pagam posições short. Se for negativa, posições short pagam posições long."
   },
@@ -5681,25 +5671,11 @@
   "perpsNoTransactions": {
     "message": "Ainda não há transações"
   },
-  "perpsOpenInterest": {
-    "message": "Interesse em aberto"
-  },
   "perpsOpenInterestTooltip": {
     "message": "O valor combinado de todas as posições em aberto para esse perp"
   },
-  "perpsOpenLong": {
-    "message": "Abrir long de $1",
-    "description": "$1 is the asset symbol (e.g., BTC, ETH)"
-  },
   "perpsOpenOrders": {
     "message": "Ordens em aberto"
-  },
-  "perpsOpenShort": {
-    "message": "Abrir short de $1",
-    "description": "$1 is the asset symbol (e.g., BTC, ETH)"
-  },
-  "perpsOraclePrice": {
-    "message": "Preço da Oracle"
   },
   "perpsOraclePriceTooltip": {
     "message": "A mediana dos preços externos reportados pelos validadores, utilizada para calcular a taxa de financiamento"
@@ -5736,9 +5712,6 @@
   },
   "perpsRateLimitExceeded": {
     "message": "Excesso de solicitações. Aguarde e tente novamente."
-  },
-  "perpsRecentActivity": {
-    "message": "Atividade recente"
   },
   "perpsReduceExposure": {
     "message": "Reduzir exposição"
@@ -5779,10 +5752,6 @@
   },
   "perpsSearchMarkets": {
     "message": "Pesquisar mercados"
-  },
-  "perpsSeeAll": {
-    "message": "Ver tudo",
-    "description": "Accessible label for the arrow button that navigates to the full activity list"
   },
   "perpsServiceUnavailable": {
     "message": "Serviço temporariamente indisponível. Tente novamente mais tarde."

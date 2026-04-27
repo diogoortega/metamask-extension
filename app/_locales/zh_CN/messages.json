@@ -1558,10 +1558,6 @@
   "confirmFieldPeriodDurationMonthly": {
     "message": "每月"
   },
-  "confirmFieldPeriodDurationSeconds": {
-    "message": "$1秒",
-    "description": "$1 is the number of seconds in the permission period (shown when the period is not a standard hour/day/week/etc.)"
-  },
   "confirmFieldPeriodDurationWeekly": {
     "message": "每周"
   },
@@ -5422,9 +5418,6 @@
     "message": "可用",
     "description": "is the available balance amount"
   },
-  "perpsAvailableBalance": {
-    "message": "可用永续合约余额： "
-  },
   "perpsAvailableToAdd": {
     "message": "可添加"
   },
@@ -5587,9 +5580,6 @@
   "perpsFundingPayments": {
     "message": "资金费用"
   },
-  "perpsFundingRate": {
-    "message": "资金费率"
-  },
   "perpsFundingRateTooltip": {
     "message": "交易者之间为使价格与市场保持一致而支付的每小时费用。当费率为正时，多头向空头支付费用；为负时，空头向多头支付费用。"
   },
@@ -5681,25 +5671,11 @@
   "perpsNoTransactions": {
     "message": "暂无交易"
   },
-  "perpsOpenInterest": {
-    "message": "未平仓合约量"
-  },
   "perpsOpenInterestTooltip": {
     "message": "该永续合约所有未平仓头寸的总价值"
   },
-  "perpsOpenLong": {
-    "message": "开立多头仓位 $1",
-    "description": "$1 is the asset symbol (e.g., BTC, ETH)"
-  },
   "perpsOpenOrders": {
     "message": "未平仓订单"
-  },
-  "perpsOpenShort": {
-    "message": "开立空头仓位 $1",
-    "description": "$1 is the asset symbol (e.g., BTC, ETH)"
-  },
-  "perpsOraclePrice": {
-    "message": "预言机价格"
   },
   "perpsOraclePriceTooltip": {
     "message": "由验证器报告的外部价格中位数，用于计算资金费率"
@@ -5736,9 +5712,6 @@
   },
   "perpsRateLimitExceeded": {
     "message": "请求次数过多。请稍等片刻，然后重试。"
-  },
-  "perpsRecentActivity": {
-    "message": "最近活动"
   },
   "perpsReduceExposure": {
     "message": "减少风险敞口"
@@ -5779,10 +5752,6 @@
   },
   "perpsSearchMarkets": {
     "message": "搜索市场"
-  },
-  "perpsSeeAll": {
-    "message": "查看全部",
-    "description": "Accessible label for the arrow button that navigates to the full activity list"
   },
   "perpsServiceUnavailable": {
     "message": "服务暂时不可用。请稍后再试。"

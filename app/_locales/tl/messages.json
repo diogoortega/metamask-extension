@@ -804,14 +804,14 @@
     "message": "basic functionality"
   },
   "backupAndSyncEnable": {
-    "message": "I-on ang backup at sync"
+    "message": "I-on ang mag-back up at mag-sync"
   },
   "backupAndSyncEnableConfirmation": {
     "message": "Kapag in-on mo ang backup at sync, mao-on din ang $1. Gusto mo bang magpatuloy?",
     "description": "$1 is backupAndSyncBasicFunctionalityNameMention in bold."
   },
   "backupAndSyncEnableDescription": {
-    "message": "Sa backup at sync, makakapagtago ka ng na-encrypt na data para sa mga custom na setting at feature mo. Pinapanatili nitong pareho ang karanasan mo sa MetaMask sa lahat ng device at ibinabalik ang mga setting at feature kung kailangan mong i-install muli ang MetaMask. Hindi nito naiba-back up ang iyong Secret Recovery Phrase. $1.",
+    "message": "Nagbibigay-daan sa amin ang mag-back up at mag-sync na ma-store ang naka-encrypt na data para sa mga custom na setting at feature mo. Pinapanatili nitong pareho ang experience mo sa MetaMask sa lahat ng device at nire-restore ang mga setting at feature kung kailanganin mo mang i-reinstall ang MetaMask. Hindi nito maba-back up ang Mga Sikretong Salita sa Pag-recover. $1.",
     "description": "$1 is link to the backup and sync privacy policy."
   },
   "backupAndSyncEnableDescriptionUpdatePreferences": {
@@ -834,7 +834,7 @@
     "message": "I-on ang na-sync mo sa mga device mo."
   },
   "backupAndSyncPrivacyLink": {
-    "message": "Matutunan kung paano namin protektahan ang iyong privacy"
+    "message": "Alamin kung paano namin pinoprotektahan ang privacy mo"
   },
   "backupApprovalInfo": {
     "message": "Ang lihim na code na ito ay kinakailangan para ma-recover ang iyong wallet sakaling maiwala mo ang iyong device, makalimutan ang iyong password, kailanganin mong i-install ulit ang MetaMask, o gusto mong i-access ang iyong wallet sa ibang device."
@@ -1431,7 +1431,7 @@
     "message": "Piliin ang iyong network"
   },
   "chooseYourNetworkDescription": {
-    "message": "Kapag ginagamit mo ang aming mga default na setting at configuration, ginagamit namin ang Infura bilang aming default na remote procedure call (RPC) provider para mag-alok ng pinakamaasahan at pribadong access sa data ng Ethereum sa abot ng aming makakaya. Sa mga limitadong pangyayari, maaari kaming gumamit ng ibang mga RPC provider upang makapagbigay ng pinakamainam na karanasan para sa aming mga user. Maaari kang pumili ng iyong sariling RPC, ngunit tandaan na ang anumang RPC ay makakatanggap ng iyong IP address at Ethereum wallet upang makapagsagawa ng mga transaksyon. Para matuto pa tungkol sa kung paano pinangangasiwaan ng Infura ang data para sa mga EVM account, basahin ang aming $1, at para sa mga Solana account, $2.",
+    "message": "Kapag ginamit mo ang mga default na setting at configuration namin, ginagamit namin ang Infura bilang default na remote procedure call (RPC) provider namin para mag-alok ng pinakamaaasahan at pribadong access sa data ng Etheeum hangga’t kaya namin. Sa mga limitadong kaso, posibleng gumamit kami ng ibang RPC provider para maibigay ang pinakamagandang experience sa mga user namin. Puwede kang pumili ng sarili mong RPC, pero tandaan na matatanggap ng sinumang RPC ang IP address at Ethereum wallet mo para para makagawa ng mga transaksyon. Para matuto pa kung paano nangangasiwa ang Infura ng data para sa mga EVM account, basahin ang $1, para sa mga Solana account, $2.",
     "description": "$1 is a link to the privacy policy, $2 is a link to Solana accounts support"
   },
   "chooseYourNetworkDescriptionCallToAction": {
@@ -1557,10 +1557,6 @@
   },
   "confirmFieldPeriodDurationMonthly": {
     "message": "Buwanan"
-  },
-  "confirmFieldPeriodDurationSeconds": {
-    "message": "$1 (na) segundo",
-    "description": "$1 is the number of seconds in the permission period (shown when the period is not a standard hour/day/week/etc.)"
   },
   "confirmFieldPeriodDurationWeekly": {
     "message": "Lingguhan"
@@ -3101,7 +3097,7 @@
     "message": "Mayroong nang mali...."
   },
   "generalDescription": {
-    "message": "I-sync ang mga setting sa lahat ng device, pumili ng mga kagustuhan sa network, at subaybayan ang data ng token"
+    "message": "I-sync ang mga setting sa lahat ng device, pumili ng mga preference sa network, at i-track ang data ng token"
   },
   "genericExplorerView": {
     "message": "Tingnan ang account sa $1"
@@ -4857,7 +4853,7 @@
     "message": "Ang URL ng IPFS gateway ay wasto"
   },
   "onboardingAdvancedPrivacyNetworkDescription": {
-    "message": "Kapag ginagamit mo ang aming mga default na setting at configuration, ginagamit namin ang Infura bilang aming default na remote procedure call (RPC) provider para mag-alok ng pinakamaasahan at pribadong access sa data ng Ethereum sa abot ng aming makakaya. Sa mga limitadong pangyayari, maaari kaming gumamit ng ibang mga RPC provider upang makapagbigay ng pinakamainam na karanasan para sa aming mga user. Maaari kang pumili ng iyong sariling RPC, ngunit tandaan na ang anumang RPC ay makakatanggap ng iyong IP address at Ethereum wallet upang makapagsagawa ng mga transaksyon. Para matuto pa tungkol sa kung paano pinangangasiwaan ng Infura ang data para sa mga EVM account, basahin ang aming $1; para sa mga Solana account, $2."
+    "message": "Kapag ginamit mo ang mga default na setting at configuration namin, ginagamit namin ang Infura bilang default na remote procedure call (RPC) provider namin para mag-alok ng pinakamaaasahan at pribadong access sa data ng Etheeum hangga’t kaya namin. Sa mga limitadong kaso, posibleng gumamit kami ng ibang RPC provider para maibigay ang pinakamagandang experience sa mga user namin. Puwede kang pumili ng sarili mong RPC, pero tandaan na matatanggap ng sinumang RPC ang IP address at Ethereum wallet mo para para makagawa ng mga transaksyon. Para matuto pa kung paano nangangasiwa ang Infura ng data para sa mga EVM account, basahin ang $1; para sa mga Solana account, $2."
   },
   "onboardingAdvancedPrivacyNetworkDescriptionCallToAction": {
     "message": "mag-click dito"
@@ -5422,9 +5418,6 @@
     "message": "available",
     "description": "is the available balance amount"
   },
-  "perpsAvailableBalance": {
-    "message": "Available na balanse sa Perps: "
-  },
   "perpsAvailableToAdd": {
     "message": "Available para idagdag"
   },
@@ -5587,9 +5580,6 @@
   "perpsFundingPayments": {
     "message": "Mga pagbabayad sa pagpopondo"
   },
-  "perpsFundingRate": {
-    "message": "Rate ng Pagpopondo"
-  },
   "perpsFundingRateTooltip": {
     "message": "Bayad kada oras na ibinabayad ng mga trader para mapanatiling naaayon ang mga presyo sa market. Kung positibo ang rate, magbabayad ang mga nag-long sa mga nag-short. Kung negatibo, magbabayad ang mga nag-short sa mga nag-long."
   },
@@ -5681,25 +5671,11 @@
   "perpsNoTransactions": {
     "message": "Wala pang mga transaksyon"
   },
-  "perpsOpenInterest": {
-    "message": "Bukas na Interes"
-  },
   "perpsOpenInterestTooltip": {
     "message": "Ang pinagsamang halaga ng lahat ng bukas na posisyon para sa perp na ito"
   },
-  "perpsOpenLong": {
-    "message": "Magbukasng Long na $1",
-    "description": "$1 is the asset symbol (e.g., BTC, ETH)"
-  },
   "perpsOpenOrders": {
     "message": "Mga Bukas na Order"
-  },
-  "perpsOpenShort": {
-    "message": "Magbukas ng Short na $1",
-    "description": "$1 is the asset symbol (e.g., BTC, ETH)"
-  },
-  "perpsOraclePrice": {
-    "message": "Oracle Price"
   },
   "perpsOraclePriceTooltip": {
     "message": "Ang panggitna ng mga panlabas na presyong iniulat ng mga nagpapatibay, na ginagamit para sa pagkukuwenta ng rate ng pagpopondo"
@@ -5736,9 +5712,6 @@
   },
   "perpsRateLimitExceeded": {
     "message": "Masyado nang maraming kahilingan. Pakihintayin at subukang muli."
-  },
-  "perpsRecentActivity": {
-    "message": "Kamakailang Aktibidad"
   },
   "perpsReduceExposure": {
     "message": "Bawasan ang exposure"
@@ -5779,10 +5752,6 @@
   },
   "perpsSearchMarkets": {
     "message": "Maghanap ng mga market"
-  },
-  "perpsSeeAll": {
-    "message": "Tingnan Lahat",
-    "description": "Accessible label for the arrow button that navigates to the full activity list"
   },
   "perpsServiceUnavailable": {
     "message": "Pansamantalang hindi available ang serbisyo. Pakisubukan muli mamaya."
@@ -6172,7 +6141,7 @@
     "message": "Pagkapribado"
   },
   "privacyMsg": {
-    "message": "Patakaran sa pagkapribado"
+    "message": "Patakaran sa Privacy namin"
   },
   "privateKey": {
     "message": "Pribadong Key",

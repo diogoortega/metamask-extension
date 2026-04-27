@@ -1558,10 +1558,6 @@
   "confirmFieldPeriodDurationMonthly": {
     "message": "मासिक"
   },
-  "confirmFieldPeriodDurationSeconds": {
-    "message": "$1 सेकंड",
-    "description": "$1 is the number of seconds in the permission period (shown when the period is not a standard hour/day/week/etc.)"
-  },
   "confirmFieldPeriodDurationWeekly": {
     "message": "साप्ताहिक"
   },
@@ -5422,9 +5418,6 @@
     "message": "उपलब्ध",
     "description": "is the available balance amount"
   },
-  "perpsAvailableBalance": {
-    "message": "उपलब्ध पर्प्स बैलेंस: "
-  },
   "perpsAvailableToAdd": {
     "message": "जोड़ने के लिए उपलब्ध है"
   },
@@ -5587,9 +5580,6 @@
   "perpsFundingPayments": {
     "message": "फंडिंग पेमेंट्स"
   },
-  "perpsFundingRate": {
-    "message": "फंडिंग रेट"
-  },
   "perpsFundingRateTooltip": {
     "message": "एक घंटे का फीस जो ट्रेडर्स के बीच मार्केट प्राइस को संतुलित रखने के लिए लिया जाता है। अगर रेट सकारात्मक है, तो लॉन्ग्स शॉर्ट्स को भुगतान करते हैं; अगर नकारात्मक है, तो शॉर्ट्स लॉन्ग्स को भुगतान करते हैं।"
   },
@@ -5681,25 +5671,11 @@
   "perpsNoTransactions": {
     "message": "अभी तक कोई ट्रांसेक्शन नहीं है"
   },
-  "perpsOpenInterest": {
-    "message": "ओपन इंटरेस्ट"
-  },
   "perpsOpenInterestTooltip": {
     "message": "इस पर्प के लिए सभी खुले पोज़िशन्स की कंबाइंड फीस"
   },
-  "perpsOpenLong": {
-    "message": "लॉन्ग $1 को ओपन करें",
-    "description": "$1 is the asset symbol (e.g., BTC, ETH)"
-  },
   "perpsOpenOrders": {
     "message": "खुला ऑर्डर"
-  },
-  "perpsOpenShort": {
-    "message": "शॉर्ट $1 को ओपन करें",
-    "description": "$1 is the asset symbol (e.g., BTC, ETH)"
-  },
-  "perpsOraclePrice": {
-    "message": "Oracle प्राइस"
   },
   "perpsOraclePriceTooltip": {
     "message": "वैलिडेटर द्वारा बताई गई बाहरी कीमतों का मीडियन, जिसे फंडिंग रेट कैलकुलेट करने के लिए इस्तेमाल किया जाता है"
@@ -5736,9 +5712,6 @@
   },
   "perpsRateLimitExceeded": {
     "message": "बहुत ज़्यादा रिक्वेस्ट हैं। कृपया इंतज़ार करें और फिर से कोशिश करें।"
-  },
-  "perpsRecentActivity": {
-    "message": "हालिया गतिविधि"
   },
   "perpsReduceExposure": {
     "message": "एक्सपोज़र घटाएं"
@@ -5779,10 +5752,6 @@
   },
   "perpsSearchMarkets": {
     "message": "मार्केट्स खोजें"
-  },
-  "perpsSeeAll": {
-    "message": "सभी को देखें",
-    "description": "Accessible label for the arrow button that navigates to the full activity list"
   },
   "perpsServiceUnavailable": {
     "message": "सेवा अस्थायी रूप से अनुपलब्ध है। कृपया बाद में फिर से कोशिश करें।"

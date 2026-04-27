@@ -1558,10 +1558,6 @@
   "confirmFieldPeriodDurationMonthly": {
     "message": "Bulanan"
   },
-  "confirmFieldPeriodDurationSeconds": {
-    "message": "$1 detik",
-    "description": "$1 is the number of seconds in the permission period (shown when the period is not a standard hour/day/week/etc.)"
-  },
   "confirmFieldPeriodDurationWeekly": {
     "message": "Mingguan"
   },
@@ -5422,9 +5418,6 @@
     "message": "tersedia",
     "description": "is the available balance amount"
   },
-  "perpsAvailableBalance": {
-    "message": "Saldo Perp yang tersedia: "
-  },
   "perpsAvailableToAdd": {
     "message": "Tersedia untuk ditambahkan"
   },
@@ -5587,9 +5580,6 @@
   "perpsFundingPayments": {
     "message": "Pembayaran pendanaan"
   },
-  "perpsFundingRate": {
-    "message": "Tingkat Pendanaan"
-  },
   "perpsFundingRateTooltip": {
     "message": "Biaya per jam yang dibayarkan antar trader untuk mempertahankan harga agar sesuai dengan pasar. Jika nilainya positif, pemegang posisi long membayar pemegang posisi short. Jika negatif, pemegang posisi short membayar pemegang posisi long."
   },
@@ -5681,25 +5671,11 @@
   "perpsNoTransactions": {
     "message": "Belum ada transaksi"
   },
-  "perpsOpenInterest": {
-    "message": "Kontrak Terbuka"
-  },
   "perpsOpenInterestTooltip": {
     "message": "Nilai gabungan dari semua posisi terbuka untuk perp ini"
   },
-  "perpsOpenLong": {
-    "message": "Buka posisi Long $1",
-    "description": "$1 is the asset symbol (e.g., BTC, ETH)"
-  },
   "perpsOpenOrders": {
     "message": "Order Terbuka"
-  },
-  "perpsOpenShort": {
-    "message": "Buka posisi Short $1",
-    "description": "$1 is the asset symbol (e.g., BTC, ETH)"
-  },
-  "perpsOraclePrice": {
-    "message": "Harga Oracle"
   },
   "perpsOraclePriceTooltip": {
     "message": "Nilai median dari harga eksternal yang dilaporkan oleh validator, digunakan untuk menghitung tingkat pendanaan"
@@ -5736,9 +5712,6 @@
   },
   "perpsRateLimitExceeded": {
     "message": "Terlalu banyak permintaan. Mohon tunggu dan coba lagi."
-  },
-  "perpsRecentActivity": {
-    "message": "Aktivitas Terbaru"
   },
   "perpsReduceExposure": {
     "message": "Kurangi eksposur"
@@ -5779,10 +5752,6 @@
   },
   "perpsSearchMarkets": {
     "message": "Cari pasar"
-  },
-  "perpsSeeAll": {
-    "message": "Lihat Semua",
-    "description": "Accessible label for the arrow button that navigates to the full activity list"
   },
   "perpsServiceUnavailable": {
     "message": "Layanan tidak tersedia untuk sementara waktu. Coba lagi nanti."

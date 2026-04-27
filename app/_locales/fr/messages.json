@@ -1558,10 +1558,6 @@
   "confirmFieldPeriodDurationMonthly": {
     "message": "Mensuelle"
   },
-  "confirmFieldPeriodDurationSeconds": {
-    "message": "$1 secondes",
-    "description": "$1 is the number of seconds in the permission period (shown when the period is not a standard hour/day/week/etc.)"
-  },
   "confirmFieldPeriodDurationWeekly": {
     "message": "Hebdomadaire"
   },
@@ -5422,9 +5418,6 @@
     "message": "disponible",
     "description": "is the available balance amount"
   },
-  "perpsAvailableBalance": {
-    "message": "Solde disponible sur le compte de trading de contrats à terme perpétuels : "
-  },
   "perpsAvailableToAdd": {
     "message": "Pouvant être ajoutés"
   },
@@ -5587,9 +5580,6 @@
   "perpsFundingPayments": {
     "message": "Taux de financement"
   },
-  "perpsFundingRate": {
-    "message": "Taux de financement"
-  },
   "perpsFundingRateTooltip": {
     "message": "Des frais horaires versés par les traders à d’autres traders afin d’aligner les prix sur ceux appliqués par le marché. Si le taux est positif, les acheteurs paient les vendeurs. S’il est négatif, les vendeurs paient les acheteurs."
   },
@@ -5681,25 +5671,11 @@
   "perpsNoTransactions": {
     "message": "Aucune transaction pour le moment"
   },
-  "perpsOpenInterest": {
-    "message": "Intérêt ouvert"
-  },
   "perpsOpenInterestTooltip": {
     "message": "La valeur combinée de toutes les positions ouvertes pour ce contrat à terme perpétuel"
   },
-  "perpsOpenLong": {
-    "message": "Ouvrir une position longue $1",
-    "description": "$1 is the asset symbol (e.g., BTC, ETH)"
-  },
   "perpsOpenOrders": {
     "message": "Ordres ouverts"
-  },
-  "perpsOpenShort": {
-    "message": "Ouvrir une position courte $1",
-    "description": "$1 is the asset symbol (e.g., BTC, ETH)"
-  },
-  "perpsOraclePrice": {
-    "message": "Prix de l’Oracle"
   },
   "perpsOraclePriceTooltip": {
     "message": "Médiane des prix externes communiqués par les validateurs, utilisée pour calculer le taux de financement"
@@ -5736,9 +5712,6 @@
   },
   "perpsRateLimitExceeded": {
     "message": "Trop de demandes. Veuillez patienter et réessayer."
-  },
-  "perpsRecentActivity": {
-    "message": "Activité récente"
   },
   "perpsReduceExposure": {
     "message": "Réduire l’exposition"
@@ -5779,10 +5752,6 @@
   },
   "perpsSearchMarkets": {
     "message": "Rechercher des marchés"
-  },
-  "perpsSeeAll": {
-    "message": "Tout afficher",
-    "description": "Accessible label for the arrow button that navigates to the full activity list"
   },
   "perpsServiceUnavailable": {
     "message": "Le service est temporairement indisponible. Veuillez réessayer plus tard."

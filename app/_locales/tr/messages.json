@@ -1558,10 +1558,6 @@
   "confirmFieldPeriodDurationMonthly": {
     "message": "Aylık"
   },
-  "confirmFieldPeriodDurationSeconds": {
-    "message": "$1 saniye",
-    "description": "$1 is the number of seconds in the permission period (shown when the period is not a standard hour/day/week/etc.)"
-  },
   "confirmFieldPeriodDurationWeekly": {
     "message": "Haftalık"
   },
@@ -3011,6 +3007,9 @@
   "gasUsed": {
     "message": "Kullanılan gaz"
   },
+  "gatorNoJustificationProvided": {
+    "message": "İzin için gerekçe sağlanmadı"
+  },
   "gatorPermissionAnnualFrequency": {
     "message": "Yıllık",
     "description": "Time period for annual recurring permissions redemption"
@@ -4092,6 +4091,26 @@
   "multipleSnapConnectionWarning": {
     "message": "$1 $2 Snap kullanmak istiyor",
     "description": "$1 is the dapp and $2 is the number of snaps it wants to connect to."
+  },
+  "musdAssetBonusClaimAmount": {
+    "message": "$1 bonus alın",
+    "description": "Label for the claim button in the mUSD asset details Your bonus section, where $1 is the formatted fiat amount (e.g., $10.27)"
+  },
+  "musdAssetBonusInfoAria": {
+    "message": "Bonus bilgileriniz",
+    "description": "Accessible name for the info icon that opens the Your bonus tooltip"
+  },
+  "musdAssetBonusInfoYourBonus": {
+    "message": "mUSD tutarak kazandığınız %$1 yıllıklandırılmış bonus. Linea üzerinde günlük olarak alabilirsiniz. $2",
+    "description": "$1 is the APY %, $2 is the 'Terms apply.' link"
+  },
+  "musdAssetBonusRate": {
+    "message": "%$1 bonus",
+    "description": "Tag next to Your bonus on the mUSD asset details page, where $1 is the bonus APY percentage (e.g., 3)"
+  },
+  "musdAssetConvertDescriptionHighlight": {
+    "message": "%$1 yıllıklandırılmış bonus",
+    "description": "Shown in Figma accent lime (#baf24a) inside the mUSD asset details convert section description. $1 is the APY percentage."
   },
   "musdBonusExplanation": {
     "message": "Stabil kripto paralarınızı mUSD'ye dönüştürün\nve günlük olarak alabileceğiniz %$1 orana kadar\nyıllıklandırılmış bonus kazanın. $2",
@@ -5422,9 +5441,6 @@
     "message": "kullanılabilir",
     "description": "is the available balance amount"
   },
-  "perpsAvailableBalance": {
-    "message": "Kullanılabilir Perps bakiyesi: "
-  },
   "perpsAvailableToAdd": {
     "message": "Eklenebilir"
   },
@@ -5522,6 +5538,12 @@
   "perpsDepositToastPendingTitle": {
     "message": "Sürekli Vadeli İşlem Sözleşmelerine fon ekleniyor"
   },
+  "perpsDepositToastSubmittedDescription": {
+    "message": "Paranız Perps'e ekleniyor."
+  },
+  "perpsDepositToastSubmittedTitle": {
+    "message": "Para yatırma işlemi gönderildi"
+  },
   "perpsDepositToastSuccessDescription": {
     "message": "Fonlarınız işleme hazır."
   },
@@ -5586,9 +5608,6 @@
   },
   "perpsFundingPayments": {
     "message": "Fonlama ödemeleri"
-  },
-  "perpsFundingRate": {
-    "message": "Fonlama Oranı"
   },
   "perpsFundingRateTooltip": {
     "message": "Fiyatları piyasa ile uyumlu tutmak için yatırımcılar arasında saatlik bir işlem ücreti ödenir. Oran pozitifse uzunlar kısalara ödeme yapar. Negatifse kısalar uzunlara ödeme yapar."
@@ -5681,25 +5700,19 @@
   "perpsNoTransactions": {
     "message": "Henüz işlem yok"
   },
-  "perpsOpenInterest": {
-    "message": "Açık Faiz"
-  },
   "perpsOpenInterestTooltip": {
     "message": "Bu sürekli vadeli işlem sözleşmesi için açık pozisyonların birleşik değeri"
   },
   "perpsOpenLong": {
-    "message": "$1 değerinde Long pozisyon aç",
+    "message": "Long $1 açın",
     "description": "$1 is the asset symbol (e.g., BTC, ETH)"
   },
   "perpsOpenOrders": {
     "message": "Açık Emirler"
   },
   "perpsOpenShort": {
-    "message": "$1 değerinde Short pozisyon aç",
+    "message": "Short $1 açın",
     "description": "$1 is the asset symbol (e.g., BTC, ETH)"
-  },
-  "perpsOraclePrice": {
-    "message": "Oracle Fiyatı"
   },
   "perpsOraclePriceTooltip": {
     "message": "Fonlama oranının hesaplanmasında kullanılan, harici fiyatların doğrulayıcılar tarafından bildirilen medyanı"
@@ -5736,9 +5749,6 @@
   },
   "perpsRateLimitExceeded": {
     "message": "Çok sayıda talepte bulunuldu. Lütfen bekleyip tekrar deneyin."
-  },
-  "perpsRecentActivity": {
-    "message": "Son Faaliyetler"
   },
   "perpsReduceExposure": {
     "message": "Pozisyon büyüklüğünü azalt"
@@ -5779,10 +5789,6 @@
   },
   "perpsSearchMarkets": {
     "message": "Piyasa ara"
-  },
-  "perpsSeeAll": {
-    "message": "Tümünü Gör",
-    "description": "Accessible label for the arrow button that navigates to the full activity list"
   },
   "perpsServiceUnavailable": {
     "message": "Hizmet geçici olarak kullanılamıyor. Lütfen daha sonra tekrar deneyin."

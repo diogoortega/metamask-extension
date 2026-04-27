@@ -1558,10 +1558,6 @@
   "confirmFieldPeriodDurationMonthly": {
     "message": "Месячный"
   },
-  "confirmFieldPeriodDurationSeconds": {
-    "message": "$1 сек.",
-    "description": "$1 is the number of seconds in the permission period (shown when the period is not a standard hour/day/week/etc.)"
-  },
   "confirmFieldPeriodDurationWeekly": {
     "message": "Недельный"
   },
@@ -5422,9 +5418,6 @@
     "message": "доступные",
     "description": "is the available balance amount"
   },
-  "perpsAvailableBalance": {
-    "message": "Доступный баланс перпов: "
-  },
   "perpsAvailableToAdd": {
     "message": "Доступно для добавления"
   },
@@ -5587,9 +5580,6 @@
   "perpsFundingPayments": {
     "message": "Платежи для финансирования"
   },
-  "perpsFundingRate": {
-    "message": "Ставка финансирования"
-  },
   "perpsFundingRateTooltip": {
     "message": "Почасовая комиссия, выплачиваемая трейдерам за поддержание цен на уровне рынка. Если ставка положительная, держатели длинных позиций платят держателям коротких позиций. Если отрицательная, держатели коротких позиций платят держателям коротких позиций."
   },
@@ -5681,25 +5671,11 @@
   "perpsNoTransactions": {
     "message": "Пока нет транзакций"
   },
-  "perpsOpenInterest": {
-    "message": "Процент при открытии"
-  },
   "perpsOpenInterestTooltip": {
     "message": "Совокупная стоимость всех открытых позиций для этого бессрочного фьючерса"
   },
-  "perpsOpenLong": {
-    "message": "Открыть длинную позицию $1",
-    "description": "$1 is the asset symbol (e.g., BTC, ETH)"
-  },
   "perpsOpenOrders": {
     "message": "Открытые ордера"
-  },
-  "perpsOpenShort": {
-    "message": "Открыть короткую позицию $1",
-    "description": "$1 is the asset symbol (e.g., BTC, ETH)"
-  },
-  "perpsOraclePrice": {
-    "message": "Цена Oracle"
   },
   "perpsOraclePriceTooltip": {
     "message": "Медианное значение внешних цен, сообщенных валидаторами, используется для расчета ставки финансирования"
@@ -5736,9 +5712,6 @@
   },
   "perpsRateLimitExceeded": {
     "message": "Слишком много запросов. Подождите немного и повторите попытку."
-  },
-  "perpsRecentActivity": {
-    "message": "Недавняя активность"
   },
   "perpsReduceExposure": {
     "message": "Снизьте экспозицию"
@@ -5779,10 +5752,6 @@
   },
   "perpsSearchMarkets": {
     "message": "Поиск рынков"
-  },
-  "perpsSeeAll": {
-    "message": "Смотреть все",
-    "description": "Accessible label for the arrow button that navigates to the full activity list"
   },
   "perpsServiceUnavailable": {
     "message": "Сервис временно недоступен. Повторите попытку позже."

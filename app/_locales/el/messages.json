@@ -1558,10 +1558,6 @@
   "confirmFieldPeriodDurationMonthly": {
     "message": "Μηνιαία"
   },
-  "confirmFieldPeriodDurationSeconds": {
-    "message": "$1 δευτερόλεπτα",
-    "description": "$1 is the number of seconds in the permission period (shown when the period is not a standard hour/day/week/etc.)"
-  },
   "confirmFieldPeriodDurationWeekly": {
     "message": "Εβδομαδιαία"
   },
@@ -5422,9 +5418,6 @@
     "message": "διαθέσιμο",
     "description": "is the available balance amount"
   },
-  "perpsAvailableBalance": {
-    "message": "Διαθέσιμο υπόλοιπο για Perps: "
-  },
   "perpsAvailableToAdd": {
     "message": "Διαθέσιμο για προσθήκη"
   },
@@ -5587,9 +5580,6 @@
   "perpsFundingPayments": {
     "message": "Πληρωμές χρηματοδότησης"
   },
-  "perpsFundingRate": {
-    "message": "Επιτόκιο Χρηματοδότησης"
-  },
   "perpsFundingRateTooltip": {
     "message": "Μια ωριαία χρέωση που καταβάλλεται μεταξύ των traders για να παραμένουν οι τιμές κοντά στην τιμή αγοράς. Αν η τιμή είναι θετική, οι θέσεις αγορών (long) πληρώνουν τις θέσεις πωλήσεων (short). Αν είναι αρνητική, οι θέσεις πωλήσεων (short) πληρώνουν τις θέσεις αγορών (long)."
   },
@@ -5681,25 +5671,11 @@
   "perpsNoTransactions": {
     "message": "Δεν υπάρχουν συναλλαγές ακόμη"
   },
-  "perpsOpenInterest": {
-    "message": "Ανοιχτές Θέσεις"
-  },
   "perpsOpenInterestTooltip": {
     "message": "Η συνολική αξία όλων των ανοιχτών θέσεων για αυτό το συμβόλαιο αορίστου διάρκειας"
   },
-  "perpsOpenLong": {
-    "message": "Άνοιγμα θέσης αγοράς στο $1",
-    "description": "$1 is the asset symbol (e.g., BTC, ETH)"
-  },
   "perpsOpenOrders": {
     "message": "Ανοιχτές εντολές"
-  },
-  "perpsOpenShort": {
-    "message": "Άνοιγμα θέσης πώλησης στο $1",
-    "description": "$1 is the asset symbol (e.g., BTC, ETH)"
-  },
-  "perpsOraclePrice": {
-    "message": "Τιμή Oracle"
   },
   "perpsOraclePriceTooltip": {
     "message": "Η διάμεσος των εξωτερικών τιμών που αναφέρονται από τους επικυρωτές, η οποία χρησιμοποιείται για τον υπολογισμό του ποσοστού χρηματοδότησης"
@@ -5736,9 +5712,6 @@
   },
   "perpsRateLimitExceeded": {
     "message": "Πάρα πολλά αιτήματα. Προσπαθήστε ξανά σε λίγο."
-  },
-  "perpsRecentActivity": {
-    "message": "Πρόσφατη δραστηριότητα"
   },
   "perpsReduceExposure": {
     "message": "Μείωση της έκθεσης"
@@ -5779,10 +5752,6 @@
   },
   "perpsSearchMarkets": {
     "message": "Αναζήτηση αγορών"
-  },
-  "perpsSeeAll": {
-    "message": "Προβολή όλων",
-    "description": "Accessible label for the arrow button that navigates to the full activity list"
   },
   "perpsServiceUnavailable": {
     "message": "Η υπηρεσία είναι προσωρινά μη διαθέσιμη. Προσπαθήστε ξανά αργότερα."
