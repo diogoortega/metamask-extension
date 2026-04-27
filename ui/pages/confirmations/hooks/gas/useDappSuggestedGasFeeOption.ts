@@ -13,7 +13,6 @@ import { useConfirmContext } from '../../context/confirm';
 import { useFeeCalculations } from '../../components/confirm/info/hooks/useFeeCalculations';
 import { useTransactionNativeTicker } from '../transactions/useTransactionNativeTicker';
 import { hexWEIToDecGWEI } from '../../../../../shared/lib/conversion.utils';
-import { useTransactionGasLimit } from './useTransactionGasLimit';
 
 const HEX_ZERO = '0x0';
 const MM_ORIGIN = 'metamask';
@@ -28,7 +27,6 @@ export const useDappSuggestedGasFeeOption = ({
     useConfirmContext<TransactionMeta>();
   const nativeTicker = useTransactionNativeTicker();
   const { calculateGasEstimate } = useFeeCalculations(transactionMeta);
-  const { gasLimit: displayGas } = useTransactionGasLimit(transactionMeta);
   const dispatch = useDispatch();
 
   const { dappSuggestedGasFees, id, origin, userFeeLevel } = transactionMeta;
@@ -56,7 +54,7 @@ export const useDappSuggestedGasFeeOption = ({
   if (shouldIncludeDappSuggestedGasFeeOption) {
     let feePerGas = HEX_ZERO;
     let gasPrice = HEX_ZERO;
-    let gas: string = displayGas || HEX_ZERO;
+    let gas = transactionMeta.gasLimitNoBuffer || HEX_ZERO;
     let shouldUseEIP1559FeeLogic = true;
     let priorityFeePerGas = HEX_ZERO;
 
