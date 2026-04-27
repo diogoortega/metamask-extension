@@ -1,5 +1,6 @@
 import { hasProperty } from '@metamask/utils';
 import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import {
   getNewBlankTestFile,
   getTestFilesSortedByTime,
@@ -110,7 +111,7 @@ export function splitTestsByTimings(
  *
  * This code is left in to be able to test the output of splitTestsByTimings()
  */
-if (require.main === module) {
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const sampleTestList = [
     'test/e2e/tests/account/account-details.spec.ts',
     'test/e2e/tests/account/account-hide-unhide.spec.ts',

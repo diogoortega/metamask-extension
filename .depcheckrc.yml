@@ -92,6 +92,13 @@ ignores:
   - 'babel-plugin-react-compiler'
   # used in image optimization script
   - 'sharp'
+  # used in .github/scripts/ (depcheck doesn't scan hidden dirs by default)
+  - '@actions/core'
+  - '@actions/github'
+  - '@octokit/types'
+  - '@slack/types'
+  - '@slack/webhook'
+  - 'xml2js'
   # trezor
   - 'ts-mixer'
   - '@testing-library/dom'
