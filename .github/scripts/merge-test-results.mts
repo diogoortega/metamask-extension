@@ -7,7 +7,7 @@ import {
 } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { normalizeTestPath, XML } from './shared/utils';
+import { normalizeTestPath, XML } from './shared/utils.mts';
 
 /**
  * Merges test results from a previous run into the current results directory.

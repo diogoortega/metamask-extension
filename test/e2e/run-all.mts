@@ -3,12 +3,12 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { hideBin } from 'yargs/helpers';
 import yargs from 'yargs/yargs';
-import { extractTestResults } from '../../.github/scripts/extract-test-results.js';
+import { extractTestResults } from '../../.github/scripts/extract-test-results.mts';
 import {
   formatTime,
   normalizeTestPath,
-} from '../../.github/scripts/shared/utils.js';
-import { splitTestsByTimings } from '../../.github/scripts/split-tests-by-timings.js';
+} from '../../.github/scripts/shared/utils.mts';
+import { splitTestsByTimings } from '../../.github/scripts/split-tests-by-timings.mts';
 import { loadBuildTypesConfig } from '../../development/lib/build-type.js';
 import { exitWithError } from '../../development/lib/exit-with-error.js';
 import { runInShell } from '../../development/lib/run-command.js';

@@ -92,13 +92,6 @@ ignores:
   - 'babel-plugin-react-compiler'
   # used in image optimization script
   - 'sharp'
-  # used in .github/scripts/ (depcheck doesn't scan hidden dirs by default)
-  - '@actions/core'
-  - '@actions/github'
-  - '@octokit/types'
-  - '@slack/types'
-  - '@slack/webhook'
-  - 'xml2js'
   # trezor
   - 'ts-mixer'
   - '@testing-library/dom'
@@ -117,6 +110,21 @@ ignores:
   - '@metamask/permissions-kernel-snap'
   # perps poc
   - '@metamask/perps-controller'
+
+# depcheck 1.4.3 only registers **/*.ts and **/*.tsx by default and the
+# `parsers` map *replaces* defaults, so re-list everything we use plus
+# Node's ESM/CJS-explicit TS extensions (.mts / .cts).
+parsers:
+  '**/*.js': jsx
+  '**/*.jsx': jsx
+  '**/*.ts': typescript
+  '**/*.tsx': typescript
+  '**/*.mts': typescript
+  '**/*.cts': typescript
+  '**/*.vue': vue
+  '**/*.svelte': svelte
+  '**/*.sass': sass
+  '**/*.scss': sass
 
 # files depcheck should not parse
 ignorePatterns:
