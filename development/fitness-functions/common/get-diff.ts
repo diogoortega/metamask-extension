@@ -49,7 +49,7 @@ async function getCIDiff(path?: string): Promise<string> {
   // Lazy dynamic import to avoid pulling @actions/github into local dev hooks
   // (and because @actions/github is now ESM-only).
   const { getPrDiff } = await import(
-    '../../../.github/scripts/shared/get-pr-diff.ts'
+    '../../../.github/scripts/shared/get-pr-diff'
   );
   return getPrDiff({ baseBranch: process.env.BASE_REF || 'main' });
 }
